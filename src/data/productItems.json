@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "type": "mercedes",
+    "title": "Single SAM modul",
+    "deviceTypes": [
+      "MR (Motorna regulacija)",
+      "Motorno upravljačko jedinstvo",
+      "Sistem upravljanja motorom",
+      "MP4 upravljačka jedinica"
+    ],
+    "image": "https://www.24volt.de/typo3temp/pics/a955a25ef6.jpg",
+    "deviceManufacturers": ["Temic", "Continental", "Daimler Chrysler"],
+    "vehicleManufacturers": ["Mercedes", "Evobus", "Neoplan", "Setra"],
+    "vehicleTypes": [
+      "MP4", "Actros", "Atego", "Axor", "SK", "Unimog", "Vario", "Econic",
+      "LTM", "Integro", "O550", "Conecto", "O345", "Tourismo", "O350",
+      "Cito", "O520", "Citaro", "O530", "Intouro O560", "Travego", "O580",
+      "Tourino", "Centroliner", "N4426", "Euroliner", "N313", "Starliner",
+      "N516", "Transliner", "N312", "S313", "S315", "S316", "S317", "S319",
+      "S328", "S411", "S412", "S415", "S416", "S417", "S419", "S431", "ST", "SX"
+    ],
+    "systemDescription": "Motorna regulacija, MP4, Actros, Sistem za upravljanje motorom",
+    "services": [
+      "Provera (ako je moguće direktno na našem vozilu)",
+      "Popravka / Sanacija",
+      "Isporuka zamenskog uređaja",
+      "Isporuka test uređaja",
+      "Predisporuka upravljačkog uređaja radi što kraćeg vremena zastoja"
+    ],
+    "errorCodes": [
+      "A0014467458", "A0014462058", "A0014466158", "A0014467658",
+      "A0014465958", "A0014466058", "A0014467358", "A0014461958",
+      "A0014467558", "A0014465858", "A0014463158", "A0014463658",
+      "A0014463458"
+    ]
+  },
+  {
+    "id": 2,
+    "type": "mercedes",
+    "title": "Popravka MP4 upravljačke jedinice",
+    "deviceTypes": [
+      "MP4",
+      "Upravljačka jedinica (Steuergerät)"
+    ],
+    "deviceManufacturers": ["Temic", "Continental", "Daimler Chrysler"],
+    "vehicleManufacturers": ["Mercedes", "Evobus", "Setra"],
+    "vehicleTypes": [
+      "MP4", "Actros", "Atego", "Axor", "Unimog", "Econic", "Integro",
+      "O550", "Conecto", "O345", "Tourismo", "O350", "Cito", "O520",
+      "Citaro", "O530", "Intouro O560", "Travego", "O580", "Tourino",
+      "Centroliner"
+    ],
+    "systemDescription": "Motorna regulacija i kontrola MP4 upravljačkih sistema",
+    "services": [
+      "Provera (ako je moguće direktno na našem vozilu)",
+      "Popravka / Sanacija",
+      "Isporuka zamenskog uređaja",
+      "Isporuka test uređaja",
+      "Predisporuka upravljačkog uređaja radi što kraćeg vremena zastoja"
+    ],
+    "errorCodes": [
+      "A0004468814", "A0004468414", "A0004465214", "0486109201"
+    ]
+  },
+  {
+    "id": 3,
+    "type": "mercedes",
+    "image": "https://www.24volt.de/uploads/pics/CPC3.jpg",
+    "title": "Popravka Fahrregelung CPC3 MP4",
+    "deviceTypes": [
+      "Fahrregelung CPC3",
+      "MP4 upravljačka jedinica"
+    ],
+    "deviceManufacturers": ["Continental"],
+    "vehicleManufacturers": ["Mercedes Benz"],
+    "vehicleTypes": [
+      "Atego", "Actros", "Citaro", "Econic", "Unimog", "Arocs", "Antos"
+    ],
+    "systemDescription": "Fahrregelung, CPC3, MP4, Actros - upravljanje vozilom",
+    "services": [
+      "Provera (ako je moguće direktno na našem vozilu)",
+      "Popravka / Sanacija",
+      "Isporuka zamenskog uređaja",
+      "Isporuka test uređaja",
+      "Predisporuka upravljačkog uređaja radi što kraćeg vremena zastoja"
+    ],
+    "errorDescriptions": [
+      "Interna greška upravljačke jedinice",
+      "Greška 3F0A08: Signallinija pedale gasa B44 prekinuta, kratki spoj na plus ili masu",
+      "Greške 0BF0E3, 0DF0E3, 5B0008, AFFFEC - često se javljaju zajedno",
+      "Greška: CPC ne odgovara",
+      "Greška EEF7E2, ACFFEE, 760202: Neispravna upravljačka jedinica CPC",
+      "Greška EEF7ED: Upravljačka jedinica CPC3 defektna",
+      "Greške 15F0E5, B70D03: Problemi sa komponentama B87, B79",
+      "Greška 63F3EE, 2CF3EE: Interna greška podataka",
+      "Senzor temperature ulja u menjaču B79 kratki spoj na plus",
+      "ADFFEE: Defektna upravljačka jedinica",
+      "6F0005: Problemi sa komponentama B47, B70D03",
+      "B60D03: Komponenta B48 kratki spoj",
+      "2AF3EE: Nemoguć automatski menjač",
+      "CAN 4 mreža bez funkcije",
+      "Uređaj blokiran",
+      "Wegfahrsperre aktivirana"
+    ],
+    "errorCodes": [
+      "A0014469202", "A0034462302", "A0034462802", "A0034463002", "A0034466002",
+      "A0034466102", "A0034466202", "A0034466302", "A0034466402", "A0034466502",
+      "A0034466602", "A0034466802", "A0034467002", "A0034467102", "A0034467202",
+      "A0034467302", "A0034467402", "A0034467502", "A0034467602", "A0034467702",
+      "A0034468502", "A0034468602", "A0034468702", "A0044464702", "A0044464802",
+      "A0044465602", "A0044465802", "A0044465902", "A0044467602", "A0044467702"
+    ]
+  }
+
+]
