@@ -13,7 +13,6 @@ const ignorePatterns = [
   "**/dist/**",
   "**/build/**",
   "**/coverage/**",
-  "**/.husky/**",
 ];
 
 export default [
@@ -24,6 +23,16 @@ export default [
   pluginJs.configs.recommended,
   ...typeScriptEsLint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  {
+    // Dodajemo custom pravila
+    rules: {
+      "no-unused-vars": "warn", // Globalno za JavaScript
+      "@typescript-eslint/no-unused-vars": "warn", // Za TypeScript
+      "react/react-in-jsx-scope": "off", // Neophodno za React 17+
+      "react/jsx-uses-react": "off", // Neophodno za React 17+
+      "prettier/prettier": "warn", // Prettier greske kao upozorenja
+    },
+  },
   pluginPrettier,
   configPrettier,
 ];
