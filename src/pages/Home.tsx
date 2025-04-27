@@ -2,6 +2,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import ProductCard from "../componets/ProductCard";
+import Contact from "./Contact";
 
 const products = [
   {
@@ -26,12 +27,8 @@ const products = [
 
 const Home: React.FC = () => (
   <Box>
-    <Typography variant="h3" component="h1" fontWeight="bold" gutterBottom>
-      PROIZVODNJA I POPRAVKA ELEKTRONSKE OPREME
-    </Typography>
-
-    <Typography variant="h5" component="h2" fontWeight="medium" gutterBottom>
-      Preduzetnik: Željko Tozanić
+    <Typography variant="h3" component="h1" color="black" gutterBottom>
+      Proizvodnja i popravka elektronske opreme
     </Typography>
 
     <Typography variant="body1" sx={{ maxWidth: 700, mx: "auto", mt: 2 }}>
@@ -40,16 +37,22 @@ const Home: React.FC = () => (
       brz rok isporuke i garanciju kvaliteta.
     </Typography>
 
-    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mt: 4 }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 4,
+        mt: 4,
+      }}
+    >
       {products.map((product) => {
         const link =
           product.id === 1 ? "/product/kamion" : `/proizvod/${product.id}`;
 
         return (
-          <Box
-            key={product.id}
-            sx={{ width: { xs: "100%", sm: "48%", md: "30%" } }}
-          >
+          <Box key={product.id}>
             <ProductCard
               id={product.id}
               name={product.name}
@@ -60,6 +63,8 @@ const Home: React.FC = () => (
         );
       })}
     </Box>
+
+    <Contact></Contact>
   </Box>
 );
 

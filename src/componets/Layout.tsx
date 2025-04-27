@@ -12,13 +12,14 @@ import { Link as RouterLink, Outlet } from "react-router-dom";
 import React from "react";
 
 const Layout = () => (
-  <Box sx={{ minHeight: "100vh", bgcolor: "#f9f9f9" }}>
+  <Box sx={{ minHeight: "100vh", bgcolor: "rgba(208,201,192,255)" }}>
     <CssBaseline />
 
     {/* Top Contact Bar */}
     <Box
       sx={{
-        bgcolor: "primary.main",
+        bgcolor: "black",
+        opacity: 0.8,
         color: "white",
         textAlign: "center",
         py: 1,
@@ -32,7 +33,7 @@ const Layout = () => (
     <AppBar position="static" color="default" elevation={1}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Typography variant="h6" component="div">
-          Željko Tozanić
+          Željko Tosanić
         </Typography>
         <Box sx={{ display: "flex", gap: 3 }}>
           <Link component={RouterLink} to="/" color="inherit" underline="none">

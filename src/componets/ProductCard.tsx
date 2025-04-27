@@ -16,8 +16,8 @@ interface ProductCardProps {
   link: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ id, name, image, link }) => (
-  <Card>
+const ProductCard: React.FC<ProductCardProps> = ({ name, image, link }) => (
+  <Card sx={{ maxWidth: 250 }}>
     <CardActionArea component={RouterLink} to={link}>
       <CardMedia component="img" height="200" image={image} alt={name} />
       <CardContent>
