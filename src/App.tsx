@@ -7,7 +7,7 @@ import { ThemeProvider } from "@mui/material";
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 };

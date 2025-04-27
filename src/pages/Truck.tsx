@@ -60,11 +60,20 @@ const Truck: React.FC = () => (
       Kliknite na kartice kako biste saznali više o svakom proizvodu.
     </Typography>
 
-    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mt: 4 }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 3,
+        mt: 4,
+      }}
+    >
       {truckProducts.map((product) => (
         <Box
           key={product.id}
-          sx={{ width: { xs: "100%", sm: "48%", md: "30%" } }}
+          sx={{ width: { xs: "48%", sm: "48%", md: "30%" } }}
         >
           <ProductCard
             id={product.id}

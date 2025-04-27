@@ -16,12 +16,11 @@ const ProductDetail = () => {
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
-    <Box sx={{ display: "flex", height: "100vh", backgroundColor: "#f4f6f8" }}>
+    <Box sx={{ display: "flex", height: "100vh" }}>
       {/* Left Panel */}
       <Box
         sx={{
           width: { xs: "100%", md: "30%" },
-          backgroundColor: "#212121",
           color: "white",
           display: "flex",
           flexDirection: "column",
@@ -30,34 +29,8 @@ const ProductDetail = () => {
           position: "relative",
         }}
       >
-        {/* Huge background title */}
-        <Typography
-          variant="h1"
-          sx={{
-            position: "absolute",
-            top: "5%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            fontWeight: "bold",
-            color: "rgba(255, 255, 255, 0.04)",
-            fontSize: "8rem",
-            zIndex: 1,
-            pointerEvents: "none",
-            whiteSpace: "nowrap",
-          }}
-        >
-          MERCEDES
-        </Typography>
-
         {/* Actual content */}
         <Box sx={{ position: "relative", zIndex: 2, width: "100%" }}>
-          <Typography
-            variant="h5"
-            sx={{ fontWeight: "bold", mb: 4, textAlign: "center" }}
-          >
-            Sistemi
-          </Typography>
-
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             {productsData.map((product) => (
               <Card
@@ -70,7 +43,6 @@ const ProductDetail = () => {
                   transition: "0.3s",
                   "&:hover": { backgroundColor: "#555" },
                   borderRadius: 2,
-                  boxShadow: selectedProduct.id === product.id ? 5 : 1,
                 }}
                 onClick={() => {
                   setSelectedProduct(product);
@@ -95,17 +67,14 @@ const ProductDetail = () => {
           backgroundColor: "#fafafa",
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: "start",
         }}
       >
         {selectedProduct && (
           <Card
             sx={{
               width: "100%",
-              maxWidth: "1100px",
               padding: 3,
-              borderRadius: 5,
-              boxShadow: 5,
             }}
           >
             <Box
@@ -237,7 +206,6 @@ const ProductDetail = () => {
                     height: { xs: 200, md: 300 },
                     borderRadius: 3,
                     objectFit: "cover",
-                    boxShadow: 4,
                   }}
                 />
               )}
