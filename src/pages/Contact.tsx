@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, IconButton, Grid, Divider } from "@mui/material";
+import { Box, Typography, IconButton, Divider } from "@mui/material";
 import { Phone, Email, LocationOn } from "@mui/icons-material";
 
 const Contact = () => (

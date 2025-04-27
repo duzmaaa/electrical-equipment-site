@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Kontrolna jedinica MAN",
+    "title": "Kontrolna jedinica MAN",
     "image": "https://via.placeholder.com/300",
     "description": "Detalji o kontrolnoj jedinici MAN...",
     "specifications": "Specifikacije MAN kontrolne jedinice...",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "name": "Senzor Volvo FH",
+    "title": "Senzor Volvo FH",
     "image": "https://via.placeholder.com/300",
     "description": "Detalji o senzoru Volvo FH...",
     "specifications": "Specifikacije senzora Volvo FH...",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "name": "Alternator Scania",
+    "title": "Alternator Scania",
     "image": "https://via.placeholder.com/300",
     "description": "Detalji o alternatoru Scania...",
     "specifications": "Specifikacije alternatora Scania...",

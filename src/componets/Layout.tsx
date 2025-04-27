@@ -6,12 +6,13 @@ import {
   Box,
   Link,
   CssBaseline,
+  Button,
 } from "@mui/material";
 import { Link as RouterLink, Outlet } from "react-router-dom";
 import React from "react";
 
 const Layout = () => (
-  <Box sx={{ minHeight: "100vh", bgcolor: "white" }}>
+  <Box sx={{ minHeight: "100vh", bgcolor: "#f9f9f9" }}>
     <CssBaseline />
 
     {/* Top Contact Bar */}
@@ -31,7 +32,7 @@ const Layout = () => (
     <AppBar position="static" color="default" elevation={1}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Typography variant="h6" component="div">
-          Zeljko tosanic
+          Željko Tozanić
         </Typography>
         <Box sx={{ display: "flex", gap: 3 }}>
           <Link component={RouterLink} to="/" color="inherit" underline="none">
@@ -50,8 +51,11 @@ const Layout = () => (
     </AppBar>
 
     {/* Main Content */}
-    <Container sx={{ py: 4 }}>
-      <Outlet />
+    <Container sx={{ py: 6, textAlign: "center" }}>
+      {/* Ovde dolazi dodatni sadržaj (npr. kartice sa slikama) */}
+      <Box sx={{ mt: 6 }}>
+        <Outlet />
+      </Box>
     </Container>
   </Box>
 );
