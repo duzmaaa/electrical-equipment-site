@@ -5,6 +5,7 @@ import Contact from "../pages/Contact";
 import Layout from "../componets/Layout";
 import Truck from "../pages/Truck";
 import ProductDetail from "../pages/ProductDetail";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { path: "/product/kamion", element: <Truck /> },
       { path: "/proizvod/:id", element: <ProductDetail /> },
       { path: "/kontakt", element: <Contact /> },
+      { path: "/onama", element: <AboutUs /> },
     ],
   },
 ]);
