@@ -2,12 +2,12 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import ProductCard from "../componets/ProductCard";
-import Contact from "./Contact";
 
 const products = [
   {
     id: 1,
     name: "Kamion",
+    route: "/product/kamion",
     image:
       "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJ1Y2t8ZW58MHx8MHx8fDA%3D",
   },
@@ -53,18 +53,21 @@ const Home: React.FC = () => (
   <Box>
     <Box
       sx={{
-        backgroundImage: `url('/tire.jpg')`, // zameni s pravom putanjom
+        backgroundImage: `url('/tire.jpg')`, // obavezno u backtick-ovima i navodnicima
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        // height: "400px", // ili koliko ti treba
+        height: "400px", // možeš prilagoditi visinu
+        display: "flex", // da bi centriralo sadržaj
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        color: "#fff",
+        color: "#111827",
         textAlign: "center",
+        px: 2,
       }}
     >
-      <Typography variant="h3" component="h1" color="#111827" gutterBottom>
+      <Typography variant="h3" component="h1" gutterBottom>
         Proizvodnja i popravka elektronske opreme
       </Typography>
 
@@ -77,6 +80,7 @@ const Home: React.FC = () => (
         uz brz rok isporuke i garanciju kvaliteta.
       </Typography>
     </Box>
+
     <Box
       sx={{
         display: "flex",
@@ -88,8 +92,7 @@ const Home: React.FC = () => (
       }}
     >
       {products.map((product) => {
-        const link =
-          product.id === 1 ? "/product/kamion" : `/proizvod/${product.id}`;
+        const link = product.route || "/proizvod"; // string treba u navodnicima
 
         return (
           <Box key={product.id}>

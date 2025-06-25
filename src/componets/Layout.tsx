@@ -4,7 +4,6 @@ import {
   Typography,
   Container,
   Box,
-  Link,
   CssBaseline,
   ListItemButton,
   Autocomplete,
@@ -14,13 +13,17 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import { Link as RouterLink, Outlet, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import productItems from "../data/productItems.json";
+import Navigation from "./Navigation";
+import productItems from "../data/new_product.json";
 
-type Product = {
+interface Product {
   id: number;
-  title: string;
   type: string;
-};
+  module: string;
+  description: string;
+  common_repairs: string[];
+  image?: string;
+}
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -33,7 +36,7 @@ const Layout = () => {
     newValue: Product | null,
   ) => {
     if (newValue) {
-      navigate(`/proizvod/${newValue.id}?type=${newValue.type}`);
+      navigate(`/proizvod?type=${newValue.type}&id=${newValue.id}`);
       setSearchValue(null);
       setInputValue("");
     }
@@ -131,54 +134,14 @@ const Layout = () => {
           </Box>
 
           {/* Navigacija */}
-          <Box sx={{ display: "flex", gap: 4 }}>
-            <Link
-              component={RouterLink}
-              to="/"
-              color="inherit"
-              underline="none"
-              sx={{
-                fontWeight: "500",
-                "&:hover": { color: "#1976d2" },
-                fontSize: "1rem",
-              }}
-            >
-              POČETNA
-            </Link>
-            <Link
-              component={RouterLink}
-              to="/onama"
-              color="inherit"
-              underline="none"
-              sx={{
-                fontWeight: "500",
-                "&:hover": { color: "#1976d2" },
-                fontSize: "1rem",
-              }}
-            >
-              O NAMA
-            </Link>
-            <Link
-              component={RouterLink}
-              to="/kontakt"
-              color="inherit"
-              underline="none"
-              sx={{
-                fontWeight: "500",
-                "&:hover": { color: "#1976d2" },
-                fontSize: "1rem",
-              }}
-            >
-              KONTAKT
-            </Link>
-          </Box>
+          <Navigation></Navigation>
 
           {/* Search bar */}
           <Autocomplete
             sx={{ width: 250 }}
             size="small"
             options={productItems}
-            getOptionLabel={(option) => option.title}
+            getOptionLabel={(option) => option.module}
             isOptionEqualToValue={(option, value) => option.id === value.id}
             value={searchValue}
             onChange={handleSearchChange}
@@ -196,7 +159,17 @@ const Layout = () => {
             }
             renderOption={(props, option) => (
               <li {...props} key={option.id}>
-                {option.title}
+                <span style={{ fontSize: "1rem", color: "#111" }}>
+                  {option.module}{" "}
+                  <span
+                    style={{
+                      opacity: 0.6,
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    ({option.type})
+                  </span>
+                </span>
               </li>
             )}
             renderInput={(params) => (

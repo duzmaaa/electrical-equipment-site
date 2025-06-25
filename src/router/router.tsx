@@ -6,6 +6,8 @@ import Layout from "../componets/Layout";
 import Truck from "../pages/Truck";
 import ProductDetail from "../pages/ProductDetail";
 import AboutUs from "../pages/AboutUs";
+import TruckTuningPage from "../pages/TruckTuningPage";
+import EcuModificationsPage from "../pages/EcuModification";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +16,9 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/product/kamion", element: <Truck /> },
-      { path: "/proizvod/:id", element: <ProductDetail /> },
+      { path: "/proizvod", element: <ProductDetail /> },
+      { path: "/tuning", element: <TruckTuningPage /> },
+      { path: "/modifikacije", element: <EcuModificationsPage /> },
       { path: "/kontakt", element: <Contact /> },
       { path: "/onama", element: <AboutUs /> },
     ],

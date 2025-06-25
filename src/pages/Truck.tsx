@@ -40,7 +40,7 @@ const truckProducts = [
   {
     id: 6,
     name: "Renault",
-    type: "renault",
+    type: "reno",
     image: "https://logowik.com/content/uploads/images/renault-trucks2259.jpg", // Placeholder
   },
   {
@@ -87,7 +87,7 @@ const Truck: React.FC = () => (
             id={product.id}
             name={product.name}
             image={product.image}
-            link={`/proizvod/${product.id}?type=${product.type}`}
+            link={`/proizvod?type=${product.type}`}
           />
         </Box>
       ))}

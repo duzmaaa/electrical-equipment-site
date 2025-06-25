@@ -1,8 +1,9 @@
-import React from "react";
-import { Box, Typography, Link, Stack, Paper } from "@mui/material";
+import React, { useState } from "react";
+import { Box, CircularProgress, Typography, Link, Stack } from "@mui/material";
 import { LocationOn, AccessTime, Phone } from "@mui/icons-material";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(true);
   return (
     <Box px={{ xs: 2, md: 8 }} py={6} bgcolor="#F3F4F6">
       {/* Naslov stranice */}
@@ -87,8 +88,28 @@ const Contact = () => {
               borderRadius: 4,
               overflow: "hidden",
               minHeight: "400px",
+              position: "relative",
             }}
           >
+            {loading && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "rgba(255,255,255,0.7)",
+                  zIndex: 10,
+                }}
+              >
+                <CircularProgress />
+              </Box>
+            )}
+
             <iframe
               title="Google mapa - Tosanic Truck Electronic"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.720059161862!2d19.856959077036374!3d43.84718307109692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759d557e7200189%3A0xe93b9d2f6d13958b!2sTosanic%20Truck%20Electronic!5e0!3m2!1ssr!2srs!4v1716404103917!5m2!1ssr!2srs"
@@ -98,7 +119,8 @@ const Contact = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+              onLoad={() => setLoading(false)}
+            />
           </Box>
         </Box>
       </Box>
