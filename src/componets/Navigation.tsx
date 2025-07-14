@@ -23,13 +23,14 @@ const Navigation = () => {
             key={item.to}
             component={RouterLink}
             to={item.to}
-            color={isActive ? "#374151" : "inherit"}
+            color={isActive ? "#3B82F6" : "inherit"}
             // textDecorationColor={"#374151"}
-            underline={isActive ? "always" : "none"}
+            // underline={isActive ? "always" : "none"}
             sx={{
-              textDecorationColor: isActive ? "#374151" : "transparent",
+              textDecorationColor: "transparent",
               fontSize: "1rem",
-              "&:hover": { color: "#374151" },
+              "&:hover": { color: "#3B82F6" },
+              transition: "all 0.3s ease-in",
             }}
           >
             {item.label}
