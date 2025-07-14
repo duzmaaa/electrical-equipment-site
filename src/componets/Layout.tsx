@@ -99,7 +99,7 @@ const Layout = () => {
       {/* Header */}
       <AppBar
         position="fixed"
-        color="default"
+        style={{ background: "#111827", paddingTop: "0.4rem" }}
         elevation={1}
         sx={{ top: 36, zIndex: 1200 }}
       >
@@ -139,6 +139,11 @@ const Layout = () => {
           {/* Search bar */}
           <Autocomplete
             sx={{ width: 250 }}
+            style={{
+              color: "white",
+              background: "white",
+              borderRadius: "0.8rem",
+            }}
             size="small"
             options={productItems}
             getOptionLabel={(option) => option.module}
@@ -173,7 +178,35 @@ const Layout = () => {
               </li>
             )}
             renderInput={(params) => (
-              <TextField {...params} label="Pretraga" variant="outlined" />
+              <TextField
+                {...params}
+                label="Pretraga"
+                variant="outlined"
+                sx={{
+                  "& .MuiInputLabel-root": {
+                    color: "#111827",
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "white",
+                    transform: "translateY(-1.2rem)",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      border: "none",
+                    },
+                    "&:hover fieldset": {
+                      border: "none",
+                    },
+                    "&.Mui-focused fieldset": {
+                      border: "none",
+                    },
+                  },
+                  "& .MuiInputBase-input::placeholder": {
+                    color: "#111827",
+                    opacity: 1,
+                  },
+                }}
+              />
             )}
           />
         </Toolbar>
