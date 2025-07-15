@@ -11,9 +11,14 @@ const Contact = () => {
         variant="h3"
         component="h1"
         sx={{
-          color: "#111827",
           mb: 2,
           textAlign: "center",
+          color: "#111827",
+          fontSize: {
+            xs: "1.5rem",
+            sm: "2rem",
+            md: "2.5rem",
+          },
         }}
       >
         Kontaktirajte nas
@@ -39,6 +44,9 @@ const Contact = () => {
                 variant="h5"
                 component="h2"
                 color="#374151"
+                sx={{
+                  fontSize: { xs: "1.25rem", sm: "1.75rem" },
+                }}
                 fontWeight="medium"
               >
                 Kontakt informacije

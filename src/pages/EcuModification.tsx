@@ -45,7 +45,20 @@ const modItems = [
 export default function EcuModifikacijePage() {
   return (
     <Box p={{ xs: 2, md: 4 }}>
-      <Typography variant="h4" textAlign="center" fontWeight={700} gutterBottom>
+      <Typography
+        variant="h1"
+        textAlign="center"
+        fontWeight={500}
+        sx={{
+          color: "#111827",
+          fontSize: {
+            xs: "1.5rem",
+            sm: "2rem",
+            md: "2.5rem",
+          },
+        }}
+        gutterBottom
+      >
         ECU Modifikacije
       </Typography>
 

@@ -22,6 +22,11 @@ export default function AboutUs() {
           color: "#111827",
           mb: 2,
           textAlign: "center",
+          fontSize: {
+            xs: "1.5rem",
+            sm: "2rem",
+            md: "2.5rem",
+          },
         }}
       >
         Ko smo mi i zašto nam možete verovati?

@@ -67,7 +67,18 @@ const Home: React.FC = () => (
         px: 2,
       }}
     >
-      <Typography variant="h3" component="h1" gutterBottom>
+      <Typography
+        variant="h3"
+        sx={{
+          fontSize: {
+            xs: "1.5rem",
+            sm: "2rem",
+            md: "2.5rem",
+          },
+        }}
+        component="h1"
+        gutterBottom
+      >
         Proizvodnja i popravka elektronske opreme
       </Typography>
 
