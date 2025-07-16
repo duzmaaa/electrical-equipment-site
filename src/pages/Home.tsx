@@ -53,18 +53,21 @@ const Home: React.FC = () => (
   <Box>
     <Box
       sx={{
-        backgroundImage: `url('/tire.jpg')`, // obavezno u backtick-ovima i navodnicima
+        backgroundImage: `url('/images/hero-section.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        height: "400px", // možeš prilagoditi visinu
-        display: "flex", // da bi centriralo sadržaj
+        height: "500px",
+        width: "100vw",
+        marginLeft: "calc(-50vw + 50%)",
+        marginTop: "-20px",
+        display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex-start", // Changed from "center" to "flex-start"
         justifyContent: "center",
-        color: "#111827",
-        textAlign: "center",
-        px: 2,
+        color: "#f4e69a",
+        textAlign: "left",
+        pl: 5, // Add left padding so text isn't touching the edge
       }}
     >
       <Typography
@@ -75,16 +78,26 @@ const Home: React.FC = () => (
             sm: "2rem",
             md: "2.5rem",
           },
+          marginLeft: "10rem",
+          fontWeight: "600",
         }}
         component="h1"
         gutterBottom
       >
-        Proizvodnja i popravka elektronske opreme
+        PROIZVODNJA I POPRAVKA
+        <br />
+        ELEKTRONSKE OPREMA
       </Typography>
 
       <Typography
         variant="body1"
-        sx={{ maxWidth: 700, color: "#374151", mx: "auto", mt: 2 }}
+        sx={{
+          maxWidth: 700,
+          color: "white",
+          mt: 4,
+          marginLeft: "10rem",
+          fontSize: "1.2rem",
+        }}
       >
         Specijalizovani za električne delove kamiona, autobusa i brodova. Naša
         firma pruža vrhunsku uslugu popravke i proizvodnje elektronske opreme,

@@ -50,14 +50,14 @@ const Layout = () => {
   };
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "#F3F4F6" }}>
+    <Box sx={{ minHeight: "100vh", bgcolor: "" }}>
       <CssBaseline />
 
       {/* Top Contact Bar */}
       <Box
         sx={{
           width: "100%",
-          bgcolor: "#111827",
+          bgcolor: "#1d1d1d",
           display: "flex",
           justifyContent: "center",
           zIndex: 1300,
@@ -101,7 +101,8 @@ const Layout = () => {
               },
             }}
           >
-            ZA INFORMACIJE I PORUDŽBINE POZVATI:
+            ZA INFORMACIJE POZVATI:
+            <br />
           </Typography>
           <Typography
             variant="body2"
@@ -127,7 +128,7 @@ const Layout = () => {
       {/* Header */}
       <AppBar
         position="fixed"
-        style={{ background: "#111827", paddingTop: "0.4rem" }}
+        style={{ background: "#1d1d1d", paddingTop: "0.4rem" }}
         elevation={1}
         sx={{ top: 36, zIndex: 1200 }}
       >

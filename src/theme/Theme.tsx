@@ -2,6 +2,6 @@ import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
   typography: {
-    fontFamily: ["Montserrat"].join(","),
+    fontFamily: ["Roboto", "sans-serif"].join(","),
   },
 });
