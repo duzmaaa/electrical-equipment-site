@@ -8,6 +8,7 @@ import {
   PowerSettingsNew,
   GpsOff,
 } from "@mui/icons-material";
+import ContactCta from "../componets/ContactCta";
 
 const modItems = [
   {
@@ -87,13 +88,14 @@ export default function EcuModifikacijePage() {
               textAlign: "center",
               p: 3,
               borderRadius: 3,
-              boxShadow: 2,
-              backgroundColor: "background.paper",
+              // boxShadow: 1,
+              bgcolor: "#6286a6",
+              // backgroundColor: "background.paper",
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
               cursor: "default",
               "&:hover": {
                 transform: "translateY(-6px)",
-                boxShadow: 6,
+                boxShadow: 4,
               },
             }}
             aria-label={mod.title}
@@ -108,6 +110,8 @@ export default function EcuModifikacijePage() {
           </Box>
         ))}
       </Box>
+
+      <ContactCta></ContactCta>
     </Box>
   );
 }

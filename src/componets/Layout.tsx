@@ -87,8 +87,36 @@ const Layout = () => {
             },
           }}
         >
-          <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+          <Typography
+            variant="body2"
+            sx={{
+              fontWeight: "bold",
+              display: {
+                xs: "none",
+                sm: "flex",
+              },
+              fontSize: {
+                sm: "0.8rem", // tablet
+                md: "0.9rem",
+              },
+            }}
+          >
             ZA INFORMACIJE I PORUDŽBINE POZVATI:
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              fontWeight: "bold",
+              display: {
+                xs: "flex",
+                sm: "none",
+              },
+              fontSize: {
+                xs: "0.7rem", // mobilni
+              },
+            }}
+          >
+            KONTAKT:
           </Typography>
           <Typography variant="body2" sx={{ fontWeight: "bold" }}>
             +381 64 125 2864

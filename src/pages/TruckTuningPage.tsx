@@ -166,28 +166,6 @@ export default function TruckTuningPage() {
           ))}
         </Box>
       </Container>
-
-      {/* CTA */}
-      <Box
-        sx={{
-          backgroundColor: "#111827",
-          color: "#fff",
-          textAlign: "center",
-          py: 6,
-        }}
-      >
-        <Typography variant="h5" gutterBottom>
-          Spreman da unaprediš svoje vozilo?
-        </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          onClick={() => navigate("/kontakt")}
-        >
-          Kontaktiraj nas
-        </Button>
-      </Box>
     </Box>
   );
 }

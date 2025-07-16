@@ -27,8 +27,14 @@ const Navigation = () => {
             // textDecorationColor={"#374151"}
             // underline={isActive ? "always" : "none"}
             sx={{
+              fontSize: {
+                xs: "0.65rem", // <600px
+                sm: "0.75rem", // 600–900
+                md: "0.8rem", // 900–1200
+                lg: "0.9rem", // 1200–1536
+                xl: "1rem", // >1536
+              },
               textDecorationColor: "transparent",
-              fontSize: "1rem",
               "&:hover": { color: "#3B82F6" },
               transition: "all 0.3s ease-in",
             }}
