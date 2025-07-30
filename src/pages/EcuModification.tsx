@@ -8,7 +8,6 @@ import {
   PowerSettingsNew,
   GpsOff,
 } from "@mui/icons-material";
-import ContactCta from "../componets/ContactCta";
 
 const modItems = [
   {
@@ -110,8 +109,6 @@ export default function EcuModifikacijePage() {
           </Box>
         ))}
       </Box>
-
-      <ContactCta></ContactCta>
     </Box>
   );
 }

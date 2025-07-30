@@ -15,6 +15,7 @@ import { Link as RouterLink, Outlet, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Navigation from "./Navigation";
 import productItems from "../data/new_product.json";
+import Footer from "./Footer";
 
 interface Product {
   id: number;
@@ -155,8 +156,8 @@ const Layout = () => {
               src="/logo.png"
               alt="Logo"
               sx={{
-                height: 160,
-                mt: "-58px",
+                height: 140,
+                mt: "-50px",
                 objectFit: "contain",
               }}
             />
@@ -167,7 +168,14 @@ const Layout = () => {
 
           {/* Search bar */}
           <Autocomplete
-            sx={{ width: 250 }}
+            sx={{
+              width: {
+                xs: "100%",
+                sm: 200,
+                lg: 250,
+                xl: 250,
+              },
+            }}
             style={{
               color: "white",
               background: "white",
@@ -252,6 +260,8 @@ const Layout = () => {
       >
         <Outlet />
       </Container>
+
+      <Footer></Footer>
     </Box>
   );
 };

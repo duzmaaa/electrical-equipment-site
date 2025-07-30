@@ -10,28 +10,24 @@ import {
   Drawer,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import productsData from "../data/new_product.json";
+import productsData from "../data/data.json";
 
-// Tip za proizvode
 interface Product {
   id: number;
   type: string;
-  module: string;
-  description: string;
-  common_repairs: string[];
-  image?: string;
+  title: string;
+  desc: string;
+  child?: { title: string; desc: string }[];
 }
 
-// Type guard za sigurnost
 function isProduct(item: any, type?: string): item is Product {
   return (
     item &&
     typeof item.id === "number" &&
     typeof item.type === "string" &&
     (type ? item.type === type : true) &&
-    typeof item.module === "string" &&
-    typeof item.description === "string" &&
-    Array.isArray(item.common_repairs)
+    typeof item.title === "string" &&
+    typeof item.desc === "string"
   );
 }
 
@@ -64,9 +60,10 @@ const ProductDetail = () => {
       sx={{
         width: 250,
         bgcolor: "#111827",
-        maxHeight: "80vh",
+        height: "100vh",
         overflowY: "auto",
-        p: 2,
+        p: 0, // bez paddinga
+        margin: 0, // nema margine
       }}
     >
       {filteredProducts.map((product) => (
@@ -80,13 +77,14 @@ const ProductDetail = () => {
             transition: "0.3s",
             mb: 1,
             "&:hover": { backgroundColor: "#374151" },
-            borderRadius: 2,
+            borderRadius: 0, // bez zaobljenja da ide do ivice
+            boxShadow: "none", // da bude skroz ravno, po želji
           }}
           onClick={() => handleProductClick(product)}
         >
           <CardContent sx={{ textAlign: "center", p: 1 }}>
             <Typography fontWeight="bold" fontSize={14}>
-              {product.module}
+              {product.title}
             </Typography>
           </CardContent>
         </Card>
@@ -95,23 +93,25 @@ const ProductDetail = () => {
   );
 
   return (
-    <Box sx={{ display: "flex", height: "80vh", bgcolor: "#F9FAFB" }}>
-      {/* Burger meni za mobilne */}
-      <Box
-        sx={{
-          display: { xs: "flex", md: "none" },
-          position: "fixed",
-          top: 10,
-          left: 10,
-          zIndex: 1300,
-        }}
-      >
-        <IconButton onClick={toggleDrawer(true)} size="large">
-          <MenuIcon sx={{ color: "#111827" }} />
-        </IconButton>
-      </Box>
+    <Box sx={{ display: "flex", height: "90vh", bgcolor: "#F9FAFB" }}>
+      {/* Burger meni za mobilne - levo i samo kad nije otvoren drawer */}
+      {!drawerOpen && (
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            position: "fixed",
+            top: "6.5rem",
+            left: "1.5rem",
+            zIndex: 1400,
+          }}
+        >
+          <IconButton onClick={toggleDrawer(true)} size="large">
+            <MenuIcon sx={{ color: "#111827" }} />
+          </IconButton>
+        </Box>
+      )}
 
-      {/* Sidebar za desktop */}
+      {/* Sidebar za desktop - LEVO */}
       <Box
         sx={{
           display: { xs: "none", md: "flex" },
@@ -122,13 +122,40 @@ const ProductDetail = () => {
           position: "relative",
           maxHeight: "100vh",
           overflowY: "auto",
+          p: 0,
+          margin: 0,
+          borderRadius: 0,
+          boxShadow: "none",
         }}
       >
         {productList}
       </Box>
 
-      {/* Drawer za mobilne */}
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+      {/* Drawer za mobilne - LEVO */}
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        PaperProps={{
+          sx: {
+            width: 250,
+            height: "100vh",
+            margin: 0,
+            padding: 0,
+            borderRadius: 0,
+            boxShadow: "none",
+            zIndex: 1500,
+          },
+        }}
+        ModalProps={{
+          keepMounted: true,
+          BackdropProps: {
+            sx: {
+              backgroundColor: "rgba(0,0,0,0.3)",
+            },
+          },
+        }}
+      >
         {productList}
       </Drawer>
 
@@ -155,41 +182,46 @@ const ProductDetail = () => {
             }}
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              {/* Naslov */}
               <Typography
                 variant="h4"
                 sx={{ color: "#111827", fontWeight: 600 }}
               >
-                {selectedProduct.module}
+                {selectedProduct.title}
               </Typography>
 
-              {/* Opis */}
               <Typography sx={{ color: "#4B5563", lineHeight: 1.6 }}>
-                {selectedProduct.description}
+                {selectedProduct.desc}
               </Typography>
 
-              {/* Uobičajene popravke */}
-              <Box>
-                <Typography
-                  variant="subtitle1"
-                  sx={{ fontWeight: 500, color: "#111827", mb: 1 }}
-                >
-                  Uobičajene popravke:
-                </Typography>
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                  {selectedProduct.common_repairs.map((repair, idx) => (
-                    <Chip
-                      key={idx}
-                      label={repair}
-                      sx={{
-                        bgcolor: "#3B82F6",
-                        color: "#FFFFFF",
-                        "&:hover": { bgcolor: "#2563EB" },
-                      }}
-                    />
-                  ))}
+              {selectedProduct.child && selectedProduct.child.length > 0 && (
+                <Box>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontWeight: 500, color: "#111827", mb: 1 }}
+                  >
+                    Podgrupe:
+                  </Typography>
+                  <Box
+                    sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+                  >
+                    {selectedProduct.child.map((childItem, idx) => (
+                      <Box
+                        key={idx}
+                        sx={{ p: 1, borderRadius: 1, bgcolor: "#F3F4F6" }}
+                      >
+                        <Typography
+                          sx={{ fontWeight: "bold", color: "#3B82F6" }}
+                        >
+                          {childItem.title}
+                        </Typography>
+                        <Typography sx={{ color: "#4B5563" }}>
+                          {childItem.desc}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
                 </Box>
-              </Box>
+              )}
             </Box>
           </Card>
         )}
