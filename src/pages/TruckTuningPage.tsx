@@ -1,13 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Box,
-  Container,
-  Typography,
-  Card,
-  CardContent,
-  Button,
-} from "@mui/material";
+import { Box, Container, Typography, Card, CardContent } from "@mui/material";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
@@ -64,108 +57,167 @@ export default function TruckTuningPage() {
       {/* Hero sekcija */}
       <Box
         sx={{
-          backgroundImage: `url('/tuning.png')`,
+          backgroundImage: `url('/images/tuning-hero-section.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "50vh",
+          height: "500px",
+          marginTop: "-20px",
           display: "flex",
+          width: "100vw",
+          marginLeft: "calc(-50vw + 50%)",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: "left",
+          justifyContent: "left",
           color: "#fff",
           textAlign: "center",
           px: 2,
         }}
-      ></Box>
-
-      {/* Opis */}
-      <Container sx={{ py: 6 }}>
-        <Typography variant="h5" gutterBottom fontWeight="bold">
-          Profesionalna optimizacija ECU jedinica
+      >
+        <Typography
+          variant="h3"
+          sx={{
+            fontSize: {
+              xs: "1.5rem",
+              sm: "2rem",
+              md: "2.5rem",
+            },
+            textAlign: "left",
+            color: "#f4e69a",
+            width: "50%",
+            marginTop: "8rem",
+            marginLeft: "10rem",
+            paddingLeft: "2rem",
+            fontWeight: "600",
+          }}
+          component="h1"
+          gutterBottom
+        >
+          PROFESIONALNA OPTIMIZACIJA
+          <br />
+          ECU JEDINICA
         </Typography>
-        <Typography variant="body1" color="text.secondary">
+        <Typography
+          variant="body1"
+          sx={{
+            maxWidth: 700,
+            color: "white",
+            mt: 5,
+            marginLeft: "12rem",
+            textAlign: "left",
+            fontSize: "1.2rem",
+          }}
+        >
           Naš tuning usmeren je na povećanje performansi i smanjenje potrošnje
           goriva. ECU tuning je precizan proces koji uključuje modifikaciju
           softvera radi postizanja boljih rezultata rada motora, poboljšanja
           odziva na gas i ukupne efikasnosti vozila.
         </Typography>
-      </Container>
-
+      </Box>
       {/* Benefiti i vrste vozila - dva Box dela u Containeru */}
-      <Container sx={{ py: 4 }}>
-        {/* Benefiti */}
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 3,
-            justifyContent: "center",
-            mb: 6,
-          }}
+      <div
+        style={{
+          width: "100vw",
+          marginLeft: "calc(-50vw + 50%)",
+          marginRight: "calc(-50vw + 50%)",
+          padding: "48px 0",
+          background: "#1d1d1d",
+          color: "#f4e69a",
+        }}
+      >
+        <div
+          style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}
         >
-          {benefits.map((item, index) => (
-            <Card
-              key={index}
-              sx={{ width: 300, minHeight: 200, borderRadius: 3, boxShadow: 4 }}
-            >
-              <CardContent sx={{ textAlign: "center" }}>
-                {item.icon}
-                <Typography variant="h6" fontWeight="bold" gutterBottom>
-                  {item.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {item.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          ))}
-        </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: "100%",
+              gap: 3,
+              justifyContent: "center",
+              mb: 6,
+            }}
+          >
+            {benefits.map((item, index) => (
+              <Card
+                style={{ background: "transparent" }}
+                key={index}
+                sx={{
+                  width: 300,
+                  minHeight: 200,
+                  borderRadius: 3,
+                  boxShadow: 4,
+                }}
+              >
+                <CardContent sx={{ textAlign: "center" }}>
+                  {item.icon}
+                  <Typography
+                    variant="h6"
+                    fontWeight="bold"
+                    gutterBottom
+                    sx={{ color: "#f4e69a" }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: "white" }}>
+                    {item.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            ))}
+          </Box>
 
-        {/* Vozila */}
-        <Typography
-          variant="h5"
-          fontWeight="bold"
-          gutterBottom
-          textAlign="center"
-          sx={{ mb: 4 }}
-        >
-          Čipovanje za različite vrste vozila
-        </Typography>
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          textAlign="center"
-          sx={{ mb: 4 }}
-        >
-          Nudimo profesionalni ECU tuning za kamione, autobuse i teške radne
-          mašine.
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: 4,
-          }}
-        >
-          {vehicleTypes.map((vehicle, index) => (
-            <Card
-              key={index}
-              sx={{ width: 280, borderRadius: 3, boxShadow: 3 }}
-            >
-              <CardContent sx={{ textAlign: "center" }}>
-                {vehicle.icon}
-                <Typography variant="h6" fontWeight="bold">
-                  {vehicle.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {vehicle.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          ))}
-        </Box>
-      </Container>
+          {/* Vozila */}
+          <Typography
+            variant="h5"
+            fontWeight="bold"
+            gutterBottom
+            textAlign="center"
+            sx={{ mb: 4, color: "#f4e69a" }}
+          >
+            Čipovanje za različite vrste vozila
+          </Typography>
+          <Typography
+            variant="body1"
+            textAlign="center"
+            sx={{ mb: 4, color: "white" }}
+          >
+            Nudimo profesionalni ECU tuning za kamione, autobuse i teške radne
+            mašine.
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: 4,
+            }}
+          >
+            {vehicleTypes.map((vehicle, index) => (
+              <Card
+                key={index}
+                style={{ background: "transparent" }}
+                sx={{ width: 280, borderRadius: 3, boxShadow: 3 }}
+              >
+                <CardContent sx={{ textAlign: "center" }}>
+                  <Typography style={{ color: "#8cb6bf" }}>
+                    {vehicle.icon}
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    fontWeight="bold"
+                    style={{ color: "#f4e69a" }}
+                  >
+                    {vehicle.title}
+                  </Typography>
+                  <Typography variant="body2" color="white">
+                    {vehicle.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            ))}
+          </Box>
+        </div>
+      </div>
     </Box>
   );
 }
