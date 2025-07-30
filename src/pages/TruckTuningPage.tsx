@@ -35,17 +35,17 @@ const vehicleTypes = [
   {
     title: "Kamioni",
     description: "Čipovanje za Mercedes, MAN, Volvo, Scania i druge modele.",
-    icon: <LocalShippingIcon sx={{ color: "#111827", fontSize: 64, mb: 2 }} />,
+    icon: <LocalShippingIcon sx={{ color: "#8cb6bf", fontSize: 64, mb: 2 }} />,
   },
   {
     title: "Autobusi",
     description: "Tuning gradskih i turističkih autobusa za bolje performanse.",
-    icon: <DirectionsBusIcon sx={{ color: "#111827", fontSize: 64, mb: 2 }} />,
+    icon: <DirectionsBusIcon sx={{ color: "#8cb6bf", fontSize: 64, mb: 2 }} />,
   },
   {
     title: "Radne mašine",
     description: "Čipovanje bagera, utovarivača, valjaka i druge opreme.",
-    icon: <ConstructionIcon sx={{ color: "#111827", fontSize: 64, mb: 2 }} />,
+    icon: <ConstructionIcon sx={{ color: "#8cb6bf", fontSize: 64, mb: 2 }} />,
   },
 ];
 
@@ -127,6 +127,15 @@ export default function TruckTuningPage() {
         <div
           style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}
         >
+          <Typography
+            variant="h5"
+            fontWeight="bold"
+            gutterBottom
+            textAlign="center"
+            sx={{ mb: 4, color: "#f4e69a" }}
+          >
+            Benefiti
+          </Typography>
           <Box
             sx={{
               display: "flex",
@@ -172,7 +181,7 @@ export default function TruckTuningPage() {
             fontWeight="bold"
             gutterBottom
             textAlign="center"
-            sx={{ mb: 4, color: "#f4e69a" }}
+            sx={{ mb: 2, color: "#f4e69a" }}
           >
             Čipovanje za različite vrste vozila
           </Typography>
@@ -189,6 +198,7 @@ export default function TruckTuningPage() {
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "center",
+              width: "100%",
               gap: 4,
             }}
           >
@@ -196,12 +206,10 @@ export default function TruckTuningPage() {
               <Card
                 key={index}
                 style={{ background: "transparent" }}
-                sx={{ width: 280, borderRadius: 3, boxShadow: 3 }}
+                sx={{ width: 300, borderRadius: 3, boxShadow: 3 }}
               >
                 <CardContent sx={{ textAlign: "center" }}>
-                  <Typography style={{ color: "#8cb6bf" }}>
-                    {vehicle.icon}
-                  </Typography>
+                  <Typography>{vehicle.icon}</Typography>
                   <Typography
                     variant="h6"
                     fontWeight="bold"
