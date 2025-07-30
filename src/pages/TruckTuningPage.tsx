@@ -1,6 +1,5 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Container, Typography, Card, CardContent } from "@mui/material";
+import { Box, Typography, Card, CardContent } from "@mui/material";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
@@ -241,7 +240,7 @@ export default function TruckTuningPage() {
                     {item.icon}
                   </Box>
                   <Typography
-                    variant="h6"
+                    variant="h5"
                     fontWeight="bold"
                     gutterBottom
                     sx={{ color: "#f4e69a", mb: 2 }}
@@ -250,7 +249,11 @@ export default function TruckTuningPage() {
                   </Typography>
                   <Typography
                     variant="body2"
-                    sx={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.6 }}
+                    sx={{
+                      color: "rgba(255,255,255,0.8)",
+                      lineHeight: 1.6,
+                      fontSize: "16px",
+                    }}
                   >
                     {item.description}
                   </Typography>

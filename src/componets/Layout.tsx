@@ -6,15 +6,10 @@ import {
   Box,
   CssBaseline,
   ListItemButton,
-  Autocomplete,
-  TextField,
-  IconButton,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 import { Link as RouterLink, Outlet, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Navigation from "./Navigation";
-import productItems from "../data/new_product.json";
 import Footer from "./Footer";
 
 interface Product {
@@ -172,7 +167,7 @@ const Layout = () => {
       <Container
         sx={{
           pt: "110px",
-          pb: 6,
+          pb: 0,
           textAlign: "center",
           // maxWidth: 1200,
         }}
