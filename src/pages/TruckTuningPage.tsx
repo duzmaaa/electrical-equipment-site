@@ -119,55 +119,121 @@ export default function TruckTuningPage() {
           width: "100vw",
           marginLeft: "calc(-50vw + 50%)",
           marginRight: "calc(-50vw + 50%)",
-          padding: "48px 0",
-          background: "#1d1d1d",
+          padding: "80px 0",
+          background: "linear-gradient(135deg, #1d1d1d 0%, #2a2a2a 100%)",
           color: "#f4e69a",
+          position: "relative",
         }}
       >
+        {/* Background pattern overlay */}
         <div
-          style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            opacity: 0.05,
+            backgroundImage:
+              "radial-gradient(circle at 25% 25%, #f4e69a 2px, transparent 2px)",
+            backgroundSize: "60px 60px",
+          }}
+        ></div>
+
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "0 24px",
+            position: "relative",
+          }}
         >
-          <Typography
-            variant="h5"
-            fontWeight="bold"
-            gutterBottom
-            textAlign="center"
-            sx={{ mb: 4, color: "#f4e69a" }}
-          >
-            Benefiti
-          </Typography>
+          {/* Benefits Section with improved styling */}
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <Typography
+              variant="h4"
+              fontWeight="bold"
+              sx={{
+                mb: 2,
+                color: "#f4e69a",
+                textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+              }}
+            >
+              Benefiti
+            </Typography>
+            <div
+              style={{
+                width: "80px",
+                height: "3px",
+                background: "linear-gradient(90deg, #f4e69a, #d4c679)",
+                margin: "0 auto",
+                marginBottom: "20px",
+              }}
+            ></div>
+          </div>
+
           <Box
             sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              width: "100%",
-              gap: 3,
-              justifyContent: "center",
-              mb: 6,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 4,
+              mb: 8,
             }}
           >
             {benefits.map((item, index) => (
               <Card
-                style={{ background: "transparent" }}
                 key={index}
                 sx={{
-                  width: 300,
-                  minHeight: 200,
-                  borderRadius: 3,
-                  boxShadow: 4,
+                  background: "rgba(45, 45, 45, 0.8)",
+                  backdropFilter: "blur(10px)",
+                  border: "1px solid rgba(244, 230, 154, 0.1)",
+                  borderRadius: 4,
+                  fontSize: "48px",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    transform: "translateY(-8px)",
+                    boxShadow: "0 16px 48px rgba(244, 230, 154, 0.15)",
+                    border: "1px solid rgba(244, 230, 154, 0.3)",
+                  },
                 }}
               >
-                <CardContent sx={{ textAlign: "center" }}>
-                  {item.icon}
+                <CardContent sx={{ textAlign: "center", p: 4 }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "80px",
+                      height: "80px",
+                      paddingTop: "18px",
+                      borderRadius: "50%",
+                      background:
+                        "linear-gradient(135deg, rgba(244, 230, 154, 0.2), rgba(244, 230, 154, 0.05))",
+                      margin: "0 auto 24px auto",
+                      fontSize: "36px",
+                      color: "#f4e69a",
+                      "& svg": {
+                        width: "40px",
+                        height: "40px",
+                        display: "block",
+                      },
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
                   <Typography
                     variant="h6"
                     fontWeight="bold"
                     gutterBottom
-                    sx={{ color: "#f4e69a" }}
+                    sx={{ color: "#f4e69a", mb: 2 }}
                   >
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.6 }}
+                  >
                     {item.description}
                   </Typography>
                 </CardContent>
@@ -175,49 +241,131 @@ export default function TruckTuningPage() {
             ))}
           </Box>
 
-          {/* Vozila */}
-          <Typography
-            variant="h5"
-            fontWeight="bold"
-            gutterBottom
-            textAlign="center"
-            sx={{ mb: 2, color: "#f4e69a" }}
-          >
-            Čipovanje za različite vrste vozila
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign="center"
-            sx={{ mb: 4, color: "white" }}
-          >
-            Nudimo profesionalni ECU tuning za kamione, autobuse i teške radne
-            mašine.
-          </Typography>
+          {/* Vehicle Types Section */}
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <Typography
+              variant="h4"
+              fontWeight="bold"
+              sx={{
+                mb: 2,
+                color: "#f4e69a",
+                textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+              }}
+            >
+              Čipovanje za različite vrste vozila
+            </Typography>
+            <div
+              style={{
+                width: "100px",
+                height: "3px",
+                background: "linear-gradient(90deg, #f4e69a, #d4c679)",
+                margin: "0 auto 24px auto",
+              }}
+            ></div>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "rgba(255,255,255,0.9)",
+                maxWidth: "600px",
+                margin: "0 auto",
+                lineHeight: 1.8,
+              }}
+            >
+              Nudimo profesionalni ECU tuning za kamione, autobuse i teške radne
+              mašine.
+            </Typography>
+          </div>
+
           <Box
             sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
               gap: 4,
             }}
           >
             {vehicleTypes.map((vehicle, index) => (
               <Card
                 key={index}
-                style={{ background: "transparent" }}
-                sx={{ width: 300, borderRadius: 3, boxShadow: 3 }}
+                sx={{
+                  background: "rgba(40, 40, 40, 0.9)",
+                  backdropFilter: "blur(15px)",
+                  border: "1px solid rgba(244, 230, 154, 0.15)",
+                  borderRadius: 4,
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+                  transition: "all 0.4s ease",
+                  position: "relative",
+                  overflow: "hidden",
+                  "&:hover": {
+                    transform: "translateY(-10px) scale(1.02)",
+                    boxShadow: "0 20px 60px rgba(244, 230, 154, 0.2)",
+                    border: "1px solid rgba(244, 230, 154, 0.4)",
+                  },
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "3px",
+                    background: "linear-gradient(90deg, #f4e69a, #d4c679)",
+                    opacity: 0,
+                    transition: "opacity 0.3s ease",
+                  },
+                  "&:hover::before": {
+                    opacity: 1,
+                  },
+                }}
               >
-                <CardContent sx={{ textAlign: "center" }}>
-                  <Typography>{vehicle.icon}</Typography>
+                <CardContent sx={{ textAlign: "center", p: 4 }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100px",
+                      height: "100px",
+                      paddingTop: "17px",
+                      borderRadius: "50%",
+                      background:
+                        "linear-gradient(135deg, rgba(244, 230, 154, 0.15), rgba(244, 230, 154, 0.05))",
+                      margin: "0 auto 24px auto",
+                      fontSize: "48px",
+                      color: "#f4e69a",
+                      border: "2px solid rgba(244, 230, 154, 0.2)",
+                      transition: "all 0.3s ease",
+                      "& svg": {
+                        width: "48px",
+                        height: "48px",
+                        display: "block",
+                      },
+                      "&:hover": {
+                        background:
+                          "linear-gradient(135deg, rgba(244, 230, 154, 0.25), rgba(244, 230, 154, 0.1))",
+                        border: "2px solid rgba(244, 230, 154, 0.4)",
+                      },
+                    }}
+                  >
+                    {vehicle.icon}
+                  </Box>
                   <Typography
-                    variant="h6"
+                    variant="h5"
                     fontWeight="bold"
-                    style={{ color: "#f4e69a" }}
+                    sx={{
+                      color: "#f4e69a",
+                      mb: 2,
+                      textShadow: "0 1px 2px rgba(0,0,0,0.3)",
+                    }}
                   >
                     {vehicle.title}
                   </Typography>
-                  <Typography variant="body2" color="white">
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: "rgba(255,255,255,0.85)",
+                      lineHeight: 1.7,
+                      fontSize: "16px",
+                    }}
+                  >
                     {vehicle.description}
                   </Typography>
                 </CardContent>
