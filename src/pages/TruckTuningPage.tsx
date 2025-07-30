@@ -170,6 +170,18 @@ export default function TruckTuningPage() {
                 marginBottom: "20px",
               }}
             ></div>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "rgba(255,255,255,0.8)",
+                maxWidth: "700px",
+                margin: "0 auto",
+                lineHeight: 1.6,
+                fontWeight: 400,
+              }}
+            >
+              Zašto je ECU tuning pravi izbor za vaše vozilo
+            </Typography>
           </div>
 
           <Box
@@ -188,7 +200,6 @@ export default function TruckTuningPage() {
                   backdropFilter: "blur(10px)",
                   border: "1px solid rgba(244, 230, 154, 0.1)",
                   borderRadius: 4,
-                  fontSize: "48px",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
                   transition: "all 0.3s ease",
                   "&:hover": {
@@ -204,19 +215,26 @@ export default function TruckTuningPage() {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      width: "80px",
-                      height: "80px",
-                      paddingTop: "18px",
+                      width: "100px",
+                      height: "100px",
+                      paddingTop: "16px",
                       borderRadius: "50%",
                       background:
                         "linear-gradient(135deg, rgba(244, 230, 154, 0.2), rgba(244, 230, 154, 0.05))",
                       margin: "0 auto 24px auto",
-                      fontSize: "36px",
+                      fontSize: "48px",
                       color: "#f4e69a",
+                      border: "2px solid rgba(244, 230, 154, 0.2)",
+                      transition: "all 0.3s ease",
                       "& svg": {
-                        width: "40px",
-                        height: "40px",
+                        width: "48px",
+                        height: "48px",
                         display: "block",
+                      },
+                      "&:hover": {
+                        background:
+                          "linear-gradient(135deg, rgba(244, 230, 154, 0.25), rgba(244, 230, 154, 0.1))",
+                        border: "2px solid rgba(244, 230, 154, 0.4)",
                       },
                     }}
                   >
@@ -324,7 +342,7 @@ export default function TruckTuningPage() {
                       alignItems: "center",
                       width: "100px",
                       height: "100px",
-                      paddingTop: "17px",
+                      paddingTop: "18px",
                       borderRadius: "50%",
                       background:
                         "linear-gradient(135deg, rgba(244, 230, 154, 0.15), rgba(244, 230, 154, 0.05))",
