@@ -15,7 +15,7 @@ import React, { useState } from "react";
 
 const navItems = [
   { label: "POČETNA", to: "/" },
-  { label: "PROIZVODI", to: "/proizvod" },
+  // { label: "PROIZVODI", to: "/proizvod" },
   { label: "TUNING", to: "/tuning" },
   { label: "ECU MODIFIKACIJE", to: "/modifikacije" },
   { label: "O NAMA", to: "/onama" },
@@ -33,7 +33,7 @@ const Navigation = () => {
       {/* Desktop Nav */}
       <Box
         sx={{
-          display: { xs: "none", md: "flex" },
+          display: { xs: "none", sm: "flex" },
           gap: 4,
           alignItems: "center",
         }}
@@ -49,6 +49,7 @@ const Navigation = () => {
               color={isActive ? "#3B82F6" : "inherit"}
               sx={{
                 fontSize: {
+                  sm: "0.7rem",
                   md: "0.8rem",
                   lg: "0.9rem",
                   xl: "1rem",
@@ -66,13 +67,14 @@ const Navigation = () => {
 
       {/* Mobile Burger Icon */}
       <IconButton
-        sx={{ display: { xs: "flex", md: "none" }, color: "white" }}
+        sx={{ display: { xs: "flex", sm: "none" }, color: "white" }}
         onClick={toggleDrawer}
       >
         <MenuIcon />
       </IconButton>
 
       {/* Drawer */}
+
       <Drawer anchor="right" open={open} onClose={toggleDrawer}>
         <Box
           sx={{ width: 250, p: 2 }}

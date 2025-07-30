@@ -83,12 +83,12 @@ const Truck: React.FC = () => (
           key={product.id}
           sx={{ width: { xs: "48%", sm: "48%", md: "30%" } }}
         >
-          <ProductCard
-            id={product.id}
-            name={product.name}
-            image={product.image}
-            link={`/proizvod?type=${product.type}`}
-          />
+          {/*<ProductCard*/}
+          // id={product.id}
+          // name={product.name}
+          // image={product.image}
+          // link={`/proizvod?type=${product.type}`}
+          {/*/>*/}
         </Box>
       ))}
     </Box>

@@ -165,87 +165,6 @@ const Layout = () => {
 
           {/* Navigacija */}
           <Navigation></Navigation>
-
-          {/* Search bar */}
-          <Autocomplete
-            sx={{
-              width: {
-                xs: "100%",
-                sm: 200,
-                lg: 250,
-                xl: 250,
-              },
-            }}
-            style={{
-              color: "white",
-              background: "white",
-              borderRadius: "0.8rem",
-            }}
-            size="small"
-            options={productItems}
-            getOptionLabel={(option) => option.module}
-            isOptionEqualToValue={(option, value) => option.id === value.id}
-            value={searchValue}
-            onChange={handleSearchChange}
-            inputValue={inputValue}
-            onInputChange={handleInputChange}
-            clearOnEscape
-            clearIcon={
-              <IconButton
-                aria-label="clear"
-                size="small"
-                onMouseDown={(e) => e.stopPropagation()}
-              >
-                <CloseIcon fontSize="small" />
-              </IconButton>
-            }
-            renderOption={(props, option) => (
-              <li {...props} key={option.id}>
-                <span style={{ fontSize: "1rem", color: "#111" }}>
-                  {option.module}{" "}
-                  <span
-                    style={{
-                      opacity: 0.6,
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    ({option.type})
-                  </span>
-                </span>
-              </li>
-            )}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Pretraga"
-                variant="outlined"
-                sx={{
-                  "& .MuiInputLabel-root": {
-                    color: "#111827",
-                  },
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "white",
-                    transform: "translateY(-1.2rem)",
-                  },
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      border: "none",
-                    },
-                    "&:hover fieldset": {
-                      border: "none",
-                    },
-                    "&.Mui-focused fieldset": {
-                      border: "none",
-                    },
-                  },
-                  "& .MuiInputBase-input::placeholder": {
-                    color: "#111827",
-                    opacity: 1,
-                  },
-                }}
-              />
-            )}
-          />
         </Toolbar>
       </AppBar>
 
@@ -255,7 +174,7 @@ const Layout = () => {
           pt: "110px",
           pb: 6,
           textAlign: "center",
-          maxWidth: 1200,
+          // maxWidth: 1200,
         }}
       >
         <Outlet />

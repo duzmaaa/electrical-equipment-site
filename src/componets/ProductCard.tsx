@@ -1,32 +1,44 @@
-// ProductCard.tsx
 import React from "react";
-import { Link as RouterLink } from "react-router-dom";
-import {
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Typography,
-} from "@mui/material";
 
-interface ProductCardProps {
-  id: number;
-  name: string;
-  image: string;
-  link: string;
+interface ChildItem {
+  title: string;
+  desc: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, image, link }) => (
-  <Card sx={{ maxWidth: 250 }}>
-    <CardActionArea component={RouterLink} to={link}>
-      <CardMedia component="img" height="200" image={image} alt={name} />
-      <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
-          {name}
-        </Typography>
-      </CardContent>
-    </CardActionArea>
-  </Card>
-);
+interface ProductItem {
+  id: number;
+  title: string;
+  type: string;
+  desc: string;
+  child?: ChildItem[];
+}
+
+interface ProductCardProps {
+  product: ProductItem;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  return (
+    <div
+      style={{ border: "1px solid #ccc", padding: "1rem", borderRadius: "8px" }}
+    >
+      <h2>{product.title}</h2>
+      <p>
+        <b>Tip:</b> {product.type}
+      </p>
+      <p>{product.desc}</p>
+      {product.child && (
+        <div style={{ marginTop: "1rem" }}>
+          {product.child.map((c, i) => (
+            <div key={i} style={{ marginBottom: "0.5rem" }}>
+              <strong>{c.title}</strong>
+              <p>{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default ProductCard;
