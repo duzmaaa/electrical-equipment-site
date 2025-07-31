@@ -1,12 +1,6 @@
-import React from "react";
 import { Box, Typography, Button, Link } from "@mui/material";
-import {
-  KeyboardArrowUp,
-  Home,
-  Email,
-  Phone,
-  Print,
-} from "@mui/icons-material";
+import { KeyboardArrowUp, Home, Phone } from "@mui/icons-material";
+import { Link as RouterLink } from "react-router-dom";
 
 const Footer = () => {
   const handleScrollTop = () => {
@@ -120,16 +114,16 @@ const Footer = () => {
               Brzi Linkovi
             </Typography>
             {[
-              "Početna",
-              "O Nama",
-              "Usluge",
-              "Cenovnik",
-              "Galerija",
-              "Kontakt",
+              { label: "Početna", to: "/" },
+              { label: "O Nama", to: "/onama" },
+              { label: "Tuning", to: "/tuning" },
+              { label: "ECU Modifikacije", to: "/modifikacije" },
+              { label: "Kontakt", to: "/kontakt" },
             ].map((item) => (
               <Link
-                key={item}
-                href="#"
+                key={item.label}
+                component={RouterLink}
+                to={item.to}
                 underline="hover"
                 display="block"
                 sx={{
@@ -143,7 +137,7 @@ const Footer = () => {
                   },
                 }}
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </Box>
@@ -254,8 +248,7 @@ const Footer = () => {
               textAlign: { xs: "center", sm: "left" },
             }}
           >
-            © {new Date().getFullYear()} TosanicElectronics. Sva prava
-            zadržana.
+            © {new Date().getFullYear()} TosanicElectronics. Sva prava zadržana
           </Typography>
 
           <Button
