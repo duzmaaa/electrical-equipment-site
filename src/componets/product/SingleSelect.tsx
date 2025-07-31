@@ -4,24 +4,22 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Checkbox,
-  ListItemText,
   SelectChangeEvent,
 } from "@mui/material";
 
-interface MultiSelectProps {
-  selectedTypes: string[];
-  setSelectedTypes: React.Dispatch<React.SetStateAction<string[]>>;
+interface SingleSelectProps {
+  selectedType: string;
+  setSelectedType: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const options = ["scania", "man", "iveco", "renault"];
 
-const MultiSelect: React.FC<MultiSelectProps> = ({
-  selectedTypes,
-  setSelectedTypes,
+const SingleSelect: React.FC<SingleSelectProps> = ({
+  selectedType,
+  setSelectedType,
 }) => {
-  const handleChange = (event: SelectChangeEvent<typeof selectedTypes>) => {
-    setSelectedTypes(event.target.value as string[]);
+  const handleChange = (event: SelectChangeEvent) => {
+    setSelectedType(event.target.value);
   };
 
   return (
@@ -54,13 +52,11 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
         },
       }}
     >
-      <InputLabel id="multi-select-label">Filter tipa</InputLabel>
+      <InputLabel id="single-select-label">Filter tipa</InputLabel>
       <Select
-        labelId="multi-select-label"
-        multiple
-        value={selectedTypes}
+        labelId="single-select-label"
+        value={selectedType}
         onChange={handleChange}
-        renderValue={(selected) => (selected as string[]).join(", ")}
         label="Filter tipa"
         MenuProps={{
           PaperProps: {
@@ -71,6 +67,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
           },
         }}
       >
+        <MenuItem value="">Svi</MenuItem>
         {options.map((option) => (
           <MenuItem
             key={option}
@@ -81,16 +78,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
               },
             }}
           >
-            <Checkbox
-              checked={selectedTypes.indexOf(option) > -1}
-              sx={{
-                color: "#f4e69a",
-                "&.Mui-checked": {
-                  color: "#fff176",
-                },
-              }}
-            />
-            <ListItemText primary={option} />
+            {option}
           </MenuItem>
         ))}
       </Select>
@@ -98,4 +86,4 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   );
 };
 
-export default MultiSelect;
+export default SingleSelect;

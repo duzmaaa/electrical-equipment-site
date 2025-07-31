@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { Box, Typography, Card, CardContent } from "@mui/material";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
@@ -49,8 +48,6 @@ const vehicleTypes = [
 ];
 
 export default function TruckTuningPage() {
-  const navigate = useNavigate();
-
   return (
     <Box>
       {/* Hero sekcija */}

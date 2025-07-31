@@ -163,18 +163,23 @@ const Layout = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Main Content */}
-      <Container
+      <Box
         sx={{
-          pt: "110px",
-          pb: 0,
-          textAlign: "center",
-          // maxWidth: 1200,
+          backgroundColor: "#1d1d1d", // pozadina iza kartica
         }}
       >
-        <Outlet />
-      </Container>
-
+        {/* Main Content */}
+        <Container
+          sx={{
+            pt: "110px",
+            pb: 0,
+            textAlign: "center",
+            // maxWidth: 1200,
+          }}
+        >
+          <Outlet />
+        </Container>
+      </Box>
       <Footer></Footer>
     </Box>
   );
