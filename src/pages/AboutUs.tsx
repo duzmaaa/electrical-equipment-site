@@ -57,65 +57,66 @@ export default function AboutUs() {
   return (
     <Box sx={{ backgroundColor: "#1a1a1a", minHeight: "100vh" }}>
       {/* Hero Section */}
-      <Box
-        sx={{
-          background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)",
-          color: "white",
-          py: { xs: 6, md: 10 },
-          position: "relative",
-          overflow: "hidden",
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "url('/circuit-pattern.svg') center/cover",
-            opacity: 0.05,
-            zIndex: 1,
-          },
-        }}
-      >
-        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
-          <Box sx={{ textAlign: "center", mb: 4 }}>
-            <Typography
-              variant="h2"
-              component="h1"
-              sx={{
-                fontWeight: "bold",
-                mb: 3,
-                fontSize: {
-                  xs: "2rem",
-                  sm: "2.5rem",
-                  md: "3.5rem",
-                },
-                background: "linear-gradient(45deg, #d4af37, #f4d03f)",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                textShadow: "0 2px 4px rgba(0,0,0,0.3)",
-              }}
-            >
-              Ko smo mi i zašto nam možete verovati?
-            </Typography>
-
-            <Typography
-              variant="h4"
-              component="h2"
-              sx={{
-                fontWeight: 400,
-                fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" },
-                color: "#e5e7eb",
-                mb: 2,
-                maxWidth: "800px",
-                mx: "auto",
-              }}
-            >
-              Specijalisti za elektronsku opremu kamiona, autobusa i brodova
-            </Typography>
-          </Box>
-        </Container>
+      <Box sx={{ backgroundColor: "#1a1a1a", minHeight: "30rem" }}>
+        {/* Hero Section */}
+        <Box
+          sx={{
+            backgroundImage: `url('/images/about-us.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            color: "white",
+            py: { xs: 6, md: 10 },
+            position: "relative",
+            overflow: "hidden",
+            width: "100%",
+            minHeight: "30rem",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0,0,0,0.4)", // Dark overlay to make text readable
+              zIndex: 1,
+            },
+          }}
+        >
+          <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+            <Box sx={{ textAlign: "center", mb: 4 }}>
+              <Typography
+                variant="h3"
+                sx={{
+                  marginTop: "7rem",
+                  width: "50%",
+                  fontSize: { xs: "0.8rem", sm: "2rem", md: "2.5rem" },
+                  fontWeight: "600",
+                  color: "#f4e69a",
+                  textAlign: "left",
+                }}
+                component="h3"
+                gutterBottom
+              >
+                KO SMO MI I ZAŠTO
+                <br />
+                NAM SE MOŽE VEROVATI?
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  maxWidth: { xs: 300, sm: 300, md: 500 },
+                  color: "white",
+                  mt: 4,
+                  textAlign: "left",
+                  fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
+                }}
+              >
+                Specijalisti za elektronsku opremu kamiona, autobusa i brodova
+              </Typography>
+            </Box>
+          </Container>
+        </Box>
       </Box>
 
       <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
@@ -390,62 +391,57 @@ export default function AboutUs() {
                       display: "block",
                     }}
                   />
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      background:
-                        "linear-gradient(transparent, rgba(0,0,0,0.7))",
-                      p: 2,
-                      color: "white",
-                    }}
-                  >
-                    <Typography variant="body2" sx={{ fontWeight: "medium" }}>
-                      Profesionalan pristup #{index + 1}
-                    </Typography>
-                  </Box>
                 </Box>
               </Box>
             ))}
           </Box>
         </Box>
 
-        {/* Call to Action */}
-        <Card
+        <Box
           sx={{
-            background: "linear-gradient(135deg, #d4af37 0%, #f4d03f 100%)",
-            color: "white",
-            p: 6,
-            textAlign: "center",
-            borderRadius: 3,
-            boxShadow: "0 15px 35px rgba(212,175,55,0.3)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            maxHeight: "40rem",
+            px: 2,
           }}
         >
-          <Typography
-            variant="h4"
+          <Card
             sx={{
-              mb: 2,
-              fontWeight: "bold",
-              fontSize: { xs: "1.5rem", md: "2rem" },
+              background: "linear-gradient(135deg, #d4af37 0%, #f4d03f 100%)",
+              color: "white",
+              p: 6,
+              width: "75%",
+              maxWidth: "800px", // add max width for better control
+              textAlign: "center",
+              borderRadius: 3,
+              boxShadow: "0 15px 35px rgba(212,175,55,0.3)",
             }}
           >
-            Spremni smo za vaš sledeći projekat!
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: { xs: "1.1rem", md: "1.2rem" },
-              opacity: 0.95,
-              maxWidth: "600px",
-              mx: "auto",
-            }}
-          >
-            Kontaktirajte nas danas i saznajte kako možemo pomoći vašem vozilu
-            da radi bolje nego ikad.
-          </Typography>
-        </Card>
+            <Typography
+              variant="h4"
+              sx={{
+                mb: 2,
+                fontWeight: "bold",
+                fontSize: { xs: "1.5rem", md: "2rem" },
+              }}
+            >
+              Spremni smo za vaš sledeći projekat!
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: { xs: "1.1rem", md: "1.2rem" },
+                opacity: 0.95,
+                maxWidth: "600px",
+                mx: "auto",
+              }}
+            >
+              Kontaktirajte nas danas i saznajte kako možemo pomoći vašem vozilu
+              da radi bolje nego ikad.
+            </Typography>
+          </Card>
+        </Box>
       </Container>
     </Box>
   );
