@@ -1,17 +1,11 @@
 import React from "react";
-import { Box, Typography, Link, IconButton, Button } from "@mui/material";
+import { Box, Typography, Button, Link } from "@mui/material";
 import {
-  Facebook,
-  Twitter,
-  Google,
-  Instagram,
-  LinkedIn,
-  GitHub,
+  KeyboardArrowUp,
   Home,
   Email,
   Phone,
   Print,
-  KeyboardArrowUp,
 } from "@mui/icons-material";
 
 const Footer = () => {
@@ -20,136 +14,273 @@ const Footer = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#f5f5f5", color: "#111827", mt: 10 }}>
-      {/*/!* Main content *!/*/}
-      {/*<Box*/}
-      {/*  sx={{*/}
-      {/*    display: "flex",*/}
-      {/*    flexDirection: { xs: "column", md: "row" },*/}
-      {/*    justifyContent: "space-between",*/}
-      {/*    flexWrap: "wrap",*/}
-      {/*    px: 3,*/}
-      {/*    py: 5,*/}
-      {/*    gap: 4,*/}
-      {/*  }}*/}
-      {/*>*/}
-      {/*  /!* Logo + Opis *!/*/}
-      {/*  <Box sx={{ flex: "1 1 250px" }}>*/}
-      {/*    <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2 }}>*/}
-      {/*      TosanicElectronics*/}
-      {/*    </Typography>*/}
-      {/*    <Box*/}
-      {/*      sx={{*/}
-      {/*        width: 150,*/}
-      {/*        height: 50,*/}
-      {/*        backgroundColor: "#ccc",*/}
-      {/*        display: "flex",*/}
-      {/*        alignItems: "center",*/}
-      {/*        justifyContent: "center",*/}
-      {/*        borderRadius: 1,*/}
-      {/*        mb: 2,*/}
-      {/*      }}*/}
-      {/*    >*/}
-      {/*      LOGO*/}
-      {/*    </Box>*/}
-      {/*    <Typography variant="body2">*/}
-      {/*      Kvalitetan servis elektronskih modula za teretna vozila i kamione.*/}
-      {/*    </Typography>*/}
-      {/*  </Box>*/}
+    <Box sx={{ backgroundColor: "#1a1a1a", color: "#ffffff", mt: 0 }}>
+      {/* Main footer content */}
+      <Box
+        sx={{
+          px: { xs: 2, sm: 4, md: 6 },
+          py: { xs: 4, md: 6 },
+          maxWidth: "1200px",
+          mx: "auto",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: 4,
+          }}
+        >
+          {/* Company Info */}
+          <Box
+            sx={{ flex: "1 1 250px", minWidth: { xs: "100%", sm: "250px" } }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: "bold",
+                mb: 3,
+                color: "#d4af37",
+                fontSize: "1.2rem",
+              }}
+            >
+              TosanicElectronics
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                mb: 3,
+                color: "#cccccc",
+                lineHeight: 1.6,
+              }}
+            >
+              Kvalitetan servis elektronskih modula za teretna vozila i kamione.
+              Profesionalni ECU tuning za optimalne performanse.
+            </Typography>
+          </Box>
 
-      {/*  /!* Proizvodi *!/*/}
-      {/*  <Box sx={{ flex: "1 1 200px" }}>*/}
-      {/*    <Typography variant="subtitle1" sx={{ fontWeight: "bold", mb: 2 }}>*/}
-      {/*      Proizvodi*/}
-      {/*    </Typography>*/}
-      {/*    {["ECU dijagnostika", "ABS popravke", "AdBlue OFF", "Kablovi"].map(*/}
-      {/*      (item) => (*/}
-      {/*        <Link*/}
-      {/*          key={item}*/}
-      {/*          href="#"*/}
-      {/*          underline="hover"*/}
-      {/*          display="block"*/}
-      {/*          color="inherit"*/}
-      {/*          sx={{ mb: 1 }}*/}
-      {/*        >*/}
-      {/*          {item}*/}
-      {/*        </Link>*/}
-      {/*      ),*/}
-      {/*    )}*/}
-      {/*  </Box>*/}
+          {/* Services */}
+          <Box
+            sx={{ flex: "1 1 200px", minWidth: { xs: "100%", sm: "200px" } }}
+          >
+            <Typography
+              variant="subtitle1"
+              sx={{
+                fontWeight: "bold",
+                mb: 3,
+                color: "#d4af37",
+                fontSize: "1.1rem",
+              }}
+            >
+              Naše Usluge
+            </Typography>
+            {[
+              "Popravka elektronske opreme",
+              "Proizvodnja elektronske opreme",
+              "ECU tuning",
+              "ECU modifikacije",
+              "Isključivanje DPF",
+            ].map((item) => (
+              <Link
+                key={item}
+                href="#"
+                underline="hover"
+                display="block"
+                sx={{
+                  mb: 1.5,
+                  color: "#cccccc",
+                  fontSize: "0.9rem",
+                  transition: "color 0.3s ease",
+                  "&:hover": {
+                    color: "#d4af37",
+                    textDecoration: "none",
+                  },
+                }}
+              >
+                {item}
+              </Link>
+            ))}
+          </Box>
 
-      {/*  /!* Korisni linkovi *!/*/}
-      {/*  <Box sx={{ flex: "1 1 200px" }}>*/}
-      {/*    <Typography variant="subtitle1" sx={{ fontWeight: "bold", mb: 2 }}>*/}
-      {/*      Linkovi*/}
-      {/*    </Typography>*/}
-      {/*    {["Početna", "Usluge", "Cene", "Kontakt"].map((item) => (*/}
-      {/*      <Link*/}
-      {/*        key={item}*/}
-      {/*        href="#"*/}
-      {/*        underline="hover"*/}
-      {/*        display="block"*/}
-      {/*        color="inherit"*/}
-      {/*        sx={{ mb: 1 }}*/}
-      {/*      >*/}
-      {/*        {item}*/}
-      {/*      </Link>*/}
-      {/*    ))}*/}
-      {/*  </Box>*/}
+          {/* Quick Links */}
+          <Box
+            sx={{ flex: "1 1 200px", minWidth: { xs: "100%", sm: "200px" } }}
+          >
+            <Typography
+              variant="subtitle1"
+              sx={{
+                fontWeight: "bold",
+                mb: 3,
+                color: "#d4af37",
+                fontSize: "1.1rem",
+              }}
+            >
+              Brzi Linkovi
+            </Typography>
+            {[
+              "Početna",
+              "O Nama",
+              "Usluge",
+              "Cenovnik",
+              "Galerija",
+              "Kontakt",
+            ].map((item) => (
+              <Link
+                key={item}
+                href="#"
+                underline="hover"
+                display="block"
+                sx={{
+                  mb: 1.5,
+                  color: "#cccccc",
+                  fontSize: "0.9rem",
+                  transition: "color 0.3s ease",
+                  "&:hover": {
+                    color: "#d4af37",
+                    textDecoration: "none",
+                  },
+                }}
+              >
+                {item}
+              </Link>
+            ))}
+          </Box>
 
-      {/*  /!* Kontakt *!/*/}
-      {/*  <Box sx={{ flex: "1 1 250px" }}>*/}
-      {/*    <Typography variant="subtitle1" sx={{ fontWeight: "bold", mb: 2 }}>*/}
-      {/*      Kontakt*/}
-      {/*    </Typography>*/}
-      {/*    <Typography variant="body2" sx={{ display: "flex", mb: 1 }}>*/}
-      {/*      <Home sx={{ mr: 1 }} fontSize="small" />*/}
-      {/*      Čačak, Srbija*/}
-      {/*    </Typography>*/}
-      {/*    <Typography variant="body2" sx={{ display: "flex", mb: 1 }}>*/}
-      {/*      <Email sx={{ mr: 1 }} fontSize="small" />*/}
-      {/*      info@tosanic.rs*/}
-      {/*    </Typography>*/}
-      {/*    <Typography variant="body2" sx={{ display: "flex", mb: 1 }}>*/}
-      {/*      <Phone sx={{ mr: 1 }} fontSize="small" />*/}
-      {/*      +381 60 1234567*/}
-      {/*    </Typography>*/}
-      {/*    <Typography variant="body2" sx={{ display: "flex" }}>*/}
-      {/*      <Print sx={{ mr: 1 }} fontSize="small" />*/}
-      {/*      +381 11 7654321*/}
-      {/*    </Typography>*/}
-      {/*  </Box>*/}
-      {/*</Box>*/}
+          {/* Contact Info */}
+          <Box
+            sx={{ flex: "1 1 250px", minWidth: { xs: "100%", sm: "250px" } }}
+          >
+            <Typography
+              variant="subtitle1"
+              sx={{
+                fontWeight: "bold",
+                mb: 3,
+                color: "#d4af37",
+                fontSize: "1.1rem",
+              }}
+            >
+              Kontakt Informacije
+            </Typography>
 
-      {/* Bottom bar */}
+            <Box sx={{ mb: 2 }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  mb: 1.5,
+                  color: "#cccccc",
+                  fontSize: "0.9rem",
+                }}
+              >
+                <Home sx={{ mr: 1.5, fontSize: 18, color: "#d4af37" }} />
+                Užice, Srbija
+              </Typography>
+
+              <Typography
+                variant="body2"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  mb: 1.5,
+                  color: "#cccccc",
+                  fontSize: "0.9rem",
+                }}
+              >
+                <Phone sx={{ mr: 1.5, fontSize: 18, color: "#d4af37" }} />
+                +381 64 125 2864
+              </Typography>
+            </Box>
+
+            {/* Working Hours */}
+            <Box sx={{ mt: 3 }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: "bold",
+                  color: "#d4af37",
+                  mb: 1,
+                  fontSize: "0.95rem",
+                }}
+              >
+                Radno Vreme:
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#cccccc",
+                  fontSize: "0.85rem",
+                  lineHeight: 1.4,
+                }}
+              >
+                Pon - Pet: 08:00 - 17:00
+                <br />
+                Subota: 08:00 – 15:00
+                <br />
+                Nedelja: Zatvoreno
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
       {/* Bottom bar */}
       <Box
         sx={{
-          py: 2,
-          px: 3,
-          backgroundColor: "#eaeaea",
-          color: "#111827",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexDirection: { xs: "column", sm: "row" },
-          textAlign: { xs: "center", sm: "left" },
-          gap: 2,
+          py: 3,
+          px: { xs: 2, sm: 4, md: 6 },
+          backgroundColor: "#111111",
+          borderTop: "1px solid #333333",
         }}
       >
-        <Typography variant="body2" sx={{ flex: 1, textAlign: "center" }}>
-          © {new Date().getFullYear()} TosanicElectronics. Sva prava zadržana.
-        </Typography>
-
-        <Button
-          variant="outlined"
-          size="small"
-          onClick={handleScrollTop}
-          startIcon={<KeyboardArrowUp />}
-          sx={{ alignSelf: { xs: "center", sm: "flex-end" } }}
+        <Box
+          sx={{
+            maxWidth: "1200px",
+            mx: "auto",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: { xs: "column", sm: "row" },
+            gap: 2,
+          }}
         >
-          Back to top
-        </Button>
+          <Typography
+            variant="body2"
+            sx={{
+              color: "#999999",
+              fontSize: "0.85rem",
+              textAlign: { xs: "center", sm: "left" },
+            }}
+          >
+            © {new Date().getFullYear()} TosanicElectronics. Sva prava
+            zadržana.
+          </Typography>
+
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={handleScrollTop}
+            startIcon={<KeyboardArrowUp />}
+            sx={{
+              color: "#d4af37",
+              borderColor: "#d4af37",
+              fontSize: "0.8rem",
+              px: 2,
+              py: 0.5,
+              transition: "all 0.3s ease",
+              "&:hover": {
+                backgroundColor: "#d4af37",
+                color: "#1a1a1a",
+                borderColor: "#d4af37",
+                transform: "translateY(-2px)",
+              },
+            }}
+          >
+            BACK TO TOP
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
