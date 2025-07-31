@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import {
   DeleteForever,
   Opacity,
@@ -44,102 +44,138 @@ const modItems = [
 
 export default function EcuModifikacijePage() {
   return (
-    <Box
-      p={{ xs: 2, md: 4 }}
-      sx={{ backgroundColor: "#111827", color: "#fff" }}
-    >
-      <Typography
-        variant="h1"
-        textAlign="center"
-        fontWeight={500}
-        sx={{
-          fontSize: {
-            xs: "1.5rem",
-            sm: "2rem",
-            md: "2.5rem",
-          },
-          mb: 2,
-        }}
-        gutterBottom
-      >
-        ECU Modifikacije
-      </Typography>
-
-      <Typography
-        variant="body1"
-        textAlign="center"
-        maxWidth="700px"
-        mx="auto"
-        mb={6}
-        sx={{ color: "#cfcfcf" }}
-      >
-        Naše softverske modifikacije omogućavaju stabilniji rad vozila, manju
-        potrošnju i eliminaciju čestih problema kao što su DPF, EGR, AdBlue i
-        druga ograničenja.
-      </Typography>
-
-      <Box display="flex" flexWrap="wrap" justifyContent="center" gap={4}>
-        {modItems.map((mod, index) => (
-          <Box
-            key={index}
-            sx={{
-              flex: "1 1 280px",
-              maxWidth: 320,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              textAlign: "center",
-              p: 3,
-              borderRadius: 3,
-              backgroundColor: "#1f2937",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-              cursor: "default",
-              "&:hover": {
-                transform: "translateY(-6px)",
-                boxShadow: 4,
-              },
-            }}
-            aria-label={mod.title}
-          >
-            {mod.icon}
-            <Typography
-              variant="h6"
-              mt={3}
-              mb={2}
-              fontWeight={600}
-              sx={{ color: "#f4e69a" }}
-            >
-              {mod.title}
-            </Typography>
-            <Typography variant="body2" sx={{ color: "#cfcfcf" }}>
-              {mod.text}
-            </Typography>
-          </Box>
-        ))}
-      </Box>
-
-      {/* Dugme za kontakt */}
-      <Box sx={{ textAlign: "center", mt: 8 }}>
-        <Box
-          component="a"
-          href="tel:+381666321"
+    <Box p={{ xs: 2, md: 4 }} sx={{ color: "#fff" }}>
+      {/* Vehicle Types Section */}
+      <div style={{ textAlign: "center", marginBottom: "60px" }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
           sx={{
-            backgroundColor: "#f4e69a",
-            color: "#000",
-            fontWeight: 600,
-            px: 4,
-            py: 1.5,
-            borderRadius: 2,
-            cursor: "pointer",
-            textDecoration: "none",
-            transition: "0.3s",
-            "&:hover": {
-              backgroundColor: "#ffe57f",
-            },
+            mb: 2,
+            color: "#f4e69a",
+            textShadow: "0 2px 4px rgba(0,0,0,0.3)",
           }}
         >
-          Zatraži poziv
-        </Box>
+          ECU Modifikacije
+        </Typography>
+        <div
+          style={{
+            width: "100px",
+            height: "3px",
+            background: "linear-gradient(90deg, #f4e69a, #d4c679)",
+            margin: "0 auto 24px auto",
+          }}
+        ></div>
+        <Typography
+          variant="h6"
+          sx={{
+            color: "rgba(255,255,255,0.9)",
+            maxWidth: "600px",
+            margin: "0 auto",
+            lineHeight: 1.8,
+          }}
+        >
+          Naše softverske modifikacije omogućavaju stabilniji rad vozila, manju
+          potrošnju i eliminaciju čestih problema kao što su DPF, EGR, AdBlue i
+          druga ograničenja.
+        </Typography>
+      </div>
+
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 4,
+        }}
+      >
+        {modItems.map((vehicle, index) => (
+          <Card
+            key={index}
+            sx={{
+              background: "rgba(40, 40, 40, 0.9)",
+              backdropFilter: "blur(15px)",
+              border: "1px solid rgba(244, 230, 154, 0.15)",
+              borderRadius: 4,
+              boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+              transition: "all 0.4s ease",
+              position: "relative",
+              overflow: "hidden",
+              "&:hover": {
+                transform: "translateY(-10px) scale(1.02)",
+                boxShadow: "0 20px 60px rgba(244, 230, 154, 0.2)",
+                border: "1px solid rgba(244, 230, 154, 0.4)",
+              },
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: "3px",
+                background: "linear-gradient(90deg, #f4e69a, #d4c679)",
+                opacity: 0,
+                transition: "opacity 0.3s ease",
+              },
+              "&:hover::before": {
+                opacity: 1,
+              },
+            }}
+          >
+            <CardContent sx={{ textAlign: "center", p: 4 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100px",
+                  height: "100px",
+                  paddingTop: "18px",
+                  borderRadius: "50%",
+                  background:
+                    "linear-gradient(135deg, rgba(244, 230, 154, 0.15), rgba(244, 230, 154, 0.05))",
+                  margin: "0 auto 24px auto",
+                  fontSize: "48px",
+                  color: "#f4e69a",
+                  border: "2px solid rgba(244, 230, 154, 0.2)",
+                  transition: "all 0.3s ease",
+                  "& svg": {
+                    width: "48px",
+                    height: "48px",
+                    display: "block",
+                  },
+                  "&:hover": {
+                    background:
+                      "linear-gradient(135deg, rgba(244, 230, 154, 0.25), rgba(244, 230, 154, 0.1))",
+                    border: "2px solid rgba(244, 230, 154, 0.4)",
+                  },
+                }}
+              >
+                {vehicle.icon}
+              </Box>
+              <Typography
+                variant="h5"
+                fontWeight="bold"
+                sx={{
+                  color: "#f4e69a",
+                  mb: 2,
+                  textShadow: "0 1px 2px rgba(0,0,0,0.3)",
+                }}
+              >
+                {vehicle.title}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "rgba(255,255,255,0.85)",
+                  lineHeight: 1.7,
+                  fontSize: "16px",
+                }}
+              >
+                {vehicle.text}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
       </Box>
     </Box>
   );

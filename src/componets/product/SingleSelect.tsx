@@ -5,7 +5,10 @@ import {
   Select,
   MenuItem,
   SelectChangeEvent,
+  IconButton,
+  Box,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface SingleSelectProps {
   selectedType: string;
@@ -22,67 +25,102 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
     setSelectedType(event.target.value);
   };
 
+  const handleClear = () => {
+    setSelectedType("");
+  };
+
   return (
-    <FormControl
+    <Box
       sx={{
-        m: 1,
-        minWidth: 200,
-        backgroundColor: "#2a2a2a",
-        borderRadius: 1,
-        "& .MuiInputLabel-root": {
-          color: "#f4e69a",
-        },
-        "& .MuiInputLabel-root.Mui-focused": {
-          color: "#f4e69a",
-        },
-        "& .MuiOutlinedInput-root": {
-          color: "#f4e69a",
-          "& fieldset": {
-            borderColor: "#f4e69a",
-          },
-          "&:hover fieldset": {
-            borderColor: "#fff176",
-          },
-          "&.Mui-focused fieldset": {
-            borderColor: "#fff176",
-          },
-        },
-        "& .MuiSvgIcon-root": {
-          color: "#f4e69a",
-        },
+        position: "relative",
+        display: "inline-flex",
+        alignItems: "center",
       }}
     >
-      <InputLabel id="single-select-label">Filter tipa</InputLabel>
-      <Select
-        labelId="single-select-label"
-        value={selectedType}
-        onChange={handleChange}
-        label="Filter tipa"
-        MenuProps={{
-          PaperProps: {
-            sx: {
-              bgcolor: "#1d1d1d",
-              color: "#f4e69a",
+      <FormControl
+        sx={{
+          m: 1,
+          minWidth: 200,
+          backgroundColor: "#2a2a2a",
+          borderRadius: 1,
+          "& .MuiInputLabel-root": {
+            color: "#f4e69a",
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#f4e69a",
+          },
+          "& .MuiOutlinedInput-root": {
+            height: 40,
+            color: "#f4e69a",
+            "& fieldset": {
+              borderColor: "#f4e69a",
             },
+            "&:hover fieldset": {
+              borderColor: "#fff176",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#fff176",
+            },
+          },
+          "& .MuiSvgIcon-root": {
+            color: "#f4e69a",
           },
         }}
       >
-        <MenuItem value="">Svi</MenuItem>
-        {options.map((option) => (
-          <MenuItem
-            key={option}
-            value={option}
-            sx={{
-              "&:hover": {
-                backgroundColor: "#374151",
+        <InputLabel id="single-select-label">Filter tipa</InputLabel>
+        <Select
+          labelId="single-select-label"
+          value={selectedType}
+          onChange={handleChange}
+          label="Filter tipa"
+          MenuProps={{
+            PaperProps: {
+              sx: {
+                bgcolor: "#1d1d1d",
+                color: "#f4e69a",
               },
-            }}
-          >
-            {option}
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
+            },
+          }}
+        >
+          {options.map((option) => (
+            <MenuItem
+              key={option}
+              value={option}
+              sx={{
+                "&:hover": {
+                  backgroundColor: "#374151",
+                },
+              }}
+            >
+              {option}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      {selectedType && (
+        <IconButton
+          onClick={handleClear}
+          sx={{
+            position: "absolute",
+            right: 13,
+            top: 15,
+            padding: "2px",
+            minWidth: 24,
+            height: 24,
+            color: "#f4e69a",
+            backgroundColor: "#1d1d1d",
+            "& svg": {
+              fontSize: "16px",
+            },
+            "&:hover": {
+              backgroundColor: "#2a2a2a",
+            },
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      )}
+    </Box>
   );
 };
 

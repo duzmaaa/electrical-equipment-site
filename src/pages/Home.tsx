@@ -123,7 +123,6 @@ const Home: React.FC = () => {
         {/* FILTERS */}
         <Box
           sx={{
-            p: 4,
             display: "flex",
             justifyContent: "center",
             gap: 3,
@@ -146,7 +145,7 @@ const Home: React.FC = () => {
       </Box>
 
       {/* KARTICE */}
-      <Box sx={{ width: "100%", py: 6, px: 2 }}>
+      <Box sx={{ width: "100%", py: 2, px: 2 }}>
         <Box
           sx={{
             display: "flex",

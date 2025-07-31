@@ -55,9 +55,9 @@ const vehicles = [
 
 export default function AboutUs() {
   return (
-    <Box sx={{ backgroundColor: "#1a1a1a", minHeight: "100vh" }}>
+    <Box sx={{ minHeight: "100vh" }}>
       {/* Hero Section */}
-      <Box sx={{ backgroundColor: "#1a1a1a", minHeight: "30rem" }}>
+      <Box sx={{ minHeight: "30rem" }}>
         {/* Hero Section */}
         <Box
           sx={{
@@ -90,7 +90,7 @@ export default function AboutUs() {
                 sx={{
                   marginTop: "7rem",
                   width: "50%",
-                  fontSize: { xs: "0.8rem", sm: "2rem", md: "2.5rem" },
+                  fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
                   fontWeight: "600",
                   color: "#f4e69a",
                   textAlign: "left",
@@ -109,7 +109,7 @@ export default function AboutUs() {
                   color: "white",
                   mt: 4,
                   textAlign: "left",
-                  fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
+                  fontSize: { xs: "0.9rem", sm: "1rem", md: "1.5rem" },
                 }}
               >
                 Specijalisti za elektronsku opremu kamiona, autobusa i brodova
@@ -146,7 +146,7 @@ export default function AboutUs() {
                   variant="body1"
                   sx={{
                     color: "#f3f4f6",
-                    fontSize: { xs: "1.1rem", sm: "1.2rem" },
+                    fontSize: { xs: "0.9rem", sm: "1.2rem" },
                     lineHeight: 1.8,
                     mb: 4,
                     textAlign: "justify",
@@ -405,43 +405,7 @@ export default function AboutUs() {
             maxHeight: "40rem",
             px: 2,
           }}
-        >
-          <Card
-            sx={{
-              background: "linear-gradient(135deg, #d4af37 0%, #f4d03f 100%)",
-              color: "white",
-              p: 6,
-              width: "75%",
-              maxWidth: "800px", // add max width for better control
-              textAlign: "center",
-              borderRadius: 3,
-              boxShadow: "0 15px 35px rgba(212,175,55,0.3)",
-            }}
-          >
-            <Typography
-              variant="h4"
-              sx={{
-                mb: 2,
-                fontWeight: "bold",
-                fontSize: { xs: "1.5rem", md: "2rem" },
-              }}
-            >
-              Spremni smo za vaš sledeći projekat!
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: { xs: "1.1rem", md: "1.2rem" },
-                opacity: 0.95,
-                maxWidth: "600px",
-                mx: "auto",
-              }}
-            >
-              Kontaktirajte nas danas i saznajte kako možemo pomoći vašem vozilu
-              da radi bolje nego ikad.
-            </Typography>
-          </Card>
-        </Box>
+        ></Box>
       </Container>
     </Box>
   );
