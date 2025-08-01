@@ -36,6 +36,7 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
   setSelectedType,
 }) => {
   const [focused, setFocused] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event: SelectChangeEvent) => {
     setSelectedType(event.target.value);
@@ -44,6 +45,27 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
   const handleClear = () => {
     setSelectedType("");
   };
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = () => {
+    setFocused(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+    setFocused(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setFocused(false);
+  };
+
+  // Determine if label should be shrunk
+  const shouldShrink = Boolean(selectedType) || focused;
 
   return (
     <Box
@@ -55,55 +77,54 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
     >
       <FormControl
         variant="outlined"
+        size="small"
         sx={{
           m: 1,
           minWidth: 250,
           width: { sm: 250, lg: 300 },
-          backgroundColor: "#2a2a2a",
-          borderRadius: 1,
-          height: 40,
           "& .MuiInputLabel-root": {
             color: "#f4e69a",
+            // Ensure proper positioning
+            zIndex: 1,
           },
           "& .MuiInputLabel-root.Mui-focused, & .MuiInputLabel-root.MuiInputLabel-shrink":
             {
               color: "#fff176",
             },
           "& .MuiOutlinedInput-root": {
-            height: 40,
-            paddingRight: "32px", // prostor za X ikoncu
-            color: selectedType ? "#f4e69a" : "rgba(244, 230, 154, 0.7)", // placeholder boja
-            fontSize: 14,
+            bgcolor: "#2a2a2a",
+            color: "#f4e69a",
+            borderRadius: 1,
             "& fieldset": {
               borderColor: "#f4e69a",
+              borderWidth: "1px",
             },
             "&:hover fieldset": {
               borderColor: "#fff176",
             },
             "&.Mui-focused fieldset": {
               borderColor: "#fff176",
-              borderWidth: 2,
+              borderWidth: "2px",
             },
             "& .MuiSelect-select": {
+              color: selectedType ? "#f4e69a" : "rgba(244, 230, 154, 0.7)",
+              paddingRight: selectedType ? "48px" : "32px",
+              textAlign: "left",
               display: "flex",
               alignItems: "center",
-              height: "40px",
-              padding: "8px 14px",
-              // placeholder je lagano providan ako nema vrednost
-              color: selectedType ? "#f4e69a" : "rgba(244, 230, 154, 0.7)",
             },
           },
-          "& .MuiSvgIcon-root": {
+          "& .MuiSelect-icon": {
             color: "#f4e69a",
             fontSize: 20,
           },
         }}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
       >
         <InputLabel
           id="single-select-label"
-          shrink={selectedType !== "" || focused}
+          shrink={shouldShrink}
+          // Add notched prop to ensure proper border behavior
+          variant="outlined"
         >
           Filter tipa
         </InputLabel>
@@ -111,10 +132,15 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
           labelId="single-select-label"
           value={selectedType}
           onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           label="Filter tipa"
           displayEmpty
+          // Add notched prop for proper border handling
+          notched={shouldShrink}
           renderValue={(selected) => {
-            if (!selected) return "Unesi proizvod"; // placeholder tekst
+            if (!selected && focused) return "Unesi proizvod";
+            if (!selected) return "";
             const found = options.find((opt) => opt.value === selected);
             return found ? found.label : "";
           }}
@@ -123,12 +149,25 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
               sx: {
                 bgcolor: "#1d1d1d",
                 color: "#f4e69a",
+                borderRadius: 1,
+                boxShadow:
+                  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
               },
             },
+            anchorOrigin: {
+              vertical: "bottom",
+              horizontal: "left",
+            },
+            transformOrigin: {
+              vertical: "top",
+              horizontal: "left",
+            },
+            // Ensure consistent positioning
+            disablePortal: false,
           }}
         >
           <MenuItem value="" disabled hidden>
-            {/* Placeholder */}
+            {/* Hidden placeholder */}
           </MenuItem>
           {options.map((option) => (
             <MenuItem
@@ -136,6 +175,8 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
               value={option.value}
               sx={{
                 fontSize: 14,
+                color: "#f4e69a",
+                padding: "8px 16px",
                 "&:hover": {
                   backgroundColor: "#374151",
                 },
@@ -152,22 +193,20 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
           onClick={handleClear}
           sx={{
             position: "absolute",
-            right: 8,
+            right: 32,
             top: "50%",
             transform: "translateY(-50%)",
-            padding: "2px",
-            minWidth: 24,
-            height: 24,
+            padding: "4px",
+            minWidth: 20,
+            height: 20,
             color: "#f4e69a",
             backgroundColor: "transparent",
-            opacity: focused ? 1 : 0,
-            transition: "opacity 0.2s",
+            zIndex: 2,
             "&:hover": {
-              opacity: 1,
-              backgroundColor: "transparent",
+              backgroundColor: "rgba(244, 230, 154, 0.1)",
             },
             "& svg": {
-              fontSize: "16px",
+              fontSize: "14px",
             },
           }}
           tabIndex={-1}
