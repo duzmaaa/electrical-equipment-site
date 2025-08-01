@@ -103,7 +103,7 @@ const Contact = () => {
               <Stack spacing={2}>
                 {[
                   { number: "+381658252864", name: "Aleksandar" },
-                  { number: "+38152846626", name: "Dargisa" },
+                  { number: "+38152846626", name: "Dragiša" },
                   { number: "+381631166588", name: "Željko" },
                 ].map(({ number, name }) => (
                   <Box key={number} display="flex" alignItems="center" gap={1}>

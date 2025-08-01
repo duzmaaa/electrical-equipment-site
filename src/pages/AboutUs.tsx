@@ -153,7 +153,7 @@ export default function AboutUs() {
                   }}
                 >
                   <strong style={{ color: "#d4af37" }}>
-                    Tosanić Truck Electronic
+                    Tosanic Truck Electronic
                   </strong>{" "}
                   je firma sa dugogodišnjom tradicijom u proizvodnji i popravci
                   elektronskih delova za teška vozila i plovila. Naša misija je
@@ -192,7 +192,7 @@ export default function AboutUs() {
                   Posetite nas ili nas kontaktirajte da saznate više o našim
                   proizvodima i uslugama. Sa{" "}
                   <strong style={{ color: "#d4af37" }}>
-                    Tosanić Truck Electronic
+                    Tosanic Truck Electronic
                   </strong>
                   , vaše vozilo je u sigurnim rukama.
                 </Typography>

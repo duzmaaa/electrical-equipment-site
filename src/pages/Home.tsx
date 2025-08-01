@@ -206,7 +206,7 @@ const Home: React.FC = () => {
                     fontSize: "0.95rem",
                   }}
                 >
-                  {item.type}
+                  {item.type?.[0]?.toUpperCase() + item.type?.slice(1)}
                 </Typography>
               </CardContent>
             </Card>
