@@ -59,29 +59,23 @@ export default function TruckTuningPage() {
           height: "500px",
           marginTop: "-20px",
           display: "flex",
-          width: "100vw",
-          marginLeft: "calc(-50vw + 50%)",
+          width: "100%",
           flexDirection: "column",
           alignItems: "left",
           justifyContent: "left",
           color: "#fff",
-          textAlign: "center",
+          textAlign: "left",
           px: 2,
         }}
       >
         <Typography
           variant="h3"
           sx={{
-            fontSize: {
-              xs: "1.5rem",
-              sm: "2rem",
-              md: "2.5rem",
-            },
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
             textAlign: "left",
             color: "#f4e69a",
-            width: "50%",
+            maxWidth: { xs: 300, sm: 300, md: 500 },
             marginTop: "8rem",
-            marginLeft: "10rem",
             paddingLeft: "2rem",
             fontWeight: "600",
           }}
@@ -95,12 +89,12 @@ export default function TruckTuningPage() {
         <Typography
           variant="body1"
           sx={{
-            maxWidth: 700,
+            maxWidth: { xs: 300, sm: 300, md: 500 },
             color: "white",
+            paddingLeft: "2rem",
             mt: 5,
-            marginLeft: "12rem",
             textAlign: "left",
-            fontSize: "1.2rem",
+            fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
           }}
         >
           Naš tuning usmeren je na povećanje performansi i smanjenje potrošnje
@@ -151,6 +145,7 @@ export default function TruckTuningPage() {
               fontWeight="bold"
               sx={{
                 mb: 2,
+                fontSize: { xs: "2rem", sm: "2.2rem", md: "2.5rem" },
                 color: "#f4e69a",
                 textShadow: "0 2px 4px rgba(0,0,0,0.3)",
               }}
@@ -174,6 +169,7 @@ export default function TruckTuningPage() {
                 margin: "0 auto",
                 lineHeight: 1.6,
                 fontWeight: 400,
+                fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
               }}
             >
               Zašto je ECU tuning pravi izbor za vaše vozilo
@@ -211,20 +207,21 @@ export default function TruckTuningPage() {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      width: "100px",
-                      height: "100px",
+                      width: { xs: "80px", sm: "90px", md: "100px" },
+                      height: { xs: "80px", sm: "90px", md: "100px" },
                       paddingTop: "16px",
                       borderRadius: "50%",
                       background:
                         "linear-gradient(135deg, rgba(244, 230, 154, 0.2), rgba(244, 230, 154, 0.05))",
                       margin: "0 auto 24px auto",
                       fontSize: "48px",
+                      // fontSize: { xs: "40px", sm: "44px", md: "48px" },
                       color: "#f4e69a",
                       border: "2px solid rgba(244, 230, 154, 0.2)",
                       transition: "all 0.3s ease",
                       "& svg": {
-                        width: "48px",
-                        height: "48px",
+                        width: { xs: "40px", sm: "44px", md: "48px" },
+                        height: { xs: "40px", sm: "44px", md: "48px" },
                         display: "block",
                       },
                       "&:hover": {
@@ -267,6 +264,7 @@ export default function TruckTuningPage() {
               sx={{
                 mb: 2,
                 color: "#f4e69a",
+                fontSize: { xs: "2rem", sm: "2.2rem", md: "2.5rem" },
                 textShadow: "0 2px 4px rgba(0,0,0,0.3)",
               }}
             >
@@ -287,6 +285,7 @@ export default function TruckTuningPage() {
                 maxWidth: "600px",
                 margin: "0 auto",
                 lineHeight: 1.8,
+                fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
               }}
             >
               Nudimo profesionalni ECU tuning za kamione, autobuse i teške radne
@@ -318,20 +317,20 @@ export default function TruckTuningPage() {
                     boxShadow: "0 20px 60px rgba(244, 230, 154, 0.2)",
                     border: "1px solid rgba(244, 230, 154, 0.4)",
                   },
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: "3px",
-                    background: "linear-gradient(90deg, #f4e69a, #d4c679)",
-                    opacity: 0,
-                    transition: "opacity 0.3s ease",
-                  },
-                  "&:hover::before": {
-                    opacity: 1,
-                  },
+                  // "&::before": {
+                  //   content: '""',
+                  //   position: "absolute",
+                  //   top: 0,
+                  //   left: 0,
+                  //   right: 0,
+                  //   height: "3px",
+                  //   background: "linear-gradient(90deg, #f4e69a, #d4c679)",
+                  //   opacity: 0,
+                  //   transition: "opacity 0.3s ease",
+                  // },
+                  // "&:hover::before": {
+                  //   opacity: 1,
+                  // },
                 }}
               >
                 <CardContent sx={{ textAlign: "center", p: 4 }}>
@@ -340,8 +339,8 @@ export default function TruckTuningPage() {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      width: "100px",
-                      height: "100px",
+                      width: { xs: "80px", sm: "90px", md: "100px" },
+                      height: { xs: "80px", sm: "90px", md: "100px" },
                       paddingTop: "18px",
                       borderRadius: "50%",
                       background:
@@ -352,8 +351,8 @@ export default function TruckTuningPage() {
                       border: "2px solid rgba(244, 230, 154, 0.2)",
                       transition: "all 0.3s ease",
                       "& svg": {
-                        width: "48px",
-                        height: "48px",
+                        width: { xs: "40px", sm: "44px", md: "48px" },
+                        height: { xs: "40px", sm: "44px", md: "48px" },
                         display: "block",
                       },
                       "&:hover": {

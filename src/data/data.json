@@ -11,7 +11,7 @@
       },
       {
         "title": "COO7",
-        "desc": ",COO7 – novija verzija sa poboljšanom memorijom i bržim procesiranjem, koristi se kod novijih Scania NTG (Next Generation Trucks)."
+        "desc": "COO7 – novija verzija sa poboljšanom memorijom i bržim procesiranjem, koristi se kod novijih Scania NTG (Next Generation Trucks)."
       }
     ]
   },
@@ -471,103 +471,103 @@
   },
   {
     "id": 52,
-    "type": "trailer",
+    "type": "Prikolice i poluprikolice",
     "title": "Wabco",
     "desc": "Wabco sistemi za prikolice pružaju elektronsku kontrolu kočenja, ABS, EBS i druge sigurnosne funkcije. Njihovi moduli omogućavaju precizno upravljanje kočenjem i stabilno ponašanje prikolice tokom vožnje, čime se povećava sigurnost i zaštita tereta."
   },
   {
     "id": 53,
-    "type": "trailer",
+    "type": "Prikolice i poluprikolice",
     "title": "Knorr-Bremse",
     "desc": "Knorr-Bremse je jedan od vodećih proizvođača kočionih sistema za prikolice. Njihovi moduli obezbeđuju elektronsku kontrolu kočenja, integrisani ABS, EBS i pomoćne sisteme koji doprinose sigurnosti i efikasnosti kočenja priključnih vozila."
   },
   {
     "id": 54,
-    "type": "trailer",
+    "type": "Prikolice i poluprikolice",
     "title": "Haldex",
     "desc": "Haldex sistemi su specijalizovani za kočione i vazdušne suspenzione sisteme na prikolicama. Njihovi moduli i ventili omogućavaju pouzdanu kontrolu kočenja i stabilnost vozila, sa posebnim naglaskom na sigurnost i trajnost sistema."
   },
   {
     "id": 55,
-    "type": "agriculture",
+    "type": "Poljoprivredne mašine",
     "title": "CUMMINS",
     "desc": "Cummins je vodeći proizvođač dizel motora za poljoprivredna vozila, sa naprednim sistemima za upravljanje motorom koji obezbeđuju efikasnost, pouzdanost i usklađenost sa emisijskim standardima."
   },
   {
     "id": 56,
-    "type": "agriculture",
+    "type": "Poljoprivredne mašine",
     "title": "MCM",
     "desc": "MCM (Motor Control Module) je elektronska jedinica koja upravlja radom motora kod poljoprivrednih mašina, optimizujući performanse i smanjujući potrošnju goriva."
   },
   {
     "id": 57,
-    "type": "agriculture",
+    "type": "Poljoprivredne mašine",
     "title": "EDC",
     "desc": "EDC (Electronic Diesel Control) sistem kontroliše ubrizgavanje goriva i rad motora u poljoprivrednim vozilima, omogućavajući preciznu regulaciju i dijagnostiku."
   },
   {
     "id": 58,
-    "type": "agriculture",
+    "type": "Poljoprivredne mašine",
     "title": "PLD",
     "desc": "PLD (Pump Line Diesel) je sistem za ubrizgavanje goriva sa linijskim pumpama, koji se koristi u poljoprivrednim mašinama za efikasnu i pouzdanu isporuku goriva."
   },
   {
     "id": 59,
-    "type": "agriculture",
+    "type": "Poljoprivredne mašine",
     "title": "EBS",
     "desc": "EBS (Electronic Braking System) pruža elektronsku kontrolu kočenja u poljoprivrednim vozilima, povećavajući sigurnost i preciznost kočenja."
   },
   {
     "id": 60,
-    "type": "agriculture",
+    "type": "Poljoprivredne mašine",
     "title": "TRW",
     "desc": "TRW je proizvođač kočionih sistema i upravljačkih komponenti za poljoprivredne mašine, fokusiran na sigurnost i pouzdanost."
   },
   {
     "id": 61,
-    "type": "agriculture",
+    "type": "Poljoprivredne mašine",
     "title": "Caterpillar",
     "desc": "Caterpillar proizvodi motore i tešku opremu za poljoprivredu, sa naprednim sistemima za upravljanje i kontrolu koji omogućavaju visoke performanse i dugotrajnost."
   },
   {
     "id": 62,
-    "type": "construction_marine",
+    "type": "Građevinske mašine i plovila",
     "title": "CUMMINS",
     "desc": "Cummins proizvodi snažne i pouzdane dizel motore za građevinske mašine i brodove, sa naprednim upravljanjem motorom za optimalne performanse i niske emisije."
   },
   {
     "id": 63,
-    "type": "construction_marine",
+    "type": "Građevinske mašine i plovila",
     "title": "MCM",
     "desc": "MCM (Motor Control Module) upravlja motorom kod građevinskih mašina i brodova, omogućavajući efikasnu kontrolu rada i pouzdanost u zahtevnim uslovima."
   },
   {
     "id": 64,
-    "type": "construction_marine",
+    "type": "Građevinske mašine i plovila",
     "title": "EDC",
     "desc": "EDC (Electronic Diesel Control) sistem kontroliše ubrizgavanje goriva i rad motora, prilagođavajući performanse za različite uslove rada građevinskih mašina i brodova."
   },
   {
     "id": 65,
-    "type": "construction_marine",
+    "type": "Građevinske mašine i plovila",
     "title": "PLD",
     "desc": "PLD (Pump Line Diesel) sistem koristi linijske pumpe za precizno ubrizgavanje goriva u motorima građevinskih mašina i brodova, obezbeđujući efikasnost i snagu."
   },
   {
     "id": 66,
-    "type": "construction_marine",
+    "type": "Građevinske mašine i plovila",
     "title": "EBS",
     "desc": "EBS (Electronic Braking System) obezbeđuje elektronsku kontrolu kočenja na građevinskim mašinama i specijalnim vozilima, povećavajući sigurnost i preciznost u radu."
   },
   {
     "id": 67,
-    "type": "construction_marine",
+    "type": "Građevinske mašine i plovila",
     "title": "TRW",
     "desc": "TRW proizvodi kočione sisteme i upravljačke komponente za građevinske mašine i brodove, sa fokusom na sigurnost i pouzdanost."
   },
   {
     "id": 68,
-    "type": "construction_marine",
+    "type": "Građevinske mašine i plovila",
     "title": "Caterpillar",
     "desc": "Caterpillar je vodeći proizvođač motora i teške opreme za građevinske mašine i brodove, sa sistemima upravljanja za visok nivo performansi i dugotrajnosti."
   }

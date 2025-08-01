@@ -61,9 +61,7 @@ const Home: React.FC = () => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           height: "500px",
-          width: "100vw",
-          marginLeft: "calc(-50vw + 50%)",
-          marginTop: "-20px",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
@@ -106,13 +104,23 @@ const Home: React.FC = () => {
         <Box sx={{ textAlign: "center", mb: 2 }}>
           <Typography
             variant="h4"
-            sx={{ color: "#f4e69a", fontWeight: "bold", mb: 1 }}
+            sx={{
+              color: "#f4e69a",
+              fontWeight: "bold",
+              mb: 1,
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+            }}
           >
             Delovi i moduli koje popravljamo
           </Typography>
           <Typography
             variant="body1"
-            sx={{ color: "#d6c972", maxWidth: 600, mx: "auto" }}
+            sx={{
+              color: "#d6c972",
+              maxWidth: 600,
+              mx: "auto",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
+            }}
           >
             Pregled dostupnih elektronskih komponenti za popravku — filtrirajte
             po proizvođaču ili nazivu dela kako biste brzo pronašli ono što vam

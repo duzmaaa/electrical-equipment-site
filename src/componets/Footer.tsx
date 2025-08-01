@@ -28,9 +28,7 @@ const Footer = () => {
           }}
         >
           {/* Company Info */}
-          <Box
-            sx={{ flex: "1 1 250px", minWidth: { xs: "100%", sm: "250px" } }}
-          >
+          <Box sx={{ flex: "1 1", minWidth: { xs: "100%", sm: "250px" } }}>
             <Typography
               variant="h6"
               sx={{
@@ -40,7 +38,7 @@ const Footer = () => {
                 fontSize: "1.2rem",
               }}
             >
-              TosanicElectronics
+              Tosanic Truck Electronic
             </Typography>
             <Typography
               variant="body2"

@@ -71,6 +71,7 @@ export default function EcuModifikacijePage() {
           sx={{
             color: "rgba(255,255,255,0.9)",
             maxWidth: "600px",
+            fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
             margin: "0 auto",
             lineHeight: 1.8,
           }}

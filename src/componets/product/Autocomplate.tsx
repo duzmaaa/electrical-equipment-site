@@ -3,6 +3,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import { List, ListItem } from "@mui/material";
 
 interface ChildItem {
   title: string;
@@ -36,15 +37,19 @@ const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
   inputValue,
   handleInputChange,
 }) => {
+  const handleClear = () => {
+    handleInputChange({} as React.SyntheticEvent, "");
+    handleSearchChange({} as React.SyntheticEvent, null);
+  };
+
   return (
     <Autocomplete
       sx={{
+        minWidth: 250,
         width: {
-          xs: "100%",
           sm: 250,
           lg: 300,
         },
-        // Ovo oboji pozadinu inputa ako želiš
         "& .MuiOutlinedInput-root": {
           bgcolor: "#2a2a2a",
           color: "#f4e69a",
@@ -67,13 +72,14 @@ const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
           color: "#fff176",
         },
         "& .MuiAutocomplete-clearIndicator": {
-          color: "#f4e69a",
+          color: "#fff176", // <-- Dodano za boju x dugmeta
+
           "&:hover": {
             color: "#fff176",
           },
         },
         "& .MuiAutocomplete-popupIndicator": {
-          color: "#f4e69a",
+          color: "#fff176", // <-- Dodano za boju strelice
           "&:hover": {
             color: "#fff176",
           },
@@ -88,37 +94,36 @@ const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
       inputValue={inputValue}
       onInputChange={handleInputChange}
       clearOnEscape
-      clearIcon={
-        <IconButton
-          aria-label="clear"
-          size="small"
-          onMouseDown={(e) => e.stopPropagation()}
-          sx={{ color: "#f4e69a" }}
-        >
-          <CloseIcon fontSize="small" />
-        </IconButton>
-      }
+      ListboxComponent={(props) => (
+        <List
+          {...props}
+          sx={{
+            backgroundColor: "#1d1d1d",
+            marginTop: 0,
+            borderRadius: 1,
+            paddingTop: 0,
+            paddingBottom: 0,
+          }}
+        />
+      )}
       renderOption={(props, option) => (
-        <li
+        <ListItem
           {...props}
           key={option.id}
-          style={{
+          sx={{
             color: "#f4e69a",
-            backgroundColor: "#1d1d1d",
             fontSize: "1rem",
+            padding: "8px",
+            "&:hover": {
+              backgroundColor: "#374151",
+            },
           }}
-          onMouseOver={(e) =>
-            (e.currentTarget.style.backgroundColor = "#374151")
-          }
-          onMouseOut={(e) =>
-            (e.currentTarget.style.backgroundColor = "#1d1d1d")
-          }
         >
           {option.title}{" "}
-          <span style={{ opacity: 0.7, textTransform: "capitalize" }}>
-            ({option.type})
-          </span>
-        </li>
+          {/*<span style={{ opacity: 0.7, textTransform: "capitalize" }}>*/}
+          {/*  ({option.type})*/}
+          {/*</span>*/}
+        </ListItem>
       )}
       renderInput={(params) => (
         <TextField

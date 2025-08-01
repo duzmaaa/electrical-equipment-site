@@ -20,6 +20,15 @@ const options = [
   { label: "Man", value: "man" },
   { label: "Iveco", value: "iveco" },
   { label: "Renault", value: "renault" },
+  { label: "DAF", value: "daf" },
+  { label: "Mercedes", value: "mercedes" },
+  { label: "Volvo", value: "volvo" },
+  {
+    label: "Građevinske mašine i plovila",
+    value: "Građevinske mašine i plovila",
+  },
+  { label: "Poljoprivredne mašine", value: "Poljoprivredne mašine" },
+  { label: "Prikolice i poluprikolice", value: "Prikolice i poluprikolice" },
 ];
 
 const SingleSelect: React.FC<SingleSelectProps> = ({
@@ -48,6 +57,7 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
         variant="outlined"
         sx={{
           m: 1,
+          minWidth: 250,
           width: { sm: 250, lg: 300 },
           backgroundColor: "#2a2a2a",
           borderRadius: 1,
