@@ -77,26 +77,35 @@ const Navigation = () => {
 
       <Drawer anchor="right" open={open} onClose={toggleDrawer}>
         <Box
-          sx={{ width: 250, p: 2 }}
+          sx={{
+            width: 250,
+            height: "100%", // puni celu visinu
+            backgroundColor: "#1d1d1d",
+            color: "white",
+          }}
           role="presentation"
           onClick={toggleDrawer}
         >
-          <IconButton sx={{ mb: 1 }}>
-            <CloseIcon />
-          </IconButton>
-          <List>
-            {navItems.map((item) => (
-              <ListItem key={item.to} disablePadding>
-                <ListItemButton
-                  component={RouterLink}
-                  to={item.to}
-                  selected={location.pathname === item.to}
-                >
-                  <ListItemText primary={item.label} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+          <Box sx={{ mt: 3, p: 2 }}>
+            <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 1 }}>
+              <IconButton>
+                <CloseIcon sx={{ color: "white" }} />
+              </IconButton>
+            </Box>
+            <List>
+              {navItems.map((item) => (
+                <ListItem key={item.to} disablePadding>
+                  <ListItemButton
+                    component={RouterLink}
+                    to={item.to}
+                    selected={location.pathname === item.to}
+                  >
+                    <ListItemText primary={item.label} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
         </Box>
       </Drawer>
     </>

@@ -13,32 +13,32 @@ const modItems = [
   {
     title: "Isključivanje DPF (Filtera čestica)",
     icon: <Opacity fontSize="large" sx={{ color: "#f4e69a" }} />,
-    text: `DPF filter izaziva probleme sa začepljenjem i gubitkom snage. Uklanjanjem se poboljšava pouzdanost i smanjuje potrošnja.`,
+    desc: `DPF filter izaziva probleme sa začepljenjem i gubitkom snage. Uklanjanjem se poboljšava pouzdanost i smanjuje potrošnja.`,
   },
   {
     title: "Isključivanje EGR ventila",
     icon: <DeleteForever fontSize="large" sx={{ color: "#f4e69a" }} />,
-    text: `EGR uzrokuje naslage i kvarove. Softversko uklanjanje poboljšava rad motora i smanjuje emisije.`,
+    desc: `EGR uzrokuje naslage i kvarove. Softversko uklanjanje poboljšava rad motora i smanjuje emisije.`,
   },
   {
     title: "Isključivanje AdBlue / SCR sistema",
     icon: <HighlightOff fontSize="large" sx={{ color: "#f4e69a" }} />,
-    text: `AdBlue može uzrokovati česte greške. Uklanjanjem se sprečavaju problemi i dodatni troškovi.`,
+    desc: `AdBlue može uzrokovati česte greške. Uklanjanjem se sprečavaju problemi i dodatni troškovi.`,
   },
   {
     title: "Isključivanje Lambda sonde",
     icon: <GpsOff fontSize="large" sx={{ color: "#f4e69a" }} />,
-    text: `Lambda sonda često pravi pogrešne korekcije. Uklanjanje omogućava stabilniji rad motora.`,
+    desc: `Lambda sonda često pravi pogrešne korekcije. Uklanjanje omogućava stabilniji rad motora.`,
   },
   {
     title: "Start-Stop sistem deaktivacija",
     icon: <PowerSettingsNew fontSize="large" sx={{ color: "#f4e69a" }} />,
-    text: `Sprečava nepotrebno gašenje motora i produžava vek akumulatora.`,
+    desc: `Sprečava nepotrebno gašenje motora i produžava vek akumulatora.`,
   },
   {
     title: "Uklanjanje limitatora brzine",
     icon: <Speed fontSize="large" sx={{ color: "#f4e69a" }} />,
-    text: `Omogućava punu brzinu bez fabričkog ograničenja.`,
+    desc: `Omogućava punu brzinu bez fabričkog ograničenja.`,
   },
 ];
 
@@ -88,7 +88,7 @@ export default function EcuModifikacijePage() {
           gap: 4,
         }}
       >
-        {modItems.map((vehicle, index) => (
+        {modItems.map((mod, index) => (
           <Card
             key={index}
             sx={{
@@ -103,22 +103,22 @@ export default function EcuModifikacijePage() {
               "&:hover": {
                 transform: "translateY(-10px) scale(1.02)",
                 boxShadow: "0 20px 60px rgba(244, 230, 154, 0.2)",
-                border: "1px solid rgba(244, 230, 154, 0.4)",
+                borderColor: "rgba(244, 230, 154, 0.4)", // Samo boja, ne debljina
               },
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "3px",
-                background: "linear-gradient(90deg, #f4e69a, #d4c679)",
-                opacity: 0,
-                transition: "opacity 0.3s ease",
-              },
-              "&:hover::before": {
-                opacity: 1,
-              },
+              // "&::before": {
+              //   content: '""',
+              //   position: "absolute",
+              //   top: 0,
+              //   left: 0,
+              //   right: 0,
+              //   height: "3px",
+              //   background: "linear-gradient(90deg, #f4e69a, #d4c679)",
+              //   opacity: 0,
+              //   transition: "opacity 0.3s ease",
+              // },
+              // "&:hover::before": {
+              //   opacity: 1,
+              // },
             }}
           >
             <CardContent sx={{ textAlign: "center", p: 4 }}>
@@ -127,30 +127,16 @@ export default function EcuModifikacijePage() {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  width: "100px",
-                  height: "100px",
-                  paddingTop: "18px",
+                  width: 60,
+                  height: 60,
                   borderRadius: "50%",
-                  background:
-                    "linear-gradient(135deg, rgba(244, 230, 154, 0.15), rgba(244, 230, 154, 0.05))",
-                  margin: "0 auto 24px auto",
-                  fontSize: "48px",
-                  color: "#f4e69a",
-                  border: "2px solid rgba(244, 230, 154, 0.2)",
-                  transition: "all 0.3s ease",
-                  "& svg": {
-                    width: "48px",
-                    height: "48px",
-                    display: "block",
-                  },
-                  "&:hover": {
-                    background:
-                      "linear-gradient(135deg, rgba(244, 230, 154, 0.25), rgba(244, 230, 154, 0.1))",
-                    border: "2px solid rgba(244, 230, 154, 0.4)",
-                  },
+                  backgroundColor: "#2a2a2a",
+                  border: "2px solid rgba(244, 230, 154, 0.3)", // Border dodat ovde
+                  mb: 3,
+                  mx: "auto",
                 }}
               >
-                {vehicle.icon}
+                {mod.icon}
               </Box>
               <Typography
                 variant="h5"
@@ -161,7 +147,7 @@ export default function EcuModifikacijePage() {
                   textShadow: "0 1px 2px rgba(0,0,0,0.3)",
                 }}
               >
-                {vehicle.title}
+                {mod.title}
               </Typography>
               <Typography
                 variant="body1"
@@ -171,7 +157,7 @@ export default function EcuModifikacijePage() {
                   fontSize: "16px",
                 }}
               >
-                {vehicle.text}
+                {mod.desc}
               </Typography>
             </CardContent>
           </Card>

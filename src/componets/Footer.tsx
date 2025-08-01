@@ -79,18 +79,17 @@ const Footer = () => {
             ].map((item) => (
               <Link
                 key={item}
-                href="#"
-                underline="hover"
+                underline="none"
                 display="block"
                 sx={{
                   mb: 1.5,
                   color: "#cccccc",
                   fontSize: "0.9rem",
-                  transition: "color 0.3s ease",
-                  "&:hover": {
-                    color: "#d4af37",
-                    textDecoration: "none",
-                  },
+                  // transition: "color 0.3s ease",
+                  // "&:hover": {
+                  //   color: "#d4af37",
+                  //   textDecoration: "none",
+                  // },
                 }}
               >
                 {item}

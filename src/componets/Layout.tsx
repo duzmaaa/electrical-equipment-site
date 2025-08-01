@@ -7,46 +7,14 @@ import {
   CssBaseline,
   ListItemButton,
 } from "@mui/material";
-import { Link as RouterLink, Outlet, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { Link as RouterLink, Outlet } from "react-router-dom";
+import React from "react";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 
-interface Product {
-  id: number;
-  type: string;
-  module: string;
-  description: string;
-  common_repairs: string[];
-  image?: string;
-}
-
 const Layout = () => {
-  const navigate = useNavigate();
-
-  const [searchValue, setSearchValue] = useState<Product | null>(null);
-  const [inputValue, setInputValue] = useState<string>("");
-
-  const handleSearchChange = (
-    event: React.SyntheticEvent,
-    newValue: Product | null,
-  ) => {
-    if (newValue) {
-      navigate(`/proizvod?type=${newValue.type}&id=${newValue.id}`);
-      setSearchValue(null);
-      setInputValue("");
-    }
-  };
-
-  const handleInputChange = (
-    event: React.SyntheticEvent,
-    newInputValue: string,
-  ) => {
-    setInputValue(newInputValue);
-  };
-
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "" }}>
+    <Box sx={{ minHeight: "100vh" }}>
       <CssBaseline />
 
       {/* Top Contact Bar */}
@@ -121,6 +89,15 @@ const Layout = () => {
         </ListItemButton>
       </Box>
 
+      {/*<Box*/}
+      {/*  sx={{*/}
+      {/*    width: "100%",*/}
+      {/*    height: "1px",*/}
+      {/*    background: "linear-gradient(to right, #f4e69a, #d4c679)", // zlatna linija*/}
+      {/*    zIndex: 9999,*/}
+      {/*    position: "fixed", // obavezno da bi zIndex imao efekat*/}
+      {/*  }}*/}
+      {/*/>*/}
       {/* Header */}
       <AppBar
         position="fixed"
@@ -165,21 +142,26 @@ const Layout = () => {
 
       <Box
         sx={{
-          backgroundColor: "#1d1d1d", // pozadina iza kartica
+          backgroundColor: "#1d1d1d",
+          display: "flex",
+          justifyContent: "center", // horizontalno centriranje
+          alignItems: "center", // vertikalno centriranje
+          textAlign: "center",
         }}
       >
         {/* Main Content */}
-        <Container
+        <Box
           sx={{
-            pt: "110px",
-            pb: 0,
-            textAlign: "center",
-            // maxWidth: 1200,
+            width: "100%",
+            position: "relative",
+            maxWidth: 1200,
+            px: 2, // padding left/right za mobilne
           }}
         >
           <Outlet />
-        </Container>
+        </Box>
       </Box>
+
       <Footer></Footer>
     </Box>
   );
