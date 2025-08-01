@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   FormControl,
   InputLabel,
@@ -36,7 +36,7 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
   setSelectedType,
 }) => {
   const [focused, setFocused] = useState(false);
-  const [open, setOpen] = useState(false);
+  const selectRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (event: SelectChangeEvent) => {
     setSelectedType(event.target.value);
@@ -44,6 +44,12 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
 
   const handleClear = () => {
     setSelectedType("");
+    setFocused(true);
+
+    // Fokusiraj Select da bi placeholder bio vidljiv odmah
+    setTimeout(() => {
+      selectRef.current?.focus();
+    }, 0);
   };
 
   const handleFocus = () => {
@@ -54,17 +60,6 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
     setFocused(false);
   };
 
-  const handleOpen = () => {
-    setOpen(true);
-    setFocused(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setFocused(false);
-  };
-
-  // Determine if label should be shrunk
   const shouldShrink = Boolean(selectedType) || focused;
 
   return (
@@ -84,7 +79,6 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
           width: { sm: 250, lg: 300 },
           "& .MuiInputLabel-root": {
             color: "#f4e69a",
-            // Ensure proper positioning
             zIndex: 1,
           },
           "& .MuiInputLabel-root.Mui-focused, & .MuiInputLabel-root.MuiInputLabel-shrink":
@@ -123,12 +117,12 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
         <InputLabel
           id="single-select-label"
           shrink={shouldShrink}
-          // Add notched prop to ensure proper border behavior
           variant="outlined"
         >
           Filter tipa
         </InputLabel>
         <Select
+          inputRef={selectRef}
           labelId="single-select-label"
           value={selectedType}
           onChange={handleChange}
@@ -136,7 +130,6 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
           onBlur={handleBlur}
           label="Filter tipa"
           displayEmpty
-          // Add notched prop for proper border handling
           notched={shouldShrink}
           renderValue={(selected) => {
             if (!selected && focused) return "Unesi proizvod";
@@ -162,13 +155,10 @@ const SingleSelect: React.FC<SingleSelectProps> = ({
               vertical: "top",
               horizontal: "left",
             },
-            // Ensure consistent positioning
             disablePortal: false,
           }}
         >
-          <MenuItem value="" disabled hidden>
-            {/* Hidden placeholder */}
-          </MenuItem>
+          <MenuItem value="" disabled hidden />
           {options.map((option) => (
             <MenuItem
               key={option.value}
