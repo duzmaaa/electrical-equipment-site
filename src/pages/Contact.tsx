@@ -104,7 +104,7 @@ const Contact = () => {
                 {[
                   { number: "+381658252864", name: "Aleksandar" },
                   { number: "+38152846626", name: "Dragiša" },
-                  { number: "+381631166588", name: "Željko" },
+                  { number: "+381641252864", name: "Željko" },
                 ].map(({ number, name }) => (
                   <Box key={number} display="flex" alignItems="center" gap={1}>
                     <Phone sx={{ color: "#f4e69a" }} />

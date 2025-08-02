@@ -341,7 +341,7 @@ const Home: React.FC = () => {
 
                   <Box
                     component="a"
-                    href="tel:+381666321"
+                    href="tel:+381658252864"
                     onClick={handleCloseModal}
                     sx={{
                       backgroundColor: "#f4e69a",

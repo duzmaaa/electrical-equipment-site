@@ -181,7 +181,7 @@ const Footer = () => {
                 }}
               >
                 <Phone sx={{ mr: 1.5, fontSize: 18, color: "#d4af37" }} />
-                +381 64 125 2864
+                +381 65 825 2864
               </Typography>
             </Box>
 

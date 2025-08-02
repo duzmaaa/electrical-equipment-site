@@ -36,7 +36,7 @@ const Layout = () => {
       >
         <ListItemButton
           component="a"
-          href="tel:+381666321"
+          href="tel:+381658252864 "
           sx={{
             color: "#F9FAFB",
             borderRadius: "8px",
@@ -88,7 +88,7 @@ const Layout = () => {
             KONTAKT:
           </Typography>
           <Typography variant="body2" sx={{ fontWeight: "bold" }}>
-            +381 64 125 2864
+            +381658252864
           </Typography>
         </ListItemButton>
       </Box>
