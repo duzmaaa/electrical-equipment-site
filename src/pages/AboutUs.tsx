@@ -149,7 +149,6 @@ export default function AboutUs() {
                     fontSize: { xs: "0.9rem", sm: "1.2rem" },
                     lineHeight: 1.8,
                     mb: 4,
-                    textAlign: "justify",
                   }}
                 >
                   <strong style={{ color: "#d4af37" }}>
@@ -167,10 +166,9 @@ export default function AboutUs() {
                   variant="body1"
                   sx={{
                     color: "#f3f4f6",
-                    fontSize: { xs: "1.1rem", sm: "1.2rem" },
+                    fontSize: { xs: "0.9rem", sm: "1.2rem" },
                     lineHeight: 1.8,
                     mb: 4,
-                    textAlign: "justify",
                   }}
                 >
                   Naš tim stručnjaka koristi najnoviju tehnologiju i alate kako
@@ -184,9 +182,8 @@ export default function AboutUs() {
                   variant="body1"
                   sx={{
                     color: "#f3f4f6",
-                    fontSize: { xs: "1.1rem", sm: "1.2rem" },
+                    fontSize: { xs: "0.9rem", sm: "1.2rem" },
                     lineHeight: 1.8,
-                    textAlign: "justify",
                   }}
                 >
                   Posetite nas ili nas kontaktirajte da saznate više o našim

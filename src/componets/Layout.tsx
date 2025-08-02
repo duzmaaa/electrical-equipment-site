@@ -88,7 +88,7 @@ const Layout = () => {
             KONTAKT:
           </Typography>
           <Typography variant="body2" sx={{ fontWeight: "bold" }}>
-            +381658252864
+            +381 65 825 2864
           </Typography>
         </ListItemButton>
       </Box>

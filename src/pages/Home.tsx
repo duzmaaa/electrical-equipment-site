@@ -10,6 +10,7 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import SearchAutocomplete from "../componets/product/Autocomplate";
 import SingleSelect from "../componets/product/SingleSelect";
 import porductItems from "../data/data.json";
@@ -178,7 +179,7 @@ const Home: React.FC = () => {
                 transition: "all 0.3s ease",
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                justifyContent: "space-between", // promenjeno
                 "&:hover": {
                   transform: "translateY(-8px)",
                   boxShadow: "0 16px 48px rgba(244, 230, 154, 0.15)",
@@ -208,6 +209,23 @@ const Home: React.FC = () => {
                 >
                   {item.type?.[0]?.toUpperCase() + item.type?.slice(1)}
                 </Typography>
+
+                {/* More info dugme */}
+                <Box
+                  mt={2}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  sx={{
+                    color: "#f4e69a",
+                    fontWeight: 500,
+                    fontSize: "0.85rem",
+                    mt: 3,
+                  }}
+                >
+                  More info
+                  <ArrowForwardIosIcon sx={{ fontSize: 14, ml: 0.5 }} />
+                </Box>
               </CardContent>
             </Card>
           ))}

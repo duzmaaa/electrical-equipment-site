@@ -102,14 +102,14 @@ const Contact = () => {
             >
               <Stack spacing={2}>
                 {[
-                  { number: "+381658252864", name: "Aleksandar" },
-                  { number: "+38152846626", name: "Dragiša" },
-                  { number: "+381641252864", name: "Željko" },
+                  { number: "+381 65 825 2864", name: "Aleksandar" },
+                  { number: "+381 52 846 626", name: "Dragiša" },
+                  { number: "+381 64 125 2864", name: "Željko" },
                 ].map(({ number, name }) => (
                   <Box key={number} display="flex" alignItems="center" gap={1}>
                     <Phone sx={{ color: "#f4e69a" }} />
                     <Link
-                      href={`tel:${number.replace(/\s+/g, "")}`}
+                      href={`tel:${number}`}
                       underline="hover"
                       sx={{ color: "#ccc", fontWeight: 500 }}
                     >
