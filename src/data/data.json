@@ -1,0 +1,574 @@
+[
+  {
+    "type": "scania",
+    "id": 1,
+    "title": "Koordinator (COO6, COO7)",
+    "desc": "COO (Central Onboard Operator) jedinice – COO6 i COO7 – su centralne upravljačke jedinice u Scania vozilima. One služe kao glavni komunikacioni čvor između različitih elektronskih sistema u vozilu (motor, menjač, ABS, instrument tabla itd.).",
+    "child": [
+      {
+        "title": "COO6",
+        "desc": "COO6 – starija verzija, koristi se kod modela do ~2016."
+      },
+      {
+        "title": "COO7",
+        "desc": "COO7 – novija verzija sa poboljšanom memorijom i bržim procesiranjem, koristi se kod novijih Scania NTG (Next Generation Trucks)."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "type": "scania",
+    "title": "OPC4",
+    "desc": "OPC4 (Opticruise Controller, generacija 4) je elektronska kontrolna jedinica u Scania vozilima koja upravlja sistemom automatskog menjača – Opticruise. Ova jedinica omogućava preciznu i efikasnu kontrolu prenosa brzina, poboljšava udobnost u vožnji i doprinosi manjoj potrošnji goriva."
+  },
+  {
+    "type": "scania",
+    "id": 3,
+    "title": "EMS",
+    "desc": "EMS jedinice (Engine Management System) su elektronski moduli koji upravljaju radom motora kod Scania vozila.",
+    "child": [
+      {
+        "title": "EMS6",
+        "desc": "Koristi se u starijim Euro 5 motorima"
+      },
+      {
+        "title": "EMS7",
+        "desc": "Prelazna verzija, podržava Euro 5/6"
+      },
+      {
+        "title": "EMS8",
+        "desc": "Koristi se u novim Scania NTG kamionima sa Euro 6 motorima"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "type": "scania",
+    "title": "EBS",
+    "desc": "EBS je elektronski sistem kočenja koji zamenjuje tradicionalni pneumatski sistem. U EBS-u, upravljanje kočenjem se vrši elektronski, što omogućava bržu, precizniju i sigurniju reakciju, kao i bolju koordinaciju između vučnog i priključnog vozila."
+  },
+  {
+    "id": 5,
+    "type": "scania",
+    "title": "Instrument tabla",
+    "desc": "Instrument tabla u Scania vozilima je centralni prikazivač informacija za vozača, koji omogućava uvid u sve važne parametre rada vozila u realnom vremenu.\nPrikazuje brzinu, broj obrtaja, nivo goriva, greške sistema, status kočenja, upozorenja sa motora, kao i podatke sa GPS-a, AdBlue sistema i CAN mreže. Savremeni modeli poseduju TFT ekran u boji sa menijima kojima se upravlja preko multifunkcionalnog volana ili komandne table."
+  },
+  {
+    "id": 6,
+    "type": "scania",
+    "title": "Retarder",
+    "desc": "Modul upravljanja retarderom kontroliše rad hidrodinamičkog usporivača – retardera, koji omogućava dodatno kočenje vozila bez korišćenja glavnog kočionog sistema.\nRetarder se koristi za održavanje bezbedne brzine pri dugim nizbrdicama i u uslovima gde je potrebno često usporavanje, čime se smanjuje habanje glavnih kočnica."
+  },
+  {
+    "id": 7,
+    "type": "mercedes",
+    "title": "Retarder",
+    "desc": "Modul upravljanja retarderom kontroliše rad hidrodinamičkog usporivača – retardera, koji omogućava dodatno kočenje vozila bez korišćenja glavnog kočionog sistema.\nRetarder se koristi za održavanje bezbedne brzine pri dugim nizbrdicama i u uslovima gde je potrebno često usporavanje, čime se smanjuje habanje glavnih kočnica."
+  },
+  {
+    "type": "mercedes",
+    "id": 8,
+    "title": "CPC",
+    "desc": "CPC moduli (Central Power Control) su centralne jedinice za upravljanje električnim sistemima u Mercedes kamionima.",
+    "child": [
+      {
+        "title": "CPC2",
+        "desc": "Ranija generacija sa osnovnim funkcijama."
+      },
+      {
+        "title": "CPC3",
+        "desc": "Poboljšana verzija sa dodatnim mogućnostima."
+      },
+      {
+        "title": "CPC4",
+        "desc": "Naprednija verzija sa boljom integracijom sistema."
+      },
+      {
+        "title": "CPC5",
+        "desc": "Najnovija generacija sa sofisticiranim funkcijama."
+      }
+    ]
+  },
+  {
+    "type": "mercedes",
+    "id": 9,
+    "title": "EBS",
+    "desc": "EBS je elektronski sistem kočenja koji omogućava precizniju i sigurniju kontrolu kočenja u Mercedes vozilima.",
+    "child": [
+      {
+        "title": "Knorr-Bremse (CNOR)",
+        "desc": "Centralna jedinica koja upravlja kočenjem i koordinira sa ABS i ASR sistemima u Mercedes vozilima. Komunikacija preko CAN magistrale."
+      },
+      {
+        "title": "Wabco",
+        "desc": "EBS modul sa dodatnim funkcijama stabilnosti i sistemima pomoći vozaču, korišćen u Mercedes kamionima. Kompatibilan sa različitim sistemima vozila."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "type": "mercedes",
+    "title": "GS II",
+    "desc": "GS II označava drugu generaciju kontrolne jedinice menjača (Transmission Control Unit) koja upravlja automatizovanim ili elektronski kontrolisanim menjačem."
+  },
+  {
+    "id": 11,
+    "type": "mercedes",
+    "title": "SAM",
+    "desc": "SAM je centralna jedinica koja prikuplja i kontroliše električne signale iz različitih sistema vozila.\nOna upravlja osvetljenjem, brisačima, centralnim zaključavanjem, pokazivačima pravca, i drugim pomoćnim funkcijama. SAM modul dolazi u različitim verzijama i konfiguracijama, zavisno od modela i opreme vozila."
+  },
+  {
+    "id": 12,
+    "type": "mercedes",
+    "title": "SSAM (Single SAM)",
+    "desc": "SSAM (Single Signal Acquisition Module) je pojedinačna kontrolna jedinica koja integriše funkcije više tradicionalnih SAM modula u jedan uređaj.\nOvaj modul upravlja različitim električnim sistemima vozila, kao što su osvetljenje, brisači, pokazivači pravca, centralno zaključavanje i drugi pomoćni sistemi, ali u kompaktnijem i modernijem obliku."
+  },
+  {
+    "id": 13,
+    "type": "mercedes",
+    "title": "Instrument tabla",
+    "desc": "Instrument tabla u Mercedes vozilima je centralni prikazivač informacija za vozača, koji omogućava uvid u sve važne parametre rada vozila u realnom vremenu.\nPrikazuje brzinu, broj obrtaja, nivo goriva, temperaturu motora, status kočenja, dijagnostičke poruke i upozorenja.\nModerni modeli koriste digitalne ili TFT ekrane sa menijima kojima se upravlja preko multifunkcionalnog volana ili komandne table."
+  },
+  {
+    "id": 14,
+    "type": "mercedes",
+    "title": "HVAC",
+    "desc": "HVAC (Heating, Ventilation, and Air Conditioning) sistem u Mercedes vozilima kontroliše grejanje, ventilaciju i klimatizaciju u kabini.\nOmogućava podešavanje temperature, protoka vazduha i distribucije kroz različite zone kabine.\nSistem je integrisan sa drugim kontrolnim modulima i koristi senzore za automatsko održavanje željenih parametara."
+  },
+  {
+    "type": "mercedes",
+    "id": 15,
+    "title": "Motor Control Module (MCN, MR, PLD)",
+    "desc": "MCM, MR i PLD su moduli za upravljanje motorom u Mercedes vozilima.",
+    "child": [
+      {
+        "title": "MCM",
+        "desc": "Glavna kontrolna jedinica motora koja upravlja ubrizgavanjem goriva, paljenjem i osnovnim parametrima rada."
+      },
+      {
+        "title": "MR",
+        "desc": "Modul za regulaciju emisija i dodatnih funkcija motora."
+      },
+      {
+        "title": "PLD",
+        "desc": "Modul za preciznu kontrolu ubrizgavanja i optimizaciju performansi motora."
+      }
+    ]
+  },
+  {
+    "type": "mercedes",
+    "id": 16,
+    "title": "MP4 – ACM, SCR",
+    "desc": "Aftertreatment Control Module (ACM) je modul koji upravlja sistemom za naknadnu obradu izduvnih gasova (SCR) u Mercedes vozilima.",
+    "child": [
+      {
+        "title": "ACM",
+        "desc": "Kontroliše rad sistema za smanjenje emisije štetnih gasova, uključujući AdBlue injektore i SCR katalizatore."
+      },
+      {
+        "title": "SCR",
+        "desc": "Selektivna katalitička redukcija (SCR) smanjuje emisiju NOx gasova korišćenjem AdBlue tečnosti."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "type": "daf",
+    "title": "SCR",
+    "desc": "SCR (Selective Catalytic Reduction) sistem u DAF vozilima koristi AdBlue tečnost za smanjenje emisije azotnih oksida (NOx) u izduvnim gasovima, čime se ispunjavaju strogi ekološki standardi.\nSistem obuhvata rezervoar za AdBlue, injektor, SCR katalizator i senzore za kontrolu i nadzor rada."
+  },
+  {
+    "id": 18,
+    "type": "daf",
+    "title": "EBS (VIC2, VIC3)",
+    "desc": "EBS (Electronic Braking System) u DAF vozilima je elektronski sistem kočenja koji omogućava precizniju i sigurniju kontrolu kočenja. Sistem koordinira rad kočionih komponenti, ABS-a i stabilizacionih funkcija preko CAN magistrale.",
+    "child": [
+      {
+        "title": "VIC 2",
+        "desc": "Druga generacija vozne elektronske kontrole (Vehicle Integrated Control), koja integriše funkcije kočenja, stabilnosti i ABS sistema."
+      },
+      {
+        "title": "VIC 3",
+        "desc": "Naprednija verzija VIC sistema sa poboljšanim funkcijama upravljanja vozilom i dodatnim bezbednosnim opcijama."
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "type": "daf",
+    "title": "DMCI",
+    "desc": "DMCI (DAF Multi-Channel Interface) je kontrolni modul koji upravlja komunikacijom i integracijom različitih elektronskih sistema u DAF vozilima. Povezuje i koordinira rad više ECU jedinica preko CAN magistrale, obezbeđujući sinhronizaciju i efikasnost sistema."
+  },
+  {
+    "id": 20,
+    "type": "daf",
+    "title": "ECS3",
+    "desc": "ECS3 (Electronic Control System 3) je napredni kontrolni modul u DAF vozilima koji upravlja motorom, menjačem i drugim ključnim sistemima radi optimizacije performansi i efikasnosti."
+  },
+  {
+    "id": 21,
+    "type": "daf",
+    "title": "CM serija modula",
+    "desc": "Kontrolni moduli iz CM serije koriste se u DAF vozilima za upravljanje različitim funkcijama motora i vozila.",
+    "child": [
+      {
+        "title": "CM850",
+        "desc": "Osnovni kontrolni modul za upravljanje motorom i osnovnim funkcijama vozila."
+      },
+      {
+        "title": "CM2150",
+        "desc": "Napredniji modul sa dodatnim funkcijama za kontrolu emisija i performansi."
+      },
+      {
+        "title": "CM2250",
+        "desc": "Modul sa proširenim mogućnostima za upravljanje menjačem i integracijom sa drugim sistemima."
+      },
+      {
+        "title": "CM2350",
+        "desc": "Najnoviji modul u seriji sa naprednom dijagnostikom i optimizacijom rada vozila."
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "type": "daf",
+    "title": "TCU – Transmission Control Unit",
+    "desc": "TCU je kontrolna jedinica menjača u DAF vozilima koja upravlja automatskim ili poluautomatskim prenosom snage. Optimizuje menjanje brzina u skladu sa uslovima vožnje, komunicira sa motorom i drugim ECU modulima radi efikasnosti i sigurnosti."
+  },
+  {
+    "id": 23,
+    "type": "renault",
+    "title": "TRB",
+    "desc": "TRB (Transmission Retarder Brake) je sistem dodatnog kočenja integrisan sa menjačem kod Renault kamiona, koji omogućava bezbedno usporavanje bez korišćenja glavnog kočionog sistema.",
+    "child": [
+      {
+        "title": "TRB 2",
+        "desc": "Osnovna verzija elektronski kontrolisanog retarder sistema, korišćena kod starijih Renault modela."
+      },
+      {
+        "title": "TRB 2.1",
+        "desc": "Poboljšana verzija sa boljom integracijom sa menjačem i većim stepenom kontrole kočenja."
+      },
+      {
+        "title": "TRB 2.2",
+        "desc": "Najnovija verzija TRB sistema sa dodatnim funkcijama kontrole brzine pri nizbrdici i integracijom sa EBS sistemom."
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "type": "renault",
+    "title": "EBS",
+    "desc": "EBS je elektronski sistem kočenja koji zamenjuje tradicionalni pneumatski sistem. U EBS-u, upravljanje kočenjem se vrši elektronski, što omogućava bržu, precizniju i sigurniju reakciju, kao i bolju koordinaciju između vučnog i priključnog vozila."
+  },
+  {
+    "id": 25,
+    "type": "renault",
+    "title": "I-Shift",
+    "desc": "I-Shift je automatizovani sistem menjača koji koristi elektronski kontrolisanu mehaniku za optimizaciju prenosa snage i efikasnosti. Kod Renault kamiona, I-Shift pruža bolje performanse, smanjuje potrošnju goriva i poboljšava udobnost vožnje, posebno u dugim relacijama. Sistem je povezan sa ECU motora i koristi podatke o opterećenju i nagibu za inteligentno menjanje stepena prenosa."
+  },
+  {
+    "id": 26,
+    "type": "renault",
+    "title": "LCM – Modul za upravljanje osvetljenjem",
+    "desc": "LCM (Light Control Module) u Renault kamionima upravlja svim funkcijama spoljnog i unutrašnjeg osvetljenja. Omogućava automatsko uključivanje i isključivanje svetala, detekciju neispravnih sijalica, kao i kontrolu intenziteta osvetljenja u kabini. Modul je povezan sa CAN mrežom i komunicira sa drugim sistemima vozila radi sinhronizacije svetlosnih funkcija."
+  },
+  {
+    "id": 27,
+    "type": "renault",
+    "title": "VCM – Modul za upravljanje vozilom",
+    "desc": "VCM (Vehicle Control Module) je centralna elektronska jedinica u Renault kamionima koja upravlja i koordiniše različitim podsistemima vozila, uključujući motor, menjač, kočioni sistem i pomoćne funkcije. Modul omogućava prikupljanje podataka, dijagnostiku i optimizaciju performansi, a putem CAN magistrale komunicira sa ostalim kontrolnim jedinicama u vozilu."
+  },
+  {
+    "id": 28,
+    "type": "renault",
+    "title": "Instrument tabla",
+    "desc": "Instrument tabla u Scania vozilima je centralni prikazivač informacija za vozača, koji omogućava uvid u sve važne parametre rada vozila u realnom vremenu.\nPrikazuje brzinu, broj obrtaja, nivo goriva, greške sistema, status kočenja, upozorenja sa motora, kao i podatke sa GPS-a, AdBlue sistema i CAN mreže. Savremeni modeli poseduju TFT ekran u boji sa menijima kojima se upravlja preko multifunkcionalnog volana ili komandne table."
+  },
+  {
+    "id": 29,
+    "type": "volvo",
+    "title": "TRB",
+    "desc": "TRB (Transmission Retarder Brake) je sistem dodatnog kočenja kod Volvo kamiona koji omogućava usporavanje bez korišćenja glavnog kočionog sistema. Integrisan je sa menjačem i često sarađuje sa EBS i I-Shift sistemima.",
+    "child": [
+      {
+        "title": "TRB 2",
+        "desc": "Osnovna verzija TRB sistema koja obezbeđuje dodatno kočenje prilikom silaska nizbrdo, najčešće korišćena kod starijih Volvo modela."
+      },
+      {
+        "title": "TRB 2.1",
+        "desc": "Naprednija verzija sa unapređenim odzivom i integracijom sa I-Shift menjačem, omogućava efikasniju kontrolu brzine."
+      },
+      {
+        "title": "TRB 2.2",
+        "desc": "Najnovija TRB verzija sa poboljšanom komunikacijom sa ECU i dodatnim sigurnosnim funkcijama preko EBS-a."
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "type": "volvo",
+    "title": "EBS",
+    "desc": "EBS (Electronic Braking System) kod Volvo kamiona omogućava elektronski kontrolisano kočenje sa bržim odzivom i većom sigurnošću. Sistem obezbeđuje optimalnu raspodelu sile kočenja između osovina i priključnog vozila, kao i integraciju sa retarderima i I-Shift sistemom."
+  },
+  {
+    "id": 31,
+    "type": "volvo",
+    "title": "I-Shift",
+    "desc": "I-Shift je automatizovani menjački sistem razvijen od strane Volvo-a, koji koristi elektronski kontrolisanu mehaniku za optimalan prenos snage. Sistem prilagođava menjač trenutnim uslovima vožnje i u saradnji sa motorom pruža ekonomičnu i udobnu vožnju."
+  },
+  {
+    "id": 32,
+    "type": "volvo",
+    "title": "LCM – Modul za upravljanje osvetljenjem",
+    "desc": "LCM (Light Control Module) kod Volvo kamiona kontroliše sve svetlosne funkcije – od farova do kabinskog osvetljenja. Omogućava automatsko upravljanje svetlima, detekciju kvarova sijalica i povezivanje sa ostalim modulima putem CAN mreže."
+  },
+  {
+    "id": 33,
+    "type": "volvo",
+    "title": "VCM – Modul za upravljanje vozilom",
+    "desc": "VCM (Vehicle Control Module) je centralni kontrolni modul kod Volvo vozila koji koordinira rad glavnih sistema – motora, kočenja, menjača i osvetljenja. Kroz CAN magistralu povezuje sve bitne elektronske jedinice i obezbeđuje stabilnost i sigurnost rada vozila."
+  },
+  {
+    "id": 34,
+    "type": "volvo",
+    "title": "Instrument tabla",
+    "desc": "Instrument tabla kod Volvo kamiona pruža vozaču sve ključne informacije – brzinu, obrtaje, potrošnju goriva, poruke grešaka i status sistema. Savremeni modeli koriste digitalne TFT ekrane sa mogućnošću prikaza navigacije i informacija sa drugih modula kao što su ECU i VCM."
+  },
+  {
+    "id": 35,
+    "type": "man",
+    "title": "EDC",
+    "desc": "EDC (Electronic Diesel Control) je sistem za elektronsku kontrolu ubrizgavanja goriva u MAN kamionima. Kontroliše rad motora u realnom vremenu putem senzora i aktuatora, optimizuje performanse, smanjuje emisije i omogućava preciznu dijagnostiku. MAN koristi različite verzije EDC sistema u zavisnosti od generacije vozila.",
+    "child": [
+      {
+        "title": "EDC 5",
+        "desc": "Koristi se u starijim MAN modelima, zasnovan na jednostavnijoj arhitekturi za kontrolu ubrizgavanja goriva i osnovne funkcije motora."
+      },
+      {
+        "title": "EDC 6.1",
+        "desc": "Poboljšana verzija sa naprednijim algoritmima za upravljanje ubrizgavanjem, boljom regulacijom EGR sistema i praćenjem emisija izduvnih gasova."
+      },
+      {
+        "title": "EDC 7",
+        "desc": "Široko korišćena verzija koja podržava rad sa CAN mrežom i omogućava složeniju dijagnostiku i integraciju sa drugim elektronskim sistemima vozila."
+      },
+      {
+        "title": "EDC 17",
+        "desc": "Najnovija generacija EDC sistema kod MAN kamiona. Obuhvata napredne funkcije kao što su adaptivno ubrizgavanje, nadzor temperature i pritiska, upravljanje AdBlue sistemom i podrška za Euro 6 standarde."
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "type": "man",
+    "title": "SCR",
+    "desc": "SCR (Selective Catalytic Reduction) je sistem za smanjenje emisije azotnih oksida (NOx) kod MAN kamiona. Radi tako što ubrizgava AdBlue (urea rastvor) u izduvne gasove pre nego što oni dođu do katalizatora, čime se štetni gasovi pretvaraju u azot i vodenu paru. SCR sistem je ključan za ispunjavanje Euro 5 i Euro 6 standarda emisije kod MAN vozila i funkcioniše u kombinaciji sa EDC i ACM modulima."
+  },
+  {
+    "id": 37,
+    "type": "man",
+    "title": "EBS",
+    "desc": "EBS (Electronic Braking System) kod MAN kamiona omogućava elektronsku kontrolu kočenja, što dovodi do brže i preciznije reakcije sistema u poređenju sa klasičnim pneumatskim sistemima. EBS integriše ABS i ASR funkcije, poboljšava bezbednost i skraćuje zaustavni put, dok obezbeđuje bolju stabilnost vozila tokom kočenja."
+  },
+  {
+    "id": 38,
+    "type": "man",
+    "title": "AS-Tronic",
+    "desc": "AS-Tronic je automatizovani menjač razvijen u saradnji sa ZF-om, koji koristi elektronski kontrolisane aktuatorske jedinice za menjanje stepena prenosa bez kvačila. U MAN vozilima pruža optimizovanu potrošnju goriva i udobniju vožnju, posebno u dužim relacijama i zahtevnim uslovima eksploatacije."
+  },
+  {
+    "id": 39,
+    "type": "man",
+    "title": "AS-Tronic Lite",
+    "desc": "AS-Tronic Lite je pojednostavljena verzija AS-Tronic menjača, namenjena za lakša teretna vozila i autobuse. Ima manji broj brzina i pojednostavljenu kontrolnu jedinicu, ali i dalje koristi elektronsku kontrolu prenosa kako bi poboljšao efikasnost vožnje i smanjio opterećenje vozača."
+  },
+  {
+    "id": 40,
+    "type": "man",
+    "title": "Instrument tabla",
+    "desc": "Instrument tabla kod MAN kamiona prikazuje ključne informacije vozaču u realnom vremenu – brzinu, obrtaje, greške sistema, nivoe tečnosti, status kočenja i dijagnostiku. Savremene verzije uključuju digitalne displeje i komunikaciju sa drugim modulima putem CAN mreže."
+  },
+  {
+    "id": 41,
+    "type": "man",
+    "title": "ZBR",
+    "desc": "ZBR (Zentraler Bordnetz-Rechner) je modul koji upravlja svim funkcijama vezanim za šasiju MAN vozila, uključujući osvetljenje, signalizaciju, senzoriku, brisače i druge pomoćne sisteme. Modul omogućava dijagnostiku i efikasnu kontrolu putem CAN magistrale."
+  },
+  {
+    "id": 42,
+    "type": "man",
+    "title": "FFR",
+    "desc": "FFR (Fahrzeug-Front-Rechner) je centralna elektronska jedinica u MAN vozilima koja koordiniše različite funkcije kabine i motora. FFR komunicira sa EDC, ZBR, instrument tablom i ostalim sistemima putem CAN mreže, prikuplja podatke i omogućava dijagnostiku celog vozila."
+  },
+  {
+    "id": 43,
+    "type": "man",
+    "title": "PTM",
+    "desc": "PTM (Powertrain Manager) u MAN kamionima upravlja odnosima između motora, menjača i diferencijala. Modul osigurava optimalan prenos snage u zavisnosti od uslova vožnje i opterećenja, kao i efikasnu komunikaciju između EDC i menjača."
+  },
+  {
+    "id": 44,
+    "type": "man",
+    "title": "Intarder",
+    "desc": "Intarder u MAN vozilima je dodatni sistem kočenja, nezavisan od glavnog kočionog sistema. Pruža kontrolisano usporavanje bez habanja kočionih obloga, posebno koristan pri dugim nizbrdicama i u teškim transportnim uslovima. Elektronski je povezan sa EBS sistemom za optimalnu koordinaciju kočenja."
+  },
+  {
+    "id": 45,
+    "type": "iveco",
+    "title": "EDC",
+    "desc": "EDC (Electronic Diesel Control) u Iveco vozilima kontroliše ubrizgavanje goriva i rad motora. Postoje različite verzije EDC sistema koje pružaju optimizaciju performansi, smanjenje emisija i preciznu dijagnostiku.",
+    "child": [
+      {
+        "title": "EDC 6.2",
+        "desc": "Koristi se u srednjoj generaciji Iveco motora sa naprednijim algoritmima upravljanja i boljim performansama."
+      },
+      {
+        "title": "EDC 7",
+        "desc": "Napredniji sistem sa podrškom za CAN mrežu i proširenim funkcijama kontrole i dijagnostike."
+      },
+      {
+        "title": "EDC 17",
+        "desc": "Najnovija generacija EDC sistema kod Iveco vozila, sa potpunom integracijom AdBlue i emisijskih sistema prema Euro 6 standardima."
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "type": "iveco",
+    "title": "SCR",
+    "desc": "SCR sistem u Iveco kamionima koristi AdBlue tečnost za redukciju azotnih oksida (NOx) u izduvnim gasovima, čime ispunjava stroge ekološke norme. Sistem se sastoji od rezervoara, injektora AdBlue-a, katalizatora i senzora za praćenje rada."
+  },
+  {
+    "id": 47,
+    "type": "iveco",
+    "title": "EBS",
+    "desc": "EBS sistem u Iveco vozilima omogućava elektronsku kontrolu kočenja sa integrisanim ABS i ASR funkcijama, povećavajući sigurnost i efikasnost kočenja."
+  },
+  {
+    "id": 48,
+    "type": "iveco",
+    "title": "AS-Tronic",
+    "desc": "AS-Tronic menjač u Iveco kamionima omogućava automatsko menjanje brzina pomoću elektronskih aktuatora, poboljšavajući udobnost vozača i efikasnost potrošnje goriva."
+  },
+  {
+    "id": 49,
+    "type": "iveco",
+    "title": "VCM",
+    "desc": "VCM je centralni modul u Iveco vozilima koji koordinira rad motora, menjača, kočionih sistema i drugih podsistema za optimalan rad vozila."
+  },
+  {
+    "id": 50,
+    "type": "iveco",
+    "title": "BCM",
+    "desc": "BCM (Body Control Module) upravlja funkcijama karoserije, uključujući osvetljenje, zaključavanje vrata, brisače i druge pomoćne sisteme. Modul komunicira sa ostalim jedinicama preko CAN magistrale."
+  },
+  {
+    "id": 51,
+    "type": "iveco",
+    "title": "Expansion Module",
+    "desc": "Ekspanzioni modul proširuje funkcionalnosti glavnih kontrolnih jedinica dodavanjem dodatnih ulaza i izlaza za senzore i aktuatorske elemente u Iveco vozilima."
+  },
+  {
+    "id": 52,
+    "type": "Prikolice i poluprikolice",
+    "title": "Wabco",
+    "desc": "Wabco sistemi za prikolice pružaju elektronsku kontrolu kočenja, ABS, EBS i druge sigurnosne funkcije. Njihovi moduli omogućavaju precizno upravljanje kočenjem i stabilno ponašanje prikolice tokom vožnje, čime se povećava sigurnost i zaštita tereta."
+  },
+  {
+    "id": 53,
+    "type": "Prikolice i poluprikolice",
+    "title": "Knorr-Bremse",
+    "desc": "Knorr-Bremse je jedan od vodećih proizvođača kočionih sistema za prikolice. Njihovi moduli obezbeđuju elektronsku kontrolu kočenja, integrisani ABS, EBS i pomoćne sisteme koji doprinose sigurnosti i efikasnosti kočenja priključnih vozila."
+  },
+  {
+    "id": 54,
+    "type": "Prikolice i poluprikolice",
+    "title": "Haldex",
+    "desc": "Haldex sistemi su specijalizovani za kočione i vazdušne suspenzione sisteme na prikolicama. Njihovi moduli i ventili omogućavaju pouzdanu kontrolu kočenja i stabilnost vozila, sa posebnim naglaskom na sigurnost i trajnost sistema."
+  },
+  {
+    "id": 55,
+    "type": "Poljoprivredne mašine",
+    "title": "CUMMINS",
+    "desc": "Cummins je vodeći proizvođač dizel motora za poljoprivredna vozila, sa naprednim sistemima za upravljanje motorom koji obezbeđuju efikasnost, pouzdanost i usklađenost sa emisijskim standardima."
+  },
+  {
+    "id": 56,
+    "type": "Poljoprivredne mašine",
+    "title": "MCM",
+    "desc": "MCM (Motor Control Module) je elektronska jedinica koja upravlja radom motora kod poljoprivrednih mašina, optimizujući performanse i smanjujući potrošnju goriva."
+  },
+  {
+    "id": 57,
+    "type": "Poljoprivredne mašine",
+    "title": "EDC",
+    "desc": "EDC (Electronic Diesel Control) sistem kontroliše ubrizgavanje goriva i rad motora u poljoprivrednim vozilima, omogućavajući preciznu regulaciju i dijagnostiku."
+  },
+  {
+    "id": 58,
+    "type": "Poljoprivredne mašine",
+    "title": "PLD",
+    "desc": "PLD (Pump Line Diesel) je sistem za ubrizgavanje goriva sa linijskim pumpama, koji se koristi u poljoprivrednim mašinama za efikasnu i pouzdanu isporuku goriva."
+  },
+  {
+    "id": 59,
+    "type": "Poljoprivredne mašine",
+    "title": "EBS",
+    "desc": "EBS (Electronic Braking System) pruža elektronsku kontrolu kočenja u poljoprivrednim vozilima, povećavajući sigurnost i preciznost kočenja."
+  },
+  {
+    "id": 60,
+    "type": "Poljoprivredne mašine",
+    "title": "TRW",
+    "desc": "TRW je proizvođač kočionih sistema i upravljačkih komponenti za poljoprivredne mašine, fokusiran na sigurnost i pouzdanost."
+  },
+  {
+    "id": 61,
+    "type": "Poljoprivredne mašine",
+    "title": "Caterpillar",
+    "desc": "Caterpillar proizvodi motore i tešku opremu za poljoprivredu, sa naprednim sistemima za upravljanje i kontrolu koji omogućavaju visoke performanse i dugotrajnost."
+  },
+  {
+    "id": 62,
+    "type": "Građevinske mašine i plovila",
+    "title": "CUMMINS",
+    "desc": "Cummins proizvodi snažne i pouzdane dizel motore za građevinske mašine i brodove, sa naprednim upravljanjem motorom za optimalne performanse i niske emisije."
+  },
+  {
+    "id": 63,
+    "type": "Građevinske mašine i plovila",
+    "title": "MCM",
+    "desc": "MCM (Motor Control Module) upravlja motorom kod građevinskih mašina i brodova, omogućavajući efikasnu kontrolu rada i pouzdanost u zahtevnim uslovima."
+  },
+  {
+    "id": 64,
+    "type": "Građevinske mašine i plovila",
+    "title": "EDC",
+    "desc": "EDC (Electronic Diesel Control) sistem kontroliše ubrizgavanje goriva i rad motora, prilagođavajući performanse za različite uslove rada građevinskih mašina i brodova."
+  },
+  {
+    "id": 65,
+    "type": "Građevinske mašine i plovila",
+    "title": "PLD",
+    "desc": "PLD (Pump Line Diesel) sistem koristi linijske pumpe za precizno ubrizgavanje goriva u motorima građevinskih mašina i brodova, obezbeđujući efikasnost i snagu."
+  },
+  {
+    "id": 66,
+    "type": "Građevinske mašine i plovila",
+    "title": "EBS",
+    "desc": "EBS (Electronic Braking System) obezbeđuje elektronsku kontrolu kočenja na građevinskim mašinama i specijalnim vozilima, povećavajući sigurnost i preciznost u radu."
+  },
+  {
+    "id": 67,
+    "type": "Građevinske mašine i plovila",
+    "title": "TRW",
+    "desc": "TRW proizvodi kočione sisteme i upravljačke komponente za građevinske mašine i brodove, sa fokusom na sigurnost i pouzdanost."
+  },
+  {
+    "id": 68,
+    "type": "Građevinske mašine i plovila",
+    "title": "Caterpillar",
+    "desc": "Caterpillar je vodeći proizvođač motora i teške opreme za građevinske mašine i brodove, sa sistemima upravljanja za visok nivo performansi i dugotrajnosti."
+  }
+]
