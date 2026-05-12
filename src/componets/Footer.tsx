@@ -5,15 +5,12 @@ import {
   Button,
   Link,
   Container,
-  IconButton,
   Stack,
   Divider,
 } from "@mui/material";
 import {
   KeyboardArrowUp,
   Phone,
-  Facebook,
-  Instagram,
   AccessTime,
   LocationOn,
 } from "@mui/icons-material";

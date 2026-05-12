@@ -124,6 +124,7 @@ const Navigation = () => {
               alignItems: "center",
               justifyContent: "space-between",
               px: 2.5,
+              mt: 4,
               py: 2,
               borderBottom: "1px solid rgba(244, 230, 154, 0.1)",
             }}
