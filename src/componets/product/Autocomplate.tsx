@@ -1,8 +1,6 @@
 import React from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
 import { List, ListItem } from "@mui/material";
 
 interface ChildItem {
@@ -37,11 +35,6 @@ const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
   inputValue,
   handleInputChange,
 }) => {
-  const handleClear = () => {
-    handleInputChange({} as React.SyntheticEvent, "");
-    handleSearchChange({} as React.SyntheticEvent, null);
-  };
-
   return (
     <Autocomplete
       sx={{

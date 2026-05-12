@@ -1,5 +1,14 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Container,
+  Button,
+  Stack,
+  Chip,
+} from "@mui/material";
 import {
   DeleteForever,
   Opacity,
@@ -8,162 +17,269 @@ import {
   PowerSettingsNew,
   GpsOff,
 } from "@mui/icons-material";
+import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 
 const modItems = [
   {
-    title: "Isključivanje DPF (Filtera čestica)",
-    icon: <Opacity fontSize="large" sx={{ color: "#f4e69a" }} />,
-    desc: `DPF filter izaziva probleme sa začepljenjem i gubitkom snage. Uklanjanjem se poboljšava pouzdanost i smanjuje potrošnja.`,
+    title: "Isključivanje DPF (filtera čestica)",
+    icon: <Opacity sx={{ fontSize: 44 }} />,
+    desc: "DPF filter izaziva probleme sa začepljenjem i gubitkom snage. Uklanjanjem se poboljšava pouzdanost i smanjuje potrošnja.",
   },
   {
     title: "Isključivanje EGR ventila",
-    icon: <DeleteForever fontSize="large" sx={{ color: "#f4e69a" }} />,
-    desc: `EGR uzrokuje naslage i kvarove. Softversko uklanjanje poboljšava rad motora i smanjuje emisije.`,
+    icon: <DeleteForever sx={{ fontSize: 44 }} />,
+    desc: "EGR uzrokuje naslage i kvarove. Softversko uklanjanje poboljšava rad motora i smanjuje emisije.",
   },
   {
-    title: "Isključivanje AdBlue / SCR sistema",
-    icon: <HighlightOff fontSize="large" sx={{ color: "#f4e69a" }} />,
-    desc: `AdBlue može uzrokovati česte greške. Uklanjanjem se sprečavaju problemi i dodatni troškovi.`,
+    title: "Isključivanje AdBlue / SCR",
+    icon: <HighlightOff sx={{ fontSize: 44 }} />,
+    desc: "AdBlue može uzrokovati česte greške. Uklanjanjem se sprečavaju problemi i dodatni troškovi.",
   },
   {
     title: "Isključivanje Lambda sonde",
-    icon: <GpsOff fontSize="large" sx={{ color: "#f4e69a" }} />,
-    desc: `Lambda sonda često pravi pogrešne korekcije. Uklanjanje omogućava stabilniji rad motora.`,
+    icon: <GpsOff sx={{ fontSize: 44 }} />,
+    desc: "Lambda sonda često pravi pogrešne korekcije. Uklanjanje omogućava stabilniji rad motora.",
   },
   {
-    title: "Start-Stop sistem deaktivacija",
-    icon: <PowerSettingsNew fontSize="large" sx={{ color: "#f4e69a" }} />,
-    desc: `Sprečava nepotrebno gašenje motora i produžava vek akumulatora.`,
+    title: "Start-Stop deaktivacija",
+    icon: <PowerSettingsNew sx={{ fontSize: 44 }} />,
+    desc: "Sprečava nepotrebno gašenje motora i produžava vek akumulatora.",
   },
   {
     title: "Uklanjanje limitatora brzine",
-    icon: <Speed fontSize="large" sx={{ color: "#f4e69a" }} />,
-    desc: `Omogućava punu brzinu bez fabričkog ograničenja.`,
+    icon: <Speed sx={{ fontSize: 44 }} />,
+    desc: "Omogućava punu brzinu bez fabričkog ograničenja.",
   },
 ];
 
 export default function EcuModifikacijePage() {
   return (
-    <Box p={{ xs: 2, md: 4 }} sx={{ color: "#fff" }}>
-      {/* Vehicle Types Section */}
-      <div style={{ textAlign: "center", marginBottom: "60px" }}>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          sx={{
-            mb: 2,
-            color: "#f4e69a",
-            textShadow: "0 2px 4px rgba(0,0,0,0.3)",
-          }}
-        >
-          ECU Modifikacije
-        </Typography>
-        <div
-          style={{
-            width: "100px",
-            height: "3px",
-            background: "linear-gradient(90deg, #f4e69a, #d4c679)",
-            margin: "0 auto 24px auto",
-          }}
-        ></div>
-        <Typography
-          variant="h6"
-          sx={{
-            color: "rgba(255,255,255,0.9)",
-            maxWidth: "600px",
-            fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
-            margin: "0 auto",
-            lineHeight: 1.8,
-          }}
-        >
-          Naše softverske modifikacije omogućavaju stabilniji rad vozila, manju
-          potrošnju i eliminaciju čestih problema kao što su DPF, EGR, AdBlue i
-          druga ograničenja.
-        </Typography>
-      </div>
-
+    <Box>
+      {/* HERO */}
       <Box
         sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 4,
+          position: "relative",
+          height: { xs: 360, md: 440 },
+          width: "100%",
+          background:
+            "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 60%, #1a1a1a 100%)",
+          display: "flex",
+          alignItems: "center",
+          overflow: "hidden",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            opacity: 0.07,
+            backgroundImage:
+              "radial-gradient(circle at 25% 25%, #f4e69a 2px, transparent 2px)",
+            backgroundSize: "60px 60px",
+          },
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            top: "-40%",
+            right: "-10%",
+            width: "60%",
+            height: "180%",
+            background:
+              "radial-gradient(ellipse, rgba(244,230,154,0.12) 0%, transparent 60%)",
+            pointerEvents: "none",
+          },
         }}
       >
-        {modItems.map((mod, index) => (
-          <Card
-            key={index}
+        <Container
+          maxWidth="lg"
+          sx={{ position: "relative", zIndex: 2, textAlign: "left" }}
+        >
+          <Chip
+            icon={<SettingsSuggestIcon sx={{ color: "#f4e69a !important" }} />}
+            label="Softverske modifikacije"
             sx={{
-              background: "rgba(40, 40, 40, 0.9)",
-              backdropFilter: "blur(15px)",
-              border: "1px solid rgba(244, 230, 154, 0.15)",
-              borderRadius: 4,
-              boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-              transition: "all 0.4s ease",
-              position: "relative",
-              overflow: "hidden",
-              "&:hover": {
-                transform: "translateY(-10px) scale(1.02)",
-                boxShadow: "0 20px 60px rgba(244, 230, 154, 0.2)",
-                borderColor: "rgba(244, 230, 154, 0.4)", // Samo boja, ne debljina
-              },
-              // "&::before": {
-              //   content: '""',
-              //   position: "absolute",
-              //   top: 0,
-              //   left: 0,
-              //   right: 0,
-              //   height: "3px",
-              //   background: "linear-gradient(90deg, #f4e69a, #d4c679)",
-              //   opacity: 0,
-              //   transition: "opacity 0.3s ease",
-              // },
-              // "&:hover::before": {
-              //   opacity: 1,
-              // },
+              mb: 3,
+              color: "#f4e69a",
+              backgroundColor: "rgba(244, 230, 154, 0.08)",
+              border: "1px solid rgba(244, 230, 154, 0.4)",
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+            }}
+          />
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: "1.8rem", sm: "2.4rem", md: "3rem" },
+              fontWeight: 700,
+              color: "#f4e69a",
+              lineHeight: 1.15,
+              mb: 2,
+              textShadow: "0 4px 24px rgba(0,0,0,0.4)",
             }}
           >
-            <CardContent sx={{ textAlign: "center", p: 4 }}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: 60,
-                  height: 60,
-                  borderRadius: "50%",
-                  backgroundColor: "#2a2a2a",
-                  border: "2px solid rgba(244, 230, 154, 0.3)", // Border dodat ovde
-                  mb: 3,
-                  mx: "auto",
-                }}
-              >
-                {mod.icon}
-              </Box>
-              <Typography
-                variant="h5"
-                fontWeight="bold"
-                sx={{
-                  color: "#f4e69a",
-                  mb: 2,
-                  textShadow: "0 1px 2px rgba(0,0,0,0.3)",
-                }}
-              >
-                {mod.title}
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "rgba(255,255,255,0.85)",
-                  lineHeight: 1.7,
-                  fontSize: "16px",
-                }}
-              >
-                {mod.desc}
-              </Typography>
-            </CardContent>
-          </Card>
-        ))}
+            ECU modifikacije
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              maxWidth: 640,
+              color: "#e5e5e5",
+              fontSize: { xs: "0.95rem", md: "1.15rem" },
+              lineHeight: 1.7,
+            }}
+          >
+            Naše softverske modifikacije omogućavaju stabilniji rad vozila,
+            manju potrošnju i eliminaciju čestih problema kao što su DPF, EGR,
+            AdBlue i druga ograničenja.
+          </Typography>
+        </Container>
       </Box>
+
+      {/* Sadržaj */}
+      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(3, 1fr)",
+            },
+            gap: 4,
+            mb: { xs: 6, md: 10 },
+          }}
+        >
+          {modItems.map((mod, index) => (
+            <Card
+              key={index}
+              sx={{
+                background:
+                  "linear-gradient(180deg, rgba(45,45,45,0.9) 0%, rgba(30,30,30,0.9) 100%)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(244, 230, 154, 0.12)",
+                borderRadius: 4,
+                boxShadow: "0 8px 28px rgba(0,0,0,0.35)",
+                transition: "all 0.35s ease",
+                position: "relative",
+                overflow: "hidden",
+                height: "100%",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 3,
+                  background:
+                    "linear-gradient(90deg, #f4e69a, #d4af37)",
+                  transform: "scaleX(0)",
+                  transformOrigin: "left",
+                  transition: "transform 0.4s ease",
+                },
+                "&:hover": {
+                  transform: "translateY(-8px)",
+                  boxShadow: "0 18px 48px rgba(244, 230, 154, 0.15)",
+                  borderColor: "rgba(244, 230, 154, 0.4)",
+                  "&::before": { transform: "scaleX(1)" },
+                },
+              }}
+            >
+              <CardContent sx={{ textAlign: "center", p: { xs: 3, md: 4 } }}>
+                <Box
+                  sx={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 76,
+                    height: 76,
+                    borderRadius: "50%",
+                    background:
+                      "linear-gradient(135deg, rgba(244,230,154,0.18) 0%, rgba(244,230,154,0.04) 100%)",
+                    border: "2px solid rgba(244, 230, 154, 0.25)",
+                    color: "#f4e69a",
+                    mb: 3,
+                    mx: "auto",
+                  }}
+                >
+                  {mod.icon}
+                </Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "#f4e69a",
+                    fontWeight: 700,
+                    mb: 1.5,
+                    fontSize: { xs: "1.05rem", md: "1.15rem" },
+                  }}
+                >
+                  {mod.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#cfcfcf",
+                    lineHeight: 1.7,
+                    fontSize: "0.95rem",
+                  }}
+                >
+                  {mod.desc}
+                </Typography>
+              </CardContent>
+            </Card>
+          ))}
+        </Box>
+
+        {/* CTA */}
+        <Box
+          sx={{
+            p: { xs: 4, md: 6 },
+            borderRadius: 4,
+            textAlign: "center",
+            background:
+              "linear-gradient(135deg, rgba(244,230,154,0.12) 0%, rgba(212,175,55,0.05) 100%)",
+            border: "1px solid rgba(244,230,154,0.25)",
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{
+              color: "#f4e69a",
+              fontWeight: 700,
+              mb: 2,
+              fontSize: { xs: "1.5rem", md: "2rem" },
+            }}
+          >
+            Potrebna vam je ECU modifikacija?
+          </Typography>
+          <Typography
+            sx={{
+              color: "#d6d6d6",
+              mb: 4,
+              maxWidth: 580,
+              mx: "auto",
+              lineHeight: 1.7,
+            }}
+          >
+            Pozovite nas i dogovorite stručno softversko podešavanje vašeg
+            vozila — bez DPF, EGR i AdBlue problema.
+          </Typography>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={2}
+            justifyContent="center"
+          >
+            <Button
+              component="a"
+              href="tel:+381658252864"
+              variant="contained"
+              color="primary"
+              size="large"
+              startIcon={<PhoneInTalkIcon />}
+            >
+              Pozovi nas
+            </Button>
+          </Stack>
+        </Box>
+      </Container>
     </Box>
   );
 }

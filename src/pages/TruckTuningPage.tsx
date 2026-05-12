@@ -1,4 +1,14 @@
-import { Box, Typography, Card, CardContent } from "@mui/material";
+import React from "react";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  Container,
+  Button,
+  Stack,
+  Chip,
+} from "@mui/material";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
@@ -6,26 +16,26 @@ import ConstructionIcon from "@mui/icons-material/Construction";
 import BoltIcon from "@mui/icons-material/Bolt";
 import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
 import SpeedIcon from "@mui/icons-material/Speed";
+import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const benefits = [
   {
     title: "Povećanje snage",
     description:
       "Optimizacijom ECU jedinice povećava se snaga i obrtni moment vozila.",
-    icon: <BoltIcon sx={{ fontSize: 64, color: "#ff6f00", mb: 2 }} />,
+    icon: <BoltIcon sx={{ fontSize: 44 }} />,
   },
   {
     title: "Ušteda goriva",
     description:
       "Tuning omogućava efikasniji rad motora i manju potrošnju goriva.",
-    icon: (
-      <LocalGasStationIcon sx={{ fontSize: 64, color: "#388e3c", mb: 2 }} />
-    ),
+    icon: <LocalGasStationIcon sx={{ fontSize: 44 }} />,
   },
   {
     title: "Bolji odziv gasa",
     description: "Preciznije mapiranje dovodi do bržeg i boljeg odziva na gas.",
-    icon: <SpeedIcon sx={{ fontSize: 64, color: "#1976d2", mb: 2 }} />,
+    icon: <SpeedIcon sx={{ fontSize: 44 }} />,
   },
 ];
 
@@ -33,220 +43,268 @@ const vehicleTypes = [
   {
     title: "Kamioni",
     description: "Čipovanje za Mercedes, MAN, Volvo, Scania i druge modele.",
-    icon: <LocalShippingIcon sx={{ color: "#8cb6bf", fontSize: 64, mb: 2 }} />,
+    icon: <LocalShippingIcon sx={{ fontSize: 44 }} />,
   },
   {
     title: "Autobusi",
     description: "Tuning gradskih i turističkih autobusa za bolje performanse.",
-    icon: <DirectionsBusIcon sx={{ color: "#8cb6bf", fontSize: 64, mb: 2 }} />,
+    icon: <DirectionsBusIcon sx={{ fontSize: 44 }} />,
   },
   {
     title: "Radne mašine",
     description: "Čipovanje bagera, utovarivača, valjaka i druge opreme.",
-    icon: <ConstructionIcon sx={{ color: "#8cb6bf", fontSize: 64, mb: 2 }} />,
+    icon: <ConstructionIcon sx={{ fontSize: 44 }} />,
   },
 ];
+
+const cardSx = {
+  background:
+    "linear-gradient(180deg, rgba(45,45,45,0.9) 0%, rgba(30,30,30,0.9) 100%)",
+  backdropFilter: "blur(10px)",
+  border: "1px solid rgba(244, 230, 154, 0.12)",
+  borderRadius: 4,
+  boxShadow: "0 8px 28px rgba(0,0,0,0.35)",
+  transition: "all 0.35s ease",
+  height: "100%",
+  "&:hover": {
+    transform: "translateY(-8px)",
+    boxShadow: "0 18px 48px rgba(244, 230, 154, 0.15)",
+    borderColor: "rgba(244, 230, 154, 0.35)",
+  },
+};
+
+const iconWrapperSx = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  width: 84,
+  height: 84,
+  borderRadius: "50%",
+  background:
+    "linear-gradient(135deg, rgba(244,230,154,0.2) 0%, rgba(244,230,154,0.04) 100%)",
+  border: "2px solid rgba(244,230,154,0.25)",
+  color: "#f4e69a",
+  mb: 3,
+  mx: "auto",
+  transition: "all 0.3s ease",
+};
+
+const SectionHeader = ({
+  overline,
+  title,
+  subtitle,
+}: {
+  overline: string;
+  title: string;
+  subtitle: string;
+}) => (
+  <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
+    <Typography
+      variant="overline"
+      sx={{
+        color: "#d4af37",
+        fontWeight: 700,
+        letterSpacing: "0.18em",
+        fontSize: "0.78rem",
+      }}
+    >
+      {overline}
+    </Typography>
+    <Typography
+      variant="h3"
+      sx={{
+        mt: 1,
+        mb: 2,
+        color: "#f4e69a",
+        fontWeight: 700,
+        fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.6rem" },
+        textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+      }}
+    >
+      {title}
+    </Typography>
+    <Box
+      sx={{
+        width: 80,
+        height: 3,
+        background: "linear-gradient(90deg, #f4e69a, #d4af37)",
+        mx: "auto",
+        mb: 3,
+        borderRadius: 2,
+      }}
+    />
+    <Typography
+      variant="body1"
+      sx={{
+        color: "#bcbcbc",
+        maxWidth: 680,
+        mx: "auto",
+        lineHeight: 1.75,
+        fontSize: { xs: "0.95rem", md: "1.1rem" },
+      }}
+    >
+      {subtitle}
+    </Typography>
+  </Box>
+);
 
 export default function TruckTuningPage() {
   return (
     <Box>
-      {/* Hero sekcija */}
+      {/* HERO */}
       <Box
         sx={{
+          position: "relative",
+          height: { xs: 480, md: 580 },
+          width: "100%",
           backgroundImage: `url('/images/tuning-hero-section.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "500px",
-          marginTop: "-20px",
           display: "flex",
-          width: "100%",
-          flexDirection: "column",
-          alignItems: "left",
-          justifyContent: "left",
-          color: "#fff",
-          textAlign: "left",
-          px: 2,
-        }}
-      >
-        <Typography
-          variant="h3"
-          sx={{
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-            textAlign: "left",
-            color: "#f4e69a",
-            maxWidth: { xs: 300, sm: 300, md: 500 },
-            marginTop: "8rem",
-            paddingLeft: "2rem",
-            fontWeight: "600",
-          }}
-          component="h1"
-          gutterBottom
-        >
-          PROFESIONALNA OPTIMIZACIJA
-          <br />
-          ECU JEDINICA
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            maxWidth: { xs: 300, sm: 300, md: 500 },
-            color: "white",
-            paddingLeft: "2rem",
-            mt: 5,
-            textAlign: "left",
-            fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
-          }}
-        >
-          Naš tuning usmeren je na povećanje performansi i smanjenje potrošnje
-          goriva. ECU tuning je precizan proces koji uključuje modifikaciju
-          softvera radi postizanja boljih rezultata rada motora, poboljšanja
-          odziva na gas i ukupne efikasnosti vozila.
-        </Typography>
-      </Box>
-      {/* Benefiti i vrste vozila - dva Box dela u Containeru */}
-      <div
-        style={{
-          width: "100vw",
-          marginLeft: "calc(-50vw + 50%)",
-          marginRight: "calc(-50vw + 50%)",
-          padding: "80px 0",
-          background: "linear-gradient(135deg, #1d1d1d 0%, #2a2a2a 100%)",
-          color: "#f4e69a",
-          position: "relative",
-        }}
-      >
-        {/* Background pattern overlay */}
-        <div
-          style={{
+          alignItems: "center",
+          overflow: "hidden",
+          "&::before": {
+            content: '""',
             position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            opacity: 0.05,
-            backgroundImage:
-              "radial-gradient(circle at 25% 25%, #f4e69a 2px, transparent 2px)",
-            backgroundSize: "60px 60px",
-          }}
-        ></div>
-
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "0 24px",
-            position: "relative",
-          }}
+            inset: 0,
+            background:
+              "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 100%)",
+            zIndex: 1,
+          },
+        }}
+      >
+        <Container
+          maxWidth="lg"
+          sx={{ position: "relative", zIndex: 2, textAlign: "left" }}
         >
-          {/* Benefits Section with improved styling */}
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <Typography
-              variant="h4"
-              fontWeight="bold"
-              sx={{
-                mb: 2,
-                fontSize: { xs: "2rem", sm: "2.2rem", md: "2.5rem" },
-                color: "#f4e69a",
-                textShadow: "0 2px 4px rgba(0,0,0,0.3)",
-              }}
+          <Chip
+            label="ECU Tuning"
+            sx={{
+              mb: 3,
+              color: "#f4e69a",
+              backgroundColor: "rgba(244, 230, 154, 0.08)",
+              border: "1px solid rgba(244, 230, 154, 0.4)",
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+            }}
+          />
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: "1.8rem", sm: "2.4rem", md: "3.2rem" },
+              fontWeight: 700,
+              color: "#f4e69a",
+              lineHeight: 1.15,
+              mb: 2,
+              maxWidth: 760,
+              textShadow: "0 4px 24px rgba(0,0,0,0.4)",
+            }}
+          >
+            Profesionalna optimizacija
+            <br />
+            ECU jedinica
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              maxWidth: 560,
+              color: "#e5e5e5",
+              fontSize: { xs: "0.95rem", md: "1.15rem" },
+              lineHeight: 1.7,
+              mb: 4,
+            }}
+          >
+            Naš tuning usmeren je na povećanje performansi i smanjenje potrošnje
+            goriva. ECU tuning je precizan proces modifikacije softvera radi
+            boljeg rada motora, odziva na gas i ukupne efikasnosti vozila.
+          </Typography>
+
+          <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+            <Button
+              component="a"
+              href="tel:+381658252864"
+              variant="contained"
+              color="primary"
+              size="large"
+              startIcon={<PhoneInTalkIcon />}
             >
-              Benefiti
-            </Typography>
-            <div
-              style={{
-                width: "80px",
-                height: "3px",
-                background: "linear-gradient(90deg, #f4e69a, #d4c679)",
-                margin: "0 auto",
-                marginBottom: "20px",
-              }}
-            ></div>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "rgba(255,255,255,0.8)",
-                maxWidth: "700px",
-                margin: "0 auto",
-                lineHeight: 1.6,
-                fontWeight: 400,
-                fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
-              }}
+              Zakaži tuning
+            </Button>
+            <Button
+              variant="outlined"
+              color="primary"
+              size="large"
+              endIcon={<ArrowForwardIcon />}
+              onClick={() =>
+                document
+                  .getElementById("benefiti")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
             >
-              Zašto je ECU tuning pravi izbor za vaše vozilo
-            </Typography>
-          </div>
+              Saznaj više
+            </Button>
+          </Stack>
+        </Container>
+      </Box>
+
+      {/* Sadržaj */}
+      <Box
+        sx={{
+          background:
+            "linear-gradient(180deg, #1d1d1d 0%, #1a1a1a 50%, #1d1d1d 100%)",
+          py: { xs: 6, md: 10 },
+          position: "relative",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            opacity: 0.04,
+            backgroundImage:
+              "radial-gradient(circle at 25% 25%, #f4e69a 1.5px, transparent 1.5px)",
+            backgroundSize: "60px 60px",
+            pointerEvents: "none",
+          },
+        }}
+      >
+        <Container
+          maxWidth="lg"
+          sx={{ position: "relative", zIndex: 1 }}
+          id="benefiti"
+        >
+          <SectionHeader
+            overline="Benefiti"
+            title="Zašto je ECU tuning pravi izbor"
+            subtitle="Pravilno izvedena ECU optimizacija donosi merljive rezultate — više snage, manje potrošnje, bolja vozna iskustva."
+          />
 
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(3, 1fr)",
+              },
               gap: 4,
-              mb: 8,
+              mb: { xs: 8, md: 12 },
             }}
           >
             {benefits.map((item, index) => (
-              <Card
-                key={index}
-                sx={{
-                  background: "rgba(45, 45, 45, 0.8)",
-                  backdropFilter: "blur(10px)",
-                  border: "1px solid rgba(244, 230, 154, 0.1)",
-                  borderRadius: 4,
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    transform: "translateY(-8px)",
-                    boxShadow: "0 16px 48px rgba(244, 230, 154, 0.15)",
-                    border: "1px solid rgba(244, 230, 154, 0.3)",
-                  },
-                }}
-              >
-                <CardContent sx={{ textAlign: "center", p: 4 }}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      width: { xs: "80px", sm: "90px", md: "100px" },
-                      height: { xs: "80px", sm: "90px", md: "100px" },
-                      paddingTop: "16px",
-                      borderRadius: "50%",
-                      background:
-                        "linear-gradient(135deg, rgba(244, 230, 154, 0.2), rgba(244, 230, 154, 0.05))",
-                      margin: "0 auto 24px auto",
-                      fontSize: "48px",
-                      // fontSize: { xs: "40px", sm: "44px", md: "48px" },
-                      color: "#f4e69a",
-                      border: "2px solid rgba(244, 230, 154, 0.2)",
-                      transition: "all 0.3s ease",
-                      "& svg": {
-                        width: { xs: "40px", sm: "44px", md: "48px" },
-                        height: { xs: "40px", sm: "44px", md: "48px" },
-                        display: "block",
-                      },
-                      "&:hover": {
-                        background:
-                          "linear-gradient(135deg, rgba(244, 230, 154, 0.25), rgba(244, 230, 154, 0.1))",
-                        border: "2px solid rgba(244, 230, 154, 0.4)",
-                      },
-                    }}
-                  >
-                    {item.icon}
-                  </Box>
+              <Card key={index} sx={cardSx}>
+                <CardContent sx={{ textAlign: "center", p: { xs: 3, md: 4 } }}>
+                  <Box sx={iconWrapperSx}>{item.icon}</Box>
                   <Typography
                     variant="h5"
-                    fontWeight="bold"
-                    gutterBottom
-                    sx={{ color: "#f4e69a", mb: 2 }}
+                    sx={{ color: "#f4e69a", fontWeight: 700, mb: 1.5 }}
                   >
                     {item.title}
                   </Typography>
                   <Typography
                     variant="body2"
                     sx={{
-                      color: "rgba(255,255,255,0.8)",
-                      lineHeight: 1.6,
-                      fontSize: "16px",
+                      color: "#cfcfcf",
+                      lineHeight: 1.7,
+                      fontSize: "0.98rem",
                     }}
                   >
                     {item.description}
@@ -256,131 +314,40 @@ export default function TruckTuningPage() {
             ))}
           </Box>
 
-          {/* Vehicle Types Section */}
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <Typography
-              variant="h4"
-              fontWeight="bold"
-              sx={{
-                mb: 2,
-                color: "#f4e69a",
-                fontSize: { xs: "2rem", sm: "2.2rem", md: "2.5rem" },
-                textShadow: "0 2px 4px rgba(0,0,0,0.3)",
-              }}
-            >
-              Čipovanje za različite vrste vozila
-            </Typography>
-            <div
-              style={{
-                width: "100px",
-                height: "3px",
-                background: "linear-gradient(90deg, #f4e69a, #d4c679)",
-                margin: "0 auto 24px auto",
-              }}
-            ></div>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "rgba(255,255,255,0.9)",
-                maxWidth: "600px",
-                margin: "0 auto",
-                lineHeight: 1.8,
-                fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
-              }}
-            >
-              Nudimo profesionalni ECU tuning za kamione, autobuse i teške radne
-              mašine.
-            </Typography>
-          </div>
+          <SectionHeader
+            overline="Vrste vozila"
+            title="Čipovanje za različita vozila"
+            subtitle="Nudimo profesionalni ECU tuning za kamione, autobuse i teške radne mašine, prilagođen svakom proizvođaču."
+          />
 
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(3, 1fr)",
+              },
               gap: 4,
+              mb: { xs: 6, md: 10 },
             }}
           >
             {vehicleTypes.map((vehicle, index) => (
-              <Card
-                key={index}
-                sx={{
-                  background: "rgba(40, 40, 40, 0.9)",
-                  backdropFilter: "blur(15px)",
-                  border: "1px solid rgba(244, 230, 154, 0.15)",
-                  borderRadius: 4,
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-                  transition: "all 0.4s ease",
-                  position: "relative",
-                  overflow: "hidden",
-                  "&:hover": {
-                    transform: "translateY(-10px) scale(1.02)",
-                    boxShadow: "0 20px 60px rgba(244, 230, 154, 0.2)",
-                    border: "1px solid rgba(244, 230, 154, 0.4)",
-                  },
-                  // "&::before": {
-                  //   content: '""',
-                  //   position: "absolute",
-                  //   top: 0,
-                  //   left: 0,
-                  //   right: 0,
-                  //   height: "3px",
-                  //   background: "linear-gradient(90deg, #f4e69a, #d4c679)",
-                  //   opacity: 0,
-                  //   transition: "opacity 0.3s ease",
-                  // },
-                  // "&:hover::before": {
-                  //   opacity: 1,
-                  // },
-                }}
-              >
-                <CardContent sx={{ textAlign: "center", p: 4 }}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      width: { xs: "80px", sm: "90px", md: "100px" },
-                      height: { xs: "80px", sm: "90px", md: "100px" },
-                      paddingTop: "18px",
-                      borderRadius: "50%",
-                      background:
-                        "linear-gradient(135deg, rgba(244, 230, 154, 0.15), rgba(244, 230, 154, 0.05))",
-                      margin: "0 auto 24px auto",
-                      fontSize: "48px",
-                      color: "#f4e69a",
-                      border: "2px solid rgba(244, 230, 154, 0.2)",
-                      transition: "all 0.3s ease",
-                      "& svg": {
-                        width: { xs: "40px", sm: "44px", md: "48px" },
-                        height: { xs: "40px", sm: "44px", md: "48px" },
-                        display: "block",
-                      },
-                      "&:hover": {
-                        background:
-                          "linear-gradient(135deg, rgba(244, 230, 154, 0.25), rgba(244, 230, 154, 0.1))",
-                        border: "2px solid rgba(244, 230, 154, 0.4)",
-                      },
-                    }}
-                  >
-                    {vehicle.icon}
-                  </Box>
+              <Card key={index} sx={cardSx}>
+                <CardContent sx={{ textAlign: "center", p: { xs: 3, md: 4 } }}>
+                  <Box sx={iconWrapperSx}>{vehicle.icon}</Box>
                   <Typography
                     variant="h5"
-                    fontWeight="bold"
-                    sx={{
-                      color: "#f4e69a",
-                      mb: 2,
-                      textShadow: "0 1px 2px rgba(0,0,0,0.3)",
-                    }}
+                    sx={{ color: "#f4e69a", fontWeight: 700, mb: 1.5 }}
                   >
                     {vehicle.title}
                   </Typography>
                   <Typography
-                    variant="body1"
+                    variant="body2"
                     sx={{
-                      color: "rgba(255,255,255,0.85)",
+                      color: "#cfcfcf",
                       lineHeight: 1.7,
-                      fontSize: "16px",
+                      fontSize: "0.98rem",
                     }}
                   >
                     {vehicle.description}
@@ -389,8 +356,55 @@ export default function TruckTuningPage() {
               </Card>
             ))}
           </Box>
-        </div>
-      </div>
+
+          {/* CTA */}
+          <Box
+            sx={{
+              mt: { xs: 6, md: 10 },
+              p: { xs: 4, md: 6 },
+              borderRadius: 4,
+              textAlign: "center",
+              background:
+                "linear-gradient(135deg, rgba(244,230,154,0.12) 0%, rgba(212,175,55,0.06) 100%)",
+              border: "1px solid rgba(244,230,154,0.25)",
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                color: "#f4e69a",
+                fontWeight: 700,
+                mb: 2,
+                fontSize: { xs: "1.5rem", md: "2rem" },
+              }}
+            >
+              Spremni za bolje performanse?
+            </Typography>
+            <Typography
+              sx={{
+                color: "#d6d6d6",
+                mb: 4,
+                maxWidth: 580,
+                mx: "auto",
+                lineHeight: 1.7,
+              }}
+            >
+              Pozovite nas i dogovorite termin za stručni ECU tuning vašeg
+              vozila — uz garanciju kvaliteta.
+            </Typography>
+            <Button
+              component="a"
+              href="tel:+381658252864"
+              variant="contained"
+              color="primary"
+              size="large"
+              startIcon={<PhoneInTalkIcon />}
+            >
+              +381 65 825 2864
+            </Button>
+          </Box>
+        </Container>
+      </Box>
     </Box>
   );
 }
